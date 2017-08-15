@@ -1,0 +1,29 @@
+<div class="sub-type3">
+	<div class="mobile-view-inner">
+		<!-- mobile-lead -->
+		<div class="mobile-lead"></div>
+		<!-- mobile-nav -->
+		{{if typeof content.textNav !== "undefined"}}
+		<div class="mobile-nav">
+			<ul class="clearfix">
+				{{each content.textNav.modelData}}
+					<li style="background:{{$value.labelColor}}">
+						<span style="color:{{$value.fontColor}}">{{$value.textName}}</span>
+					</li>
+				{{/each}}
+			</ul>
+		</div>
+		{{/if}}
+		<div class="banner mb-20">
+			<img src="{{content.modelars.modelData[0].iconBgUrl}}" width="232">
+		</div>
+		<div class="content">
+			<div class="inner">
+				<h3 class="tc bold" style="color:{{content.modelars.modelData[0].mainFontColor}}">{{content.modelars.modelData[0].mainTitle}}</h3>
+			</div>
+			<div class="main">
+				{{xss content.modelars.modelData[0].intro}}
+			</div>
+		</div>
+	</div>
+</div>

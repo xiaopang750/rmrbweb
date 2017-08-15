@@ -1,0 +1,44 @@
+/**
+ *description:推广活动公共样式表
+ *author:fanwei
+ *date:2014/08/30
+ */
+
+
+/* 列表样式 - 模块+图标 */
+.list-type-icon {
+	padding:50px 0;
+}
+
+.list-type-icon td {
+	padding:20px 0;
+	text-align: center;
+}
+
+.list-type-icon td p {
+	padding:5px;
+	font-size: 14px;
+} 
+
+
+/* 列表样式 - table列表 */
+.list-type-table {
+	width: 95%;
+	margin:20px auto 0 auto;
+}
+
+.list-type-table table {
+	border-collapse: collapse;
+}
+
+.list-type-table table td {
+	border:1px solid #ccc;
+	text-align: center;
+	padding:10px 0;
+	word-break:break-all;
+}
+
+.list-type-table button {
+	width: 100px;
+	height: 30px;
+}

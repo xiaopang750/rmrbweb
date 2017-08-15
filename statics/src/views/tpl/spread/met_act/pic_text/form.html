@@ -1,0 +1,36 @@
+<!-- 图文表单 -->
+<div class="tab-wrap" sub-wrap name="muliInfos">
+	{{each muliInfos}}
+	<div class="tab-content" widget-role="tab-content" sub-list name="test">
+		<div class="item">
+			<p>标题</p>
+			<input type="text" value="{{$value.subject}}" sub-name="subject">
+			<input type="hidden" value="{{$value.activityAbstract}}" sub-name="activityAbstract">
+			<input type="hidden" value="{{$value.pkInfo}}" sub-name="pkInfo">
+			<input type="hidden" value="{{$value.activityAbstract}}" sub-name="activityAbstract">
+		</div>
+		<div class="item">
+			<p>作者</p>
+			<input type="text" value="{{$value.creator}}" sub-name="creator">
+		</div>
+		<div class="item">
+			<p>上传</p>
+			<div r-upload-wrap name="bg">
+				<span>
+					<input type="text" class="r-text fl upload" value="{{$value.picurl}}" r-upload-url>
+					<input type="hidden" value="{{$value.picurl}}" sub-name="picurl" r-upload-url>			
+					<span class="r-btn mobile-upload" r-upload-btn></span>	
+				</span>				
+			</div>
+		</div>
+		<div class="item">
+			<p>摘要</p>
+			<textarea sub-name="activityAbstract">{{$value.activityAbstract}}</textarea>
+		</div>
+		<div class="item">
+			<p>到店有礼链接</p>
+			<input type="text" value="{{$value.url}}" readonly="readonly">
+		</div>
+	</div>
+	{{/each}}
+</div>

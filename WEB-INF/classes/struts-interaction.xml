@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+    <constant name="struts.enable.DynamicMethodInvocation" value="true" />
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.ui.theme" value="simple"></constant>
+    <constant name="struts.action.extension" value="do,action,,"></constant>
+
+	<package name="rmrb-interaction" namespace="/interaction" extends="rmrb-default">
+		
+		<action name="interaction*" class="com.rsdataservice.o2o.action.Interaction.ActivityInteractionAction" method="{1}">
+			
+		</action>
+		<action name="prize*" class="com.rsdataservice.o2o.action.prize.ActivityPrizeAction" method="{1}">
+		    
+		</action>
+	</package>
+</struts>

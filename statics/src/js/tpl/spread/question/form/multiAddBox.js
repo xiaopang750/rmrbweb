@@ -1,0 +1,4 @@
+/*TMODJS:{"version":1,"md5":"f80cc8f2fdf3e51eebb84b4441f55b7d"}*/
+define(function(require) {
+    return require("../../../templates")("spread/question/form/multiAddBox", '<div class="jsBubble_s"> <div class="arrowL"> <div class="arrowt" style="border-color:transparent #EFEFEF transparent transparent "> </div> <div class="arrowb" style="border-color:transparent #548BA7 transparent transparent "> </div> </div> <div class="tipCon" style="background:#fff; border-color:#548BA7; padding-right:0px;"> <div class="tipTitle" style="background:#EFEFEF;"> 批量添加 <a href="javascript:;" class="jsTip_close" multi-close> X </a> </div> <div class="tipCon_t"> <div class="poplayer"> <p class="spanlh"> 每行代表一个选项，可以添加多个选项 </p> <div> <textarea class="bulkadd" bulkadd></textarea> </div> <div style="height:40px;" class="mtop postiondiv"> <a href="javascript:;" multi-confirm class="btn btn-primary pl-50 pr-50">保存</a> </div> </div> </div> </div> </div>');
+});

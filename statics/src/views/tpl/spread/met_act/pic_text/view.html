@@ -1,0 +1,11 @@
+<!-- 图文预览 -->
+{{each muliInfos}}
+<div class="list-view b-r font-14" data-ele="tab-head">
+	<h3 class="mb-10 font-14">{{$value.subject}}</h3>
+	<img class="mb-10" src="{{$value.picurl}}" width="100%">
+	<p class="mb-10">图文内容</p>
+	<div class="text lineH-23">
+		{{$value.activityAbstract}}
+	</div>
+</div>
+{{/each}}

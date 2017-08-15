@@ -1,0 +1,88 @@
+/**
+ *description:推广活动评论
+ *author:fanwei
+ *date:2014/08/21
+ */
+
+.commonts-detail {
+	width: 700px;
+	margin:10px auto 0 auto;
+}
+
+
+.commonts-area {
+	border:1px solid #ccc;
+	padding:5px;
+	width: 690px;
+	height: 200px;
+	border-radius: 5px;
+}
+
+.commonts-area:focus {
+	border:1px solid #FFB941;
+}
+
+.send-btn {
+	color: #fff;
+	display: inline-block;
+	height: 26px;
+	line-height: 26px;
+	padding: 0 15px;
+	border:1px solid #ffa00a;
+	background: #ffa00a;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+
+.commonts-detail ul {
+	margin-bottom: 10px;
+}
+
+.commonts-detail ul li  {
+	padding:10px 0;
+	border-bottom: 1px solid #ccc;
+	position: relative;
+}
+
+.commonts-detail .btn-wrap {
+	position: absolute;
+	right:0;
+	top: 10px;
+	display: none;
+}
+
+.WB_media_expand {
+	padding:5px;
+	font-size: 12px;
+	margin: 10px 0 6px;
+	border-radius: 3px;
+	border:1px solid #ccc;
+	zoom: 1;
+	width: 100%;
+	height: 50px;
+}
+
+.more-btn {
+	color: #fff;
+	display: none;
+	height: 26px;
+	line-height: 26px;
+	padding: 0 15px;
+	border:1px solid #ccc;
+	background: #ccc;
+	border-radius: 5px;
+}
+
+.more-btn.active {
+	display: inline-block;
+}
+
+.reply-area {
+	display: none;
+}
+
+.bg-gray {
+	background: #ccc;
+	border:1px solid #ccc;
+}

@@ -1,0 +1,23 @@
+<!-- 会员收藏记录 -->
+{{if !memberCols.length}}
+<div class="tc">暂无数据</div>
+{{else}}
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="auto table mt-20">
+	<thead class="list-head">
+		<tr>
+			<td>收藏时间</td>
+			<td>收藏类型</td>
+			<td>收藏内容</td>
+		</tr>
+	</thead>
+	<tbody data-ele="data-wrap" class="list-body">
+		{{each memberCols}}
+		<tr>
+			<td>{{$value.collecttime}}</td>
+			<td>{{$value.collecttype}}</td>
+			<td>{{$value.collectcontent}}</td>
+		</tr>
+		{{/each}}
+	</tbody>
+</table>
+{{/if}}

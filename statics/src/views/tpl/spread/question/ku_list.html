@@ -1,0 +1,29 @@
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		<td colspan="3">
+			<!-- <div class="WJButton wj_blue smallfontsize postionbtn Batch_push test_class_A fr" add>
+				导入问题库
+			</div> -->
+			<div class="fr mr-5">
+				<span class="black mr-10 font-14">按问题库类别查询:</span>
+				<select change-type>
+					<option value="">请选择</option>
+				</select>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td>序号1</td>
+		<td width="70%">问题</td>
+		<td>操作</td>
+	</tr>
+	{{each questins}}
+	<tr>
+		<td>Q{{$index + 1}}</td>
+		<td>您一般在哪里买XX?</td>
+		<td>
+			<a href="javascript:;">编辑</a>
+		</td>
+	</tr>
+	{{/each}}
+</table>

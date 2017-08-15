@@ -1,0 +1,25 @@
+<!-- 会员互动详情 -->
+{{if !mInteracts.length}}
+<div class="tc">暂无数据</div>
+{{else}}
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="auto table mt-20">
+	<thead class="list-head">
+		<tr>
+			<td>发起时间</td>
+			<td>结束时间</td>
+			<td>互动内容</td>
+			<td>互动对象</td>
+		</tr>
+	</thead>
+	<tbody data-ele="data-wrap" class="list-body">
+		{{each mInteracts}}
+		<tr>
+			<td>{{$value.starttime}}</td>
+			<td>{{$value.endtime}}</td>
+			<td>{{$value.interactioncontent}}</td>
+			<td>{{$value.interactionobject}}</td>
+		</tr>
+		{{/each}}
+	</tbody>
+</table>
+{{/if}}

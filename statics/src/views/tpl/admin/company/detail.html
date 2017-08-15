@@ -1,0 +1,73 @@
+<!-- 子企业详情 -->
+
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="table striped">
+	<thead>
+		<tr>
+			<td width="10%">公司名称</td>
+			<td width="30%">是否启用</td>
+			<td width="10%">手机网站数</td>
+			<td width="15%">活动数</td>
+			<td width="10%">微信账号数</td>
+			<td width="10%">微博账号数</td>
+			<td width="15%">会员数</td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="active">
+			<td>{{cut currentCorp.corpName 10}}</td>
+			<td>
+				{{if currentCorp.isEnable == 0}}
+					未启用
+				{{else}}
+					已启用
+				{{/if}}
+			</td>
+			<td>{{currentCorp.mobileNum}}</td>
+			<td>
+				{{currentCorp.activityNum}}
+			</td>
+			<td>
+				{{currentCorp.wxNum}}
+			</td>
+			<td>
+				{{currentCorp.wbNum}}
+			</td>
+			<td>
+				{{currentCorp.memberNum}}
+			</td>
+		</tr>	
+		{{if childrenCorps.length}}
+		{{each childrenCorps}}
+		<tr rule-list>
+			<td>{{cut $value.corpName 10}}</td>
+			<td>
+				{{if $value.isEnable == 0}}
+					未启用
+				{{else}}
+					已启用
+				{{/if}}
+			</td>
+			<td>{{$value.mobileNum}}</td>
+			<td>
+				{{$value.activityNum}}
+			</td>
+			<td>
+				{{$value.wxNum}}
+			</td>
+			<td>
+				{{$value.wbNum}}
+			</td>
+			<td>
+				{{$value.memberNum}}
+			</td>
+		</tr>
+		{{/each}}
+	{{else}}
+		<tr>
+			<td colspan="7">
+				暂无数据
+			</td>
+		</tr>	
+	{{/if}}
+	</tbody>
+</table>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+    <constant name="struts.enable.DynamicMethodInvocation" value="true" />
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.ui.theme" value="simple"></constant>
+    <constant name="struts.action.extension" value="do,action,,"></constant>
+    <!--   系统登录模块-->
+	<package name="rmrb-mobilesite" namespace="/mobilesite" extends="rmrb-default">
+	   <action name="mobilesite*" class="com.rsdataservice.o2o.action.mobilesite.MobileSiteAction" method="{1}">
+	      <result type="json"></result>
+	   </action>
+	   <action name="findCustomPageByPkSite" class="com.rsdataservice.o2o.action.mobilesite.MobileSiteAction" method="findCustomPageByPkSite">
+	      <result type="json"></result>
+	   </action>
+	   <action name="saveCustomDomain" class="com.rsdataservice.o2o.action.mobilesite.MobileSiteAction" method="customDomainByPkSite">
+	      <result type="json"></result>
+	   </action>
+	   <action name="updateShortUrl" class="com.rsdataservice.o2o.action.mobilesite.MobileSiteAction" method="updateShortUrl">
+	      <result type="json"></result>
+	   </action>
+	   
+		<action name="jump" class="com.rsdataservice.o2o.action.mobilesite.MobileSiteAction" method="jump">
+	      <result name="mobile_build">../views/main/mobile/mobile_build.jsp</result>
+	      <result name="site_add_edit">../views/main/mobile/mobile_add_edit.jsp</result>
+	      <result name="mobile_hased">../views/main/mobile/mobile_hased.jsp</result>
+	      <result name="mobile_select_sub">../views/main/mobile/mobile_select_sub.jsp</result>
+	      <result name="mobile_list">../views/main/mobile/mobile_list.jsp</result>
+	   </action>
+	</package>
+</struts>
+
+
+
+
+
+

@@ -1,0 +1,10 @@
+<server>
+	<administrator>
+	<userName value="admin123"></userName>
+	<userPass value="123456"></userPass>
+	</administrator>
+	<administrator>
+	<userName value="admin234"></userName>
+	<userPass value="654321"></userPass>
+	</administrator>
+</server>

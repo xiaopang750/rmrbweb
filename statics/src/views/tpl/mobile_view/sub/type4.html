@@ -1,0 +1,24 @@
+<!-- 子模板4 -->
+<div class="main-type1">
+	<div class="mobile-view-inner">
+		<!-- mobile-lead -->
+		<div class="mobile-lead"></div>
+		<!-- mobile-nav -->
+		{{if typeof content.textNav !== "undefined"}}
+		<div class="mobile-nav">
+			<ul class="clearfix">
+				{{each content.textNav.modelData}}
+					<li style="background:{{$value.labelColor}}">
+						<span style="color:{{$value.fontColor}}">{{$value.textName}}</span>
+					</li>
+				{{/each}}
+			</ul>
+		</div>
+		{{/if}}
+		<div id="mobile-view">
+			<div class="main-type3">
+				{{=content.editor.modelData.editorContent}}
+			</div>
+		</div>
+	</div>
+</div>

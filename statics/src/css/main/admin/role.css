@@ -1,0 +1,30 @@
+/**
+ *description:后台配置-角色管理
+ *author:fanwei
+ *date:2014/08/06
+ */
+
+.admin-wrap .list-wrap {
+	width: 48%;
+	height: 500px;
+	border:1px solid #ccc;
+	background:#fff;
+	overflow: auto;
+} 
+
+.admin-wrap .list-wrap ul {
+	margin-top:10px;
+}
+
+.admin-wrap .list-wrap ul li {
+	width: 98%;
+	margin:0 auto 10px auto;
+	background:#ccc;
+	height: 28px;
+	line-height: 28px;
+	text-align: center;
+	color:#fff;
+	cursor: pointer;
+}
+
+ 

@@ -1,0 +1,421 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+    <constant name="struts.enable.DynamicMethodInvocation" value="true" />
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.ui.theme" value="simple"></constant>
+    <constant name="struts.action.extension" value="do,action,,"></constant>
+	<package name="rmrb-activity" namespace="/activity" extends="rmrb-default">
+		<!-- 活动主信息部分开始 -->
+			<!-- 根据活动主题查看活动 -->
+			<action name="findInfoByTopic" class="com.rsdataservice.o2o.action.activity.ActivityAction" method="findInfoByTopic">
+				<result type="json"></result>
+			</action>
+			<!-- 进入活动主页 -->
+			<action name="toActivityIndex" class="com.rsdataservice.o2o.action.activity.ActivityAction" method="activityIndex">
+				<result name="007">../views/main/spread/gift/index.jsp</result>
+			</action>
+			<!-- 进入活动列表页 -->
+			<action name="toActivityListPage" class="com.rsdataservice.o2o.action.activity.ActivityAction">
+				<result name="007">../views/main/spread/gift/list.jsp</result>
+			</action>
+			<action name="findActivityByType" class="com.rsdataservice.o2o.action.activity.ActivityAction" method="findActivityByPage">
+				<result type="json"></result>
+			</action>
+			<!-- 查看活动信息 -->
+			<action name="findActivity" class="com.rsdataservice.o2o.action.activity.ActivityAction" method="findActivity">
+				<result type="json"></result>
+			</action> 
+			<!-- 编辑活动有效期 -->
+			<action name="editActivityEffectDate" class="com.rsdataservice.o2o.action.activity.ActivityAction" method="editActivityEffectDate">
+				<result type="json"></result>
+			</action>
+			<!-- 添加活动信息 -->
+			<action name="addActivity" class="com.rsdataservice.o2o.action.activity.ActivityAction" method="addActivityInfo">
+				<result  type="json"></result>
+				<result  name="meeting" type="json"></result>
+			</action>
+			<!-- 查看活动评论结果 -->
+			<action name="findActivityReviewResult" class="com.rsdataservice.o2o.action.activity.ActivityAction" method="findActivityReviewResult">
+				<result type="json"></result>
+			</action>
+			<!-- 查看活动报名情况 -->
+			<action name="findActivitySignResult" class="com.rsdataservice.o2o.action.activity.ActivityAction" method="findActivitySignResult">
+				  <result type="json"></result>
+			</action>
+			<!-- 修改活动信息 -->
+			<action name="updateActivity" class="com.rsdataservice.o2o.action.activity.ActivityAction" method="updateActivityInfo">
+				<result type="json"></result>
+			</action>
+			<!-- 删除活动信息 -->
+			<action name="deleteActivity" class="com.rsdataservice.o2o.action.activity.ActivityAction" method="deleteActivity">
+				<result type="json"></result>
+			</action>
+			<action name="sendActivity" class="com.rsdataservice.o2o.action.activity.ActivityAction" method="sendActivity">
+				<result type="json"></result>
+			</action>
+			<!--根据活动类型查看活动信息-->
+			<action name="queryActivityByType" class="com.rsdataservice.o2o.action.activity.ActivityAction" method="queryActivity">
+				<result type="json"></result>
+			</action>	
+				<!-- 查看子活动 -->
+			<action name="findChildrenActivity" class="com.rsdataservice.o2o.action.activity.ActivityAction" method="findChildrenActivity">
+				<result type="json"></result>
+			</action>
+				<!-- 通过类型查看子活动 -->
+			<action name="findChildrenActivityByType" class="com.rsdataservice.o2o.action.activity.ActivityAction" method="findChildrenActivityByType">
+				<result type="json"></result>
+			</action>	
+				<!-- 查看活动状态 -->
+			<action name="queryActStatus" class="com.rsdataservice.o2o.action.activity.ActivityAction" method="queryActivityStatus">
+				<result type="json"></result>
+			</action>
+				<!-- 查看活动是否过期状态 -->
+			<action name="queryActivityOverDueStatus" class="com.rsdataservice.o2o.action.activity.ActivityAction" method="queryActivityOverDueStatus">
+				<result type="json"></result>
+			</action>
+		<!-- 活动主信息部分结束 -->
+		<!-- 图文信息部分开始 -->
+			<!-- 进入单图文信息编辑页 -->
+			<action name="toSinglePage" class="com.rsdataservice.o2o.action.activity.ActivityMuliInfoAction" method="toSingle">
+				<result>../views/main/spread/pic_text.jsp</result>
+			</action>
+			<!-- 进入多图文信息编辑页 -->
+			<!-- 添加图文西西你 -->
+			<action name="addMuli" class="com.rsdataservice.o2o.action.activity.ActivityMuliInfoAction" method="addmuli">
+				<result type="json"></result>
+			</action>
+			<!-- 删除图文信息 -->
+			<action name="delMuli" class="com.rsdataservice.o2o.action.activity.ActivityMuliInfoAction" method="delmuli">
+				<result type="json"></result>
+			</action>
+			<!-- 修改图文信息 -->
+			<action name="updateMuli" class="com.rsdataservice.o2o.action.activity.ActivityMuliInfoAction" method="updatemuli">
+				<result type="json"></result>
+			</action>
+			<!-- 查看图文信息 -->
+			<action name="findMuli" class="com.rsdataservice.o2o.action.activity.ActivityMuliInfoAction" method="findMulis">
+				<result type="json"></result>
+			</action>
+		<!-- 图文信息部分结束 -->
+		<!-- 会议部分开始 -->
+			<!-- 进入会议列表页 -->
+			<action name="toMeeting" class="com.rsdataservice.o2o.action.activity.MeetingAction" >
+				<result>../views/main/spread/met_act/index.jsp</result>
+			</action>
+			<!-- 新建会议进入选择模板页 -->
+			<action name="toCheckMeetModel" class="com.rsdataservice.o2o.action.activity.MeetingAction" method="toCheckMeet">
+				<result>../views/main/spread/met_act/select_type.jsp</result>
+			</action>
+			<!-- 编辑会议信息 -->
+			<action name="editMeetingFile" class="com.rsdataservice.o2o.action.activity.MeetingAction" method="editMeeting">
+				<result type="json"></result>
+			</action>
+			<!-- 模板编辑页面切换 -->
+			<action name="editPageChange" class="com.rsdataservice.o2o.action.activity.MeetingAction" method="editPageChange">
+				<result name="CheckModel" type="redirectAction">
+					<param name="id">0030701</param>
+					<param name="pkActivity">${pkActivity}</param>
+					<param name="status">checkModel</param>
+					<param name="actionName">../activity/toCheckMeetModel</param>
+				</result>
+				<result>../views/main/spread/met_act/flow.jsp</result>
+			</action>
+			<!-- 选择会议模板 -->
+			<action name="checkMeetModel" class="com.rsdataservice.o2o.action.activity.MeetingAction" method="checkModel">
+				<result type="json"></result>
+			</action>
+			<!-- 查看会议列表 -->
+			<action name="findMeetingList"  class="com.rsdataservice.o2o.action.activity.MeetingAction" method="selMeetingList">
+				<result type="json"></result>
+			</action>	
+			<action name="findMeeting" class="com.rsdataservice.o2o.action.activity.MeetingAction" method="selMeetingList">
+				<result type="json"></result>
+			</action>
+			<!-- 查看文件信息(模块) -->
+			<action name="findModelMeeting" class="com.rsdataservice.o2o.action.activity.MeetingAction" method="findMeetingByType">
+				<result type="json"></result>
+			</action>
+			<!-- 查看整个文件信息 -->
+			<action name="findFileInfo" class="com.rsdataservice.o2o.action.activity.MeetingAction" method="findAllMeeting">
+				<result type="json"></result>
+			</action>
+			<action name="pageNext" class="com.rsdataservice.o2o.action.activity.MeetingAction" method="pageNext">
+				<result>${pageurl}</result>
+			</action>
+			<action name="toMeetMuli" class="com.rsdataservice.o2o.action.activity.MeetingAction" method="toMeetMuli">
+				<result>../views/main/spread/pic_text.jsp</result>
+			</action>
+		<!-- 会议部分结束 -->
+		<!-- 二维码部分开始 -->
+			<!-- 下载二维码 -->
+			<action name="downloadEWM" class="com.rsdataservice.o2o.action.ewm.EWMAction" method="download">
+			</action>
+			<!-- 获取下载二维码需要的配置信息 -->	
+			<action name="findEWMConfigInfo" class="com.rsdataservice.o2o.action.ewm.EWMInfoAction" method="findConfigInfo">
+				<result type="json"></result>
+			</action>
+			<action name="offLineEWM" class="com.rsdataservice.o2o.action.ewm.OffLineEWMAction">
+				<result type="stream">
+				<param name="inputName">input</param>
+				<param name="contentType">image/jpeg</param>
+				</result>
+			</action>
+			<!-- 直接显示二维码 -->
+			<action name="ewmview" class="com.rsdataservice.o2o.action.ewm.EWMAction" method="ewmview">
+				<result type="json"></result>
+			</action>
+			<!-- 查看关注二维码 -->
+			<action name="queryFocusEwm" class="com.rsdataservice.o2o.action.ewm.FoucsEWMAction" method="queryFoucsEwm">
+				<result type="json"></result>
+			</action>
+			<!-- 下载关注二维码 -->
+			<action name="downloadFocusEwm" class="com.rsdataservice.o2o.action.ewm.FoucsEWMAction" method="downloadFocusEwm">
+			</action>
+		<!-- 二维码部分结束 -->
+		<!-- 活动渠道部分开始 -->
+			<!-- 配置活动发布渠道 -->
+			<action name="channelConfig" class="com.rsdataservice.o2o.action.activity.ActivityChannelAction" method="channelConfig">
+				<result type="json"></result>
+			</action>
+			<!-- 获取渠道配置相关信息 -->
+			<action name="findChannelConfigInfo" class="com.rsdataservice.o2o.action.activity.ActivityChannelAction" method="findSendConfigInfo">
+				<result type="json"></result>
+			</action>
+		<!-- 活动渠道部分结束 -->
+		
+		
+		
+		<action name="test" class="com.rsdataservice.o2o.action.activity.MeetingAction" method="test">
+				<result>${changeUrl}</result>
+		</action>
+		<!-- 活动报名情况开始 -->
+			<!-- 进入报名列表页 -->
+			<action name="toSingList" class="com.rsdataservice.o2o.action.activity.ActivitySignAction">
+				<result>../views/main/spread/sign_list.jsp</result>
+			</action>
+			<!-- 分页查看报名信息 -->
+			<action name="findSignListPage" class="com.rsdataservice.o2o.action.activity.ActivitySignAction" method="showList">
+				<result type="json"></result>
+			</action>
+			<!--查看在某个时间点后的签到信息 -->
+			<action name="findSignByParticipatetime" class="com.rsdataservice.o2o.action.activity.ActivitySignAction" method="findSignByParticipatetime">
+				<result type="json"></result>
+			</action>
+			<!-- 通过验证码签到 -->
+			<action name="activitySignByCode" class="com.rsdataservice.o2o.action.activity.ActivitySignAction" method="activitySignByCode">
+				<result type="json"></result>
+			</action>
+			<!-- 通过主键核销 -->
+			<action name="activitySignByPk" class="com.rsdataservice.o2o.action.activity.ActivitySignAction" method="activitySignByPk">
+				<result type="json"></result>
+			</action>
+			<!-- 查看会议活动在本公司所有渠道的二维码 -->
+			<action name="queryQrCodes" class="com.rsdataservice.o2o.action.activity.ActivitySignAction" method="QueryEwm">
+				<result type="json"></result>
+			</action>
+		<!-- 活动报名情况结束-->
+		<!-- 现场发布会屏幕展示开始 -->
+			<action name="findViewInfo" class="com.rsdataservice.o2o.action.activity.ActivityScreenShowAction" method="findViewInfo">
+				<result type="json"></result>
+			</action>
+		<!-- 现场发布会屏幕展示结束 -->
+		<!-- 优惠券 -->
+		<action name="saveCoupons" class="com.rsdataservice.o2o.action.coupons.CouponsAction" method="addCouponsInfo">
+				<result type="json"></result>
+		</action>
+		<action name="findCouponsByPage" class="com.rsdataservice.o2o.action.coupons.CouponsAction" method="findCouponsByPage">
+				<result type="json"></result>
+		</action>
+		<action name="deleteCoupons" class="com.rsdataservice.o2o.action.coupons.CouponsAction" method="deleteCoupons">
+				<result type="json"></result>
+		</action>
+		<action name="updateCoupons" class="com.rsdataservice.o2o.action.coupons.CouponsAction" method="updateCoupons">
+				<result type="json"></result>
+		</action>
+		<action name="findCouponsById" class="com.rsdataservice.o2o.action.coupons.CouponsAction" method="findCouponsById">
+				<result type="json"></result>
+		</action>
+		<action name="jump" class="com.rsdataservice.o2o.action.coupons.CouponsAction" method="jump">
+				<result name="add_edit_coupons">../views/main/spread/elc_sale/build.jsp</result>
+				<result name="coupons_list">../views/main/spread/elc_sale/list.jsp</result>
+				<result name="coupons_index">../views/main/spread/elc_sale/index.jsp</result>
+		</action>
+		<!-- 互动活动开始 -->
+			<!-- 编辑互动信息 -->
+		<action name="editInteraction" class="com.rsdataservice.o2o.action.activity.InteractAction" method="editInteract">
+			<result type="json"></result>
+		</action>
+			<!-- 上屏 -->
+		<action name="upScreen" class="com.rsdataservice.o2o.action.activity.ActivityScreenShowAction" method="upScreen">
+			<result type="json"></result>
+		</action>
+			<!-- 屏幕显示 -->
+		<action name="viewScreen" class="com.rsdataservice.o2o.action.activity.ActivityScreenShowAction" method="viewScreen">
+			<result type="json"></result>
+		</action>
+			<!-- 建立互动与活动的关联 -->
+		<action name="createInteractToActivity" class="com.rsdataservice.o2o.action.activity.InteractAction" method="createInteractToActivity">
+			<result type="json"></result>
+		</action>
+			<!-- 查看互动消息-->
+		<action name="findInteraction" class="com.rsdataservice.o2o.action.activity.InteractAction" method="findInteraction">
+			 <result type="json"></result>
+		</action>	
+		<!-- 互动活动结束 -->
+		<!-- 积分兑换开始 -->
+			
+			<!-- 进入积分兑换列表页 -->
+			<action name="toIntegralExchange" class="com.rsdataservice.o2o.action.activity.IntegralExchangeAction">
+				 <result>../views/main/spread/score_goods/list.jsp</result>
+			</action>
+			<!-- 进入积分兑换编辑页 -->
+			<action name="toIntegralExchangeEdit" class="com.rsdataservice.o2o.action.activity.IntegralExchangeAction" method="integralExchangeEdit">
+				<result>../views/main/spread/score_goods/form.jsp</result>
+			</action>
+			<!-- 进入积分兑换详情页 -->
+			<action name="toIntegralExchanegDetailPage" class="com.rsdataservice.o2o.action.activity.IntegralExchangeAction" method="toIntegralExchanegDetailPage">
+				<result>../views/main/spread/score_goods/detail.jsp</result>
+			</action>
+			<!-- 分页查看积分兑换详情信息 -->
+			<action name="findIntegralExchangeDetail" class="com.rsdataservice.o2o.action.activity.IntegralExchangeAction" method="findIntegralExchangeDetail">
+				<result type="json"></result>
+			</action>
+			<!-- 分页查看积分兑换列表信息 -->
+			<action name="findIntegralExchangeList" class="com.rsdataservice.o2o.action.activity.IntegralExchangeAction" method="findByPage">
+				<result type="json"></result>
+			</action>
+			<!-- 添加积分兑换礼品信息 -->
+			<action name="addIntegralExchange" class="com.rsdataservice.o2o.action.activity.IntegralExchangeAction" method="addIntegralExchange">
+				<result type="json"></result>
+			</action>
+			<!-- 修改积分兑换礼品信息 -->
+			<action name="updateIntegralExchange" class="com.rsdataservice.o2o.action.activity.IntegralExchangeAction" method="updateIntegralExchange">
+				<result type="json"></result>
+			</action>
+			<!-- 删除积分兑换礼品信息 -->
+			<action name="delIntegralExchange" class="com.rsdataservice.o2o.action.activity.IntegralExchangeAction" method="delIntegralExchange">
+				<result type="json"></result>
+			</action>
+			<!-- 查看对应积分兑换礼品信息 -->
+			<action name="findIntegralExchange" class="com.rsdataservice.o2o.action.activity.IntegralExchangeAction" method="findIntegralExchange">
+				<result type="json"></result>
+			</action>
+			<!-- 积分兑换礼品 -->
+			<action name="integralToProduct" class="com.rsdataservice.o2o.action.activity.IntegralExchangeAction" method="integralToProduct">
+				<result type="json"></result>
+			</action>
+			<!-- 查看所有积分兑换信息 -->
+			<action name="findIntegralExchangeInfo" class="com.rsdataservice.o2o.action.activity.IntegralExchangeAction" method="findIntegralExchangeInfo">
+				<result type="json"></result>
+			</action>
+		<!-- 积分兑换结束 -->
+		<!-- 活动评论开始 -->
+			<!-- 进入活动评论页 -->
+			<action name="toActivityReview" class="com.rsdataservice.o2o.action.activity.ActivityReviewAction">
+				<result>../views/main/spread/commont.jsp</result>
+			</action>
+			<!-- 添加评论信息 -->
+			<action name="addActivityReview" class="com.rsdataservice.o2o.action.activity.ActivityReviewAction" method="addReview">
+				<result type="json"></result>
+			</action>
+			<!-- 删除评论信息 -->
+			<action name="delActivityReview" class="com.rsdataservice.o2o.action.activity.ActivityReviewAction" method="deleteReview">
+				<result type="json"></result>
+			</action>
+			<!-- 查看所有评论 -->
+			<action name="findAllActivityReview" class="com.rsdataservice.o2o.action.activity.ActivityReviewAction" method="findAllReview">
+				<result type="json"></result>
+			</action>
+		<!-- 活动评论结束 -->
+		
+		<!-- 活动进入页开始 -->
+			<!-- 进入企业形象 -->
+			<action name="toCorparate" class="com.rsdataservice.o2o.action.activity.ActivityAction" method="toCorparate">
+				<result>../views/main/spread/corparate/list.jsp</result>
+			</action>
+			<!-- 进入品牌建设 -->
+			<action name="toBrand" class="com.rsdataservice.o2o.action.activity.ActivityAction" method="toBrand">
+				<result>../views/main/spread/brand/list.jsp</result>
+			</action>
+			<!-- 进入每日资讯 -->
+			<action name="toEvery" class="com.rsdataservice.o2o.action.activity.ActivityAction"  method="toEvery">
+				<result>../views/main/spread/info/list.jsp</result>
+			</action>
+			<!-- 今日促销活动页 -->
+			<action name="toSale" class="com.rsdataservice.o2o.action.activity.ActivityAction" method="toSale">
+				<result>../views/main/spread/sale/list.jsp</result>
+			</action>
+			<!-- 进入现场发布会页 -->
+			<action name="toConference" class="com.rsdataservice.o2o.action.activity.ActivityAction" method="toConference">
+				<result>../views/main/spread/public/index.jsp</result>
+			</action>
+			<!-- 进入二维码 -->
+			<action name="toNumber" class="com.rsdataservice.o2o.action.activity.ActivityAction" method="toNumber">
+				<result>../views/main/spread/code/build.jsp</result>
+			</action>
+			<!-- 进入现场互动页 -->
+			<action name="toMeetingInteractive" class="com.rsdataservice.o2o.action.activity.ActivityAction" method="toMeetingInteractive">
+				<result>../views/main/spread/public/list2.jsp</result>
+			</action>
+			<!-- 进入现场抽奖页 -->
+			<action name="toAward" class="com.rsdataservice.o2o.action.activity.ActivityAction" method="toAward">
+				<result>../views/main/spread/public/list.jsp</result>
+			</action>
+			<!-- 进入现场抽奖编辑页 -->
+			<action name="toWardEdit" class="com.rsdataservice.o2o.action.activity.ActivityAction" method="toWardEdit">
+				<result>../views/main/spread/public/step1.jsp</result>
+			</action>
+			<!-- 进入现场互动编辑页 -->
+			<action name="toMeetingInteractiveEdit" class="com.rsdataservice.o2o.action.activity.ActivityAction" method="toMeetingInteractiveEdit">
+				<result>../views/main/spread/pic_text.jsp</result>
+			</action>
+			<!-- 进入会员互动屏幕页面 -->
+			<action name="toMemberConference" class="com.rsdataservice.o2o.action.activity.ActivityAction" method="toMemberConference">
+				<result>../views/main/spread/public/step2.jsp</result>
+			</action>
+			<!-- 进入发布会监控页面 -->
+			<action name="toMonitor" class="com.rsdataservice.o2o.action.activity.ActivityAction" method="toMonitor">
+				<result>../views/main/spread/public/step3.jsp</result>
+			</action>
+			<!-- 进入会议签到页面 -->
+			<action name="toWelcome" class="com.rsdataservice.o2o.action.activity.ActivityAction" method="toWelcome">
+				<result>../views/main/spread/public/step4.jsp</result>
+			</action>
+		<!-- 活动进入页结束 -->
+		
+		
+		<!-- 线下活动二维码 -->
+		<action name="addQcode" class="com.rsdataservice.o2o.action.activity.OfflineQcodeAction" method="addQcode">
+				<result type="json"></result>
+		</action>
+		<action name="scareQcode" class="com.rsdataservice.o2o.action.activity.OfflineQcodeAction" method="scareQcode">
+		   <result ></result>
+		</action>
+		<action name="allQcode" class="com.rsdataservice.o2o.action.activity.OfflineQcodeAction" method="findAllQcodeByPkCorp">
+		   <result type="json"></result>
+		</action>
+		<action name="previewQcode" class="com.rsdataservice.o2o.action.activity.OfflineQcodeAction" method="previewQcode">
+		    <result name="toQcode" type="stream">
+	              <param name="contentType">image/jpeg</param>
+	              <param name="inputName">inputStream</param>
+	              <param name="bufferSize">2048</param>
+         	</result>
+		</action>
+		<action name="downloadQcode" class="com.rsdataservice.o2o.action.activity.OfflineQcodeAction" method="downloadQcode">
+		</action>
+		<action name="deleteQcode" class="com.rsdataservice.o2o.action.activity.OfflineQcodeAction" method="deleteQcode">
+		    <result type="json"></result>
+		</action>
+	</package>
+</struts>
+
+
+
+
+
+

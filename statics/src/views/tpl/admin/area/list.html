@@ -1,0 +1,30 @@
+<!-- 区域店铺列表 -->
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="table striped mt-20">
+	<thead>
+		<tr>
+			<td colspan="4" class="tr">
+				<a href="javascript:;" class="btn btn-primary" add show-form>添加</a>
+			</td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>店铺名称</td>
+			<td>店铺地址</td>
+			<td>店铺编码</td>
+			<td>操作</td>
+		</tr>
+		{{each shopareas}}
+		<tr list-wrap>
+			<td>{{$value.shopname}}</td>
+			<td>{{$value.shopaddr}}</td>
+			<td>{{$value.shopcode}}</td>
+			<td>
+				<a href="javascript:;" aid="{{$value.pkShoparea}}" edit show-form name="{{$value.shopname}}" add="{{$value.shopaddr}}" code="{{$value.shopcode}}">编辑</a>
+				<span>|</span>
+				<a href="javascript:;" aid="{{$value.pkShoparea}}" remove>删除</a>
+			</td>
+		</tr>
+		{{/each}}
+	</tbody>
+</table>

@@ -1,0 +1,55 @@
+<!-- 自定义二维码列表 -->
+<table class="table striped" width="100%">
+	<thead>
+		<tr>
+			<td width="30%">链接地址</td>
+			<td width="10%">自定义字段</td>
+			<td width="10%">普通二维码扫描数</td>
+			<td width="10%">微信扫描数/关注数</td>
+			<td width="10%">微博扫描数/关注数</td>
+			<td width="20%">二维码预览</td>
+			<td width="10%">管理</td>
+		</tr>
+	</thead>
+	<tbody>
+		{{if qcodes.length}}
+			{{each qcodes}}
+			<tr>
+				<td>
+					{{$value.pageUrl}}
+				</td>
+				<td>
+					{{$value.customCode}}
+				</td>
+				<td>
+					{{$value.scanCount}}
+				</td>
+				<td>
+					{{$value.standby9 ? $value.standby9 : 0}}/{{$value.standby7 ? $value.standby7 : 0}}
+				</td>
+				<td>
+					{{$value.standby10 ? $value.standby10 : 0}}/{{$value.standby8 ? $value.standby8 : 0}}
+				</td>
+				<td>
+					<a href="javascript:;" view url="{{$value.qcodeUrl}}" pkQcode="{{$value.pkQcode}}">普通</a>
+					<span>|</span>
+					<a href="javascript:;" view type="001" pkQcode="{{$value.pkQcode}}">微信</a>
+					<span>|</span>
+					<a href="javascript:;" view type="002" pkQcode="{{$value.pkQcode}}">微博</a>
+					<!-- <a href="../activity/downloadQcode?pkQcode={{$value.pkQcode}}" download>下载</a>
+					<span>|</span> -->
+				</td>
+				<td>
+					<a href="javascript:;" remove aid="{{$value.pkQcode}}">删除</a>
+				</td>
+			</tr>
+			{{/each}}
+		{{else}}
+			<tr>
+				<td colspan="4">
+					暂无数据
+				</td>
+			</tr>
+		{{/if}}
+	</tbody>
+</table>

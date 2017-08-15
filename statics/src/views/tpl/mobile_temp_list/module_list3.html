@@ -1,0 +1,67 @@
+<!-- 列表模板3 -->
+
+{{each content.modelars.modelData}}
+<table cellspacing="0" cellpadding="0" border="0" width="100%" sub-list class="list-table sub-table">
+	<tr>
+		<td width="100">选择图片：</td>
+		<td r-upload-wrap>
+			<input type="text" class="r-text fl mr-6 edit-main" value="{{$value.iconBgName}}" data-ele="no-move" sub-name="iconBgName" r-upload-name>
+			<input type="hidden" value="{{$value.iconBgUrl}}" r-upload-url data-ele="no-move" sub-name="iconBgUrl">
+			<span class="r-btn mobile-upload fl" r-upload-btn iscut="true" w="50" h="20" wmin="320" wmax="640" iscale="Y"></span>
+			<span class="fl red mt-5 ml-5 font-14">*</span>
+		</td>
+	</tr>
+	<tr>
+		<td>主题内容：</td>
+		<td>
+			<input type="text" class="r-text edit-main fl" value="{{$value.mainTitle}}" data-ele="no-move" sub-name="mainTitle" text-limit text-max="10">
+			<span class="fl red mt-5 ml-5 font-14">*</span>
+		</td>
+	</tr>
+	<tr>
+		<td>主题颜色：</td>
+		<td>
+			<input type="text" class="r-text edit-main fl" value="{{$value.mainFontColor}}" data-ele="no-move" sub-name="mainFontColor" readonly="readonly" widget-color>
+			<span class="fl red mt-5 ml-5 font-14">*</span>
+		</td>
+	</tr>
+	<tr>
+		<td>摘要内容：</td>
+		<td>
+			<input type="text" class="r-text edit-main fl" value="{{$value.intro}}" data-ele="no-move" sub-name="intro" text-limit text-max="10">
+			<span class="fl red mt-5 ml-5 font-14">*</span>
+		</td>
+	</tr>
+	<tr>
+		<td>摘要文字颜色：</td>
+		<td>
+			<input type="text" class="r-text edit-color fl" value="{{$value.intorFontColor}}" data-ele="no-move" sub-name="intorFontColor" readonly="readonly" widget-color>
+			<span class="fl red mt-5 ml-5 font-14">*</span>
+		</td>
+	</tr>
+	<tr>
+		<td>链接：</td>
+		<td>
+			<select class="fl edit-select" data-ele="no-move" sub-name="pageUrl">
+				<option value="">请选择</option>	
+				{{each pages as value1 index}}
+					<option value="{{value1.weburl}}" {{if value1.weburl==$value.pageUrl}}selected="selected"{{/if}}>{{value1.webname}}</option>
+				{{/each}}
+				<option value="" select-link>自定义链接</option>
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td>是否页面显示：</td>
+		<td>
+			<input type="checkbox" {{if $value.isused == 1}}checked="checked"{{/if}} data-ele="no-move" sub-name="isused">
+		</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>
+			<span class="fr r-btn mobile-list-remove mt-5" data-ele="no-move" remove-list=""></span>
+		</td>
+	</tr>
+</table>
+{{/each}}

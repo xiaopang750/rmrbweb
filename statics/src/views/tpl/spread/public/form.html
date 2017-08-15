@@ -1,0 +1,27 @@
+<!-- 活动签到图文消息制作 -->
+{{each prizes}}
+<tr list>
+	<td>
+		<p>
+			{{if $index  == prizes.length-1}}
+				其他
+			{{else}}
+				{{changeIndex $index}}等奖
+			{{/if}}
+		</p>
+		<input type="text" up-name="prize" value="{{$value.prize}}" need-check class="p-text">
+		<input type="hidden" up-name="grade" value="{{if $index  == prizes.length-1}}其他{{else}}{{changeIndex $index}}等奖{{/if}}">
+		<input type="hidden" up-name="pkPrize" value="{{$value.pkPrize}}">
+		<input type="hidden" up-name="residueNum" value="{{$value.residueNum}}">
+	</td>
+	<td>
+		<p>数量</p>
+		<input type="text" up-name="count" value="{{$value.count}}" need-check class="p-text">
+	</td>
+	<td>
+		<span class="fl">锁定奖项</span>
+		<input type="checkbox" class="fl mt-2 ml-5" up-name="prizeLock" need-check {{if $value.prizeLock == "Y"}}checked="checked"{{/if}}>
+		<!-- <input type="text"  need-check> --> 
+	</td>
+</tr>
+{{/each}}

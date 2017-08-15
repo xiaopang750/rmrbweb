@@ -1,0 +1,32 @@
+/**
+ *description:企业管理
+ *author:fanwei
+ *date:2014/08/06
+ */
+
+ .admin-wrap table td input {
+ 	width: 200px;
+ 	height: 28px;
+ 	line-height: 28px;
+ 	border:1px solid #ccc;
+ 	padding-left:2px;
+ }
+
+  .admin-wrap table select {
+  	width: 200px;
+  	height: 28px;
+  	line-height: 28px;
+  	border:1px solid #ccc;
+  }
+
+  .admin-wrap textarea {
+  	width: 200px;
+  	height: 100px;
+  	border:1px solid #ccc;
+  }
+
+  .repeat {
+    position: absolute;
+    right:10px;
+    top:15px;
+  }

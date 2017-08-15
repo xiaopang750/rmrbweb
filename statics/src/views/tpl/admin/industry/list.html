@@ -1,0 +1,33 @@
+<table class="table striped" width="100%">
+	<thead>
+		<tr>
+			<td colspan="2">
+				<a href="{{getUrl 'dataDictionaryEdit'}}" class="btn btn-primary pl-50 pr-50 fr" link>添加</a>
+			</td>
+		</tr>
+		<tr>
+			<td width="50%">行业名称</td>
+			<td width="50%">管理</td>
+		</tr>
+	</thead>
+	<tbody>
+		{{if datas.length}}
+			{{each datas}}
+			<tr>
+				<td>{{$value.dataName}}</td>
+				<td>
+					<a href="{{getUrl 'dataDictionaryEdit'}}{{'&pid=' + $value.pkDictionarySub}}" link>编辑</a>
+					<span>|</span>
+					<a href="javascript:;" remove aid="{{$value.pkDictionarySub}}">删除</a>
+				</td>
+			</tr>
+			{{/each}}
+		{{else}}
+			<tr>
+			<td colspan="2">
+				<div>暂无数据</div>
+			</td>
+		</tr>
+		{{/if}}
+	</tbody>
+</table>

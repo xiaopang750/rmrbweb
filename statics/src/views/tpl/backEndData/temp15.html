@@ -1,0 +1,33 @@
+
+<table class="table striped mb-50" width="100%">
+	<thead>
+		<tr>
+			<td>日期</td>
+			<td>微信会员评论量</td>
+			<td>新浪微博会员评论量</td>
+		</tr>
+	</thead>
+	<tbody>
+		{{if results.length}}
+			{{each results as value2 index2}}
+			<tr>
+				<td>
+					{{value2.dt}}
+				</td>
+				<td>
+					{{value2.wxnum}}
+				</td>
+				<td>
+					{{value2.wbnum}}
+				</td>
+			</tr>
+			{{/each}}
+		{{else}}
+		<tr>
+			<td colspan="3">
+				暂无数据
+			</td>
+		</tr>
+		{{/if}}
+	</tbody>
+</table>

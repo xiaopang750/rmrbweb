@@ -1,0 +1,36 @@
+<!-- 问题库列表 -->
+{{each question}}
+<li class="q-list clearfix" q-list aid="{{$value.pkQuestion}}">
+	<div class="q-list-l">
+		<div class="q-func-wrap ml-5">
+			<div class="q-list-num font-16 mb-10 clearfix">
+				<span class="fl">Q</span>
+				<span q-list-num class="fl">
+					{{if num}}
+						{{num}}
+					{{else}}
+						{{$index + 1}}	
+					{{/if}}
+				</span>
+			</div>
+			<div class="left-func" left-func>
+				<a href="javascript:;" class="q-icon q-set ml-1" title="切换题型" aid="{{$value.pkQuestion}}" q-set type="{{$value.questiontype}}"></a>
+				<a href="javascript:;" class="q-icon q-copy ml-2" title="复制" q-copy></a>
+				<a href="javascript:;" class="q-icon q-remove ml-2" title="删除" q-remove aid="{{$value.pkQuestion}}"></a>
+			</div>
+		</div>	
+	</div>
+	<div class="q-list-r">
+		<div class="inner">
+			<h3 class="q-list-title" q-list-title q-edit q-text-max="20" edit-type="question" aid="{{$value.pkQuestion}}">{{$value.questionname}}</h3>
+			<ul class="font-14" option-wrap>
+				{{include './option' $value}}
+			</ul>
+			<div class="handle-wrap mt-20 clearfix" handle-wrap>
+				<a class="q-icon option-add fl mr-10" href="javascript:;" title="添加" option-add aid="{{$value.pkQuestion}}"></a>
+				<a class="q-icon option-multi-add fl" href="javascript:;" title="批量添加" option-multi-add aid="{{$value.pkQuestion}}"></a>
+			</div>
+		</div>
+	</div>
+</li>
+{{/each}}

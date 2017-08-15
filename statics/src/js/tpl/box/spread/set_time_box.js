@@ -1,0 +1,4 @@
+/*TMODJS:{"version":1,"md5":"5dd94491053280a61496fa5f0fedd066"}*/
+define(function(require) {
+    return require("../../templates")("box/spread/set_time_box", '<div class="nr-box time-box"> <div class="inner-wrap"> <a href="javascript:;" class="close" sc="close">×</a> <div class="clearfix"> <span class="fl">开始时间：</span> <input type="text" class="form-control mb-20" set-time-box start-time readonly="readonly"> </div> <div class="clearfix"> <span class="fl">结束时间：</span> <input type="text" class="form-control" set-time-box end-time readonly="readonly"> </div> <div class="tc mt-20"> <a href="javascript:;" class="btn btn-primary" sc="confirm">确定</a> <a href="javascript:;" class="btn btn-danger" sc="close">取消</a> </div> </div> </div>');
+});

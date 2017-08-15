@@ -1,0 +1,22 @@
+<table class="table striped" width="100%">
+	<thead>
+		<tr>
+			<td>渠道</td>
+			<td>活动阅读量</td>
+			<td>活动分享量</td>
+			<td>活动会员参与量</td>
+			<td>会员增量</td>
+		</tr>
+	</thead>
+	<tbody>
+		{{each results}}
+		<tr>
+			<td>{{$value.channel}}</td>
+			<td>{{$value.accessnum}}</td>
+			<td>{{$value.fxnum}}</td>
+			<td>{{$value.mempartnum}}</td>
+			<td>{{$value.memberAddNum}}</td>
+		</tr>
+		{{/each}}
+	</tbody>
+</table>

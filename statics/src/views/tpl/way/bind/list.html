@@ -1,0 +1,57 @@
+<!-- 自媒体渠道管理-账号绑定列表 -->
+{{if accounts.length}}
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="table striped">
+	<thead>
+		<tr>
+			<td>账号名称</td>
+			<td>账号类别</td>
+			<td>关注会员量</td>
+			<td>绑定时间</td>
+			<td>操作</td>
+		</tr>
+	</thead>
+	<tbody>
+		{{each accounts}}
+		<tr list-wrap>
+			<td>
+				<a href="{{getUrl 'accountBindForm'}}&type=edit&aid={{$value.pkAccount}}&way={{$value.accounttype}}" edit>
+					{{$value.accountname}}
+				</a>
+			</td>
+			<td>
+				<a href="{{getUrl 'accountBindForm'}}&type=edit&aid={{$value.pkAccount}}&way={{$value.accounttype}}" edit>
+				{{if $value.accounttype == "001" }}
+				微信
+				{{else if $value.accounttype == "002"}}
+				新浪微博
+				{{else if $value.accounttype == "003"}}
+				腾讯微博
+				{{/if}}
+				</a>
+			</td>
+			<td>{{$value.reserve1}}</td>
+			<td>{{$value.ts}}</td>
+			<td>
+				<a href="{{getUrl 'accountBindForm'}}&type=edit&aid={{$value.pkAccount}}&way={{$value.accounttype}}" edit>编辑</a>
+				<span>|</span>
+				<a href="{{getUrl 'autoMenuIndex'}}&accountid={{$value.accountid}}&accounttype={{$value.accounttype}}">自定义菜单</a>
+				<span>|</span>
+				<a href="javascript:;" remove aid="{{$value.pkAccount}}">删除</a>
+				<!-- <span>|</span>
+				<a href="javascript:;" entry accountid="{{$value.pkAccount}}" status="{{$value.vdef1}}" {{if $value.vdef1 == 1}}class="default"{{/if}}>
+					{{if $value.vdef1 == 1}}
+					已接入
+					{{else}}
+					接入
+					{{/if}}
+				</a> -->
+			</td>
+		</tr>
+		{{/each}}
+	</tbody>
+</table>
+{{else}}
+<div class="noData">
+	<p>暂无数据</p>
+</div>
+{{/if}}

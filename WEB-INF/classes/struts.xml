@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<include file="struts-ds.xml"></include>
+	<include file="struts-ku.xml"></include>
+	<include file="struts-wj.xml"></include>
+	<include file="struts-sys.xml"></include>
+	<include file="struts-login.xml"></include>
+	<include file="struts-account.xml"></include>
+	<include file="struts-activity.xml"></include>
+	<include file="struts-upload.xml"></include>
+	<include file="struts-dictionary.xml"></include>
+	<include file="struts-mobilesite.xml"></include>
+	<include file="struts-member.xml"></include>
+	<include file="struts-publicpic.xml"></include>
+	<include file="struts-coupons.xml"></include>
+	<include file="struts-autoreply.xml"></include>
+	<include file="struts-interaction.xml"></include>
+	<include file="struts-blog.xml"></include>
+	<include file="struts-customer.xml"></include>
+	<include file="struts-luckturntable.xml"></include>
+	<include file="struts-channel.xml"></include>
+	<include file="struts-excel.xml"></include>
+	<include file="struts-jumppage.xml"></include>
+	<include file="struts-keyword.xml"></include>
+	<include file="struts-calendar.xml"></include>
+    <constant name="struts.enable.DynamicMethodInvocation" value="true" />
+    <constant name="struts.devMode" value="false" />
+    <constant name="struts.ui.theme" value="simple"></constant>
+    <constant name="struts.action.extension" value="do,action,,"></constant>
+	<package name="rmrb-default" namespace="" extends="json-default">
+		 <interceptors>
+<!-- 		   <interceptor name="logInteceptor" class="com.rsdataservice.inteceptor.LogInterceptor"></interceptor> -->
+		      <interceptor name="loginInteceptor" class="com.rsdataservice.o2o.action.login.LoginIntercepter"></interceptor>
+		   <interceptor-stack name="customStack">
+		      <interceptor-ref name="loginInteceptor"></interceptor-ref>
+		      <interceptor-ref name="defaultStack"/>
+		   </interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="customStack"/> 
+		
+		
+		<global-results>
+		   <result name="login" type="redirectAction">../loginSys/toLoginPage</result>
+		   <result name="index" type="redirectAction">../jumppage/indexPage</result>
+		   <result name="toJson" type="redirectAction">../loginSys/returnJson</result>
+		   <result name="noRole">../views/main/norole.jsp</result>
+		   <result name="404">../views/main/error.jsp</result>
+		   <result name="errHandler" type="chain">
+                <param name="actionName">errorProcessor</param>
+           </result>
+		</global-results>
+
+      <global-exception-mappings>
+            <exception-mapping result="errHandler" exception="java.lang.Exception"/>  
+        </global-exception-mappings>
+		<action name="errorProcessor" class="com.rsdataservice.o2o.action.ErrorProcessAction">
+             <result>../views/main/record.jsp</result>
+ 		 </action>
+	</package>
+</struts>
+
+
+
+
+
+

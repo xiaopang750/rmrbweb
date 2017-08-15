@@ -1,0 +1,417 @@
+/**
+ *description:推广活动-调查问卷
+ *author:fanwei
+ *date:2014/08/30
+ */
+
+/* 问卷和问题库添加 */
+.q-main {
+	width: 700px;
+	margin-top: 20px;
+}
+
+/* 图标 */
+.q-icon {
+	background: url('../../../../../assets/main/spread/question/qicon.png') no-repeat;
+	display: block;
+}
+
+.q-icon.radio {
+	width: 15px;
+	height: 13px;
+	background-position: 0 0;
+}
+
+.q-icon.checkbox {
+	width: 15px;
+	height: 13px;
+	background-position: 0 -29px;
+}
+
+.q-icon.q-set {
+	width: 17px;
+	height: 17px;
+	background-position: 0 -63px;
+}
+
+.q-icon.q-copy {
+	width: 16px;
+	height: 18px;
+	background-position: 0 -102px;
+}
+
+.q-icon.q-remove {
+	width: 15px;
+	height: 15px;
+	background-position: 0 -150px;
+}
+
+.q-icon.option-add {
+	width: 18px;
+	height: 18px;
+	background-position: 0 -179px;
+}
+
+.q-icon.option-multi-add {
+	width: 17px;
+	height: 17px;
+	background-position: 0 -200px;
+}
+
+.q-icon.up {
+	width: 11px;
+	height: 15px;
+	background-position: 0 -243px;
+}
+
+.q-icon.down {
+	width: 11px;
+	height: 15px;
+	background-position: 0 -263px;
+}
+
+.q-icon.main-up {
+	width: 11px;
+	height: 7px;
+	background-position: 0 -127px;
+}
+
+.q-icon.main-down {
+	width: 11px;
+	height: 7px;
+	background-position: 0 -139px;
+}
+
+.q-icon.chose {
+	width: 32px;
+	height: 27px;
+	background-position: -26px 0;
+}
+
+/* question-head */
+.question-head {
+	height: 44px;
+	border: 1px solid #dbdbdb;
+	margin-bottom: 10px;
+	display: none;
+}
+
+.question-head ul li {
+	float: left;
+}
+
+
+/* left-bar */
+.left-bar {
+	position: relative;
+	top:0;
+}
+
+.left-bar.active {
+	position: fixed;
+	top:0;
+}
+
+.left-bar .inner {
+	width: 140px;
+}
+
+.left-bar .inner {
+	background: #F5F5F5;
+	border-radius: 4px;
+	border: 1px solid #e3e3e3;
+	min-height: 20px;
+	padding: 8px;
+}
+
+.left-bar ul {
+	margin: 5px 0;
+}
+
+.left-bar ul li {
+	line-height: 24px;
+	height: 24px;
+	font-size: 12px;
+	background: #fff;
+	border-top: 1px solid #dbdbdb;
+	border-left: 1px solid #dbdbdb;
+	border-right: 2px solid #dbdbdb;
+	border-bottom: 2px solid #dbdbdb;
+	margin-bottom: 4px;
+}
+
+.left-bar ul li:hover {
+	background: #e0dfdf;
+}
+
+.left-bar ul li a {
+	padding: 0 8px;
+	display: block;
+	color: #434a5d;
+}
+
+.left-bar ul li .q-icon {
+	margin: 5px 5px 0 0;
+}
+
+/* right-content */
+
+.right-content {
+	width: 504px;
+	padding:20px 8px;
+	background: #EFEFEF;
+	word-break:break-all;
+}
+
+.right-content .title {
+	background: #fafafa;
+	font-size: 18px;
+	text-align: center;
+	padding: 4px 0;
+	margin: 0 0;
+	width: 100%;
+	border: 1px solid #FAFAFA;
+	display: none;
+}
+
+.right-content .description {
+	display: none;
+}
+
+.right-content .q-list {
+	background: #fff;
+	margin-top: 10px;
+	border: 1px solid #dbdbdb;
+	width: 100%;
+	overflow: hidden;
+	min-height: 150px;
+}
+
+.right-content .q-list-l {
+	float: left;
+	width: 34px;
+	padding:0 5px;
+	border-right:1px solid #ccc;
+	padding-top:10px;
+	padding-bottom: 2010px;
+	margin-bottom: -2000px;
+}
+
+.right-content .q-list-r {
+	float: right;
+	width: 459px;
+}
+
+.right-content .q-list-r .inner {
+	width: 440px;
+	margin: 10px auto;
+}
+
+.right-content .q-list-r .q-list-title {
+	font-size: 16px;
+	padding: 6px 0 0 0;
+	min-height: 30px;
+}
+
+.left-func {
+	display: none;
+}
+
+.left-func.active {
+	display: block;
+}
+
+.handle-wrap {
+	display: none;
+}
+
+.handle-wrap.active {
+	display: block;
+}
+
+
+.right-content .q-list-l .q-func-wrap a {
+	margin-bottom: 8px;
+}
+
+.main-change {
+	width: 18px;
+	position: absolute;
+	right: -12px;
+	top: 50%;
+	background: #fff;
+	border: 1px solid #DBDBDB;
+	border-left:none;
+	border-radius: 2px;
+	display: none;
+}
+
+.main-change i {
+	margin:10px auto;
+}
+
+/* 添加多个选项弹框 */
+.jsBubble_s {
+	position: absolute;
+	min-width: 50px;
+	z-index: 9900;
+	display: none;
+}
+
+.jsBubble_s .arrowL {
+	left: -14px;
+	top: 7px;
+	position: absolute;
+	font-size: 30px!important;
+	z-index: 9900;
+	width: 30px;
+	border-bottom: none!important;
+}
+
+.jsBubble_s .tipCon {
+	background-color: #F3F3F3;
+	border: 1px solid #CCCCCC;
+	font-size: 12px;
+	box-shadow: 2px 2px 0px rgba(0,0,0,0.2);
+}
+
+.jsBubble_s .tipTitle {
+	height: 28px;
+	line-height: 28px;
+	color: #808080;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 0 8px;
+}
+
+
+.jsBubble_s .tipCon_t {
+	z-index: 1002;
+	padding: 5px 8px;
+	background: #fff;
+	overflow: auto;
+}
+
+.poplayer {
+	padding: 10px 20px;
+	background: #fff;
+}
+
+.spanlh {
+	line-height: 31px;
+	line-height: 31px \0;
+}
+
+.bulkadd {
+	width: 443px;
+	height: 258px;
+	border: 1px #77a5b4 solid;
+	resize: none;
+}
+
+.postiondiv {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+}
+
+.mtop {
+	margin-top: 10px;
+}
+
+.wj_blue {
+	color: #F7F7F7;
+	background: #0095cd;
+}
+
+.WJButton {
+	font-weight: bold;
+	display: inline-block;
+	zoom: 1;
+	vertical-align: baseline;
+	margin: 0 2px;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	font-size: 18px;
+	line-height: normal;
+	padding: .3em 2em .3em;
+	padding: .6em 2em .3em \0;
+	-webkit-border-radius: .2em;
+	-moz-border-radius: .2em;
+	border-radius: .2em;
+}
+
+/* 从问题库选择弹框 */
+.choseBox {
+	width: 580px;
+	height: 340px;
+	background: #fff;
+	border:1px solid #548ba7;
+	padding:10px;
+	border-radius: 5px;
+	box-shadow: 1px 1px 10px #ccc;
+}
+
+.choseBox select {
+	width: 100px;
+	height: 30px;
+	border: 1px solid #ccc;
+}
+
+.choseBox .select-wrap ul li {
+	float: left;
+	margin-right: 20px;
+}
+
+.choseBox .question-view {
+	color: #000;
+}
+
+.choseBox .question-view h3 {
+	font-size: 18px;
+}
+
+.choseBox .question-view ul {
+	height: 150px;
+	overflow: auto;
+}
+
+.choseBox .question-view ul li {
+	font-size: 14px;
+	line-height: 28px;
+}
+
+.choseBox .wj-copy-btn {
+	position: absolute;
+	bottom: 20px;
+	width: 100%;
+}
+
+
+/* 创建问卷 */
+
+.create-wrap {
+	width: 600px;
+}
+
+
+/* 问卷题目统计 */
+.statics-wrap {
+	width: 700px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

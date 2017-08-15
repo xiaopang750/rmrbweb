@@ -1,0 +1,55 @@
+{{if wjObjects.length}}
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="table striped">
+	<thead>
+		<tr>
+			<td colspan="7">
+				<a href="{{getUrl 'surveyAddForm'}}" class="btn btn-primary fr">创建问卷</a>
+			</td>
+		</tr>
+		<tr>
+			<td width="10%">序号</td>
+			<td width="10%">问卷名称</td>
+			<td width="15%">创建时间</td>
+			<td width="15%">编辑时间</td>
+			<td width="10%">当前状态</td>
+			<td width="10%">收到答卷数</td>
+			<td width="30%">管理</td>
+		</tr>
+	</thead>
+	<tbody data-ele="data-wrap">
+		{{each wjObjects}}
+			<tr list>
+				<td>{{$index + 1}}</td>
+				<td>{{$value.title}}</td>
+				<td>{{$value.createtime}}</td>
+				<td>{{$value.lastedittime}}</td>
+				<td pub-status>
+					{{if $value.state == 1}}
+						未发布
+					{{else}}
+						已发布
+					{{/if}}
+				</td>
+				<td>{{$value.answernum}}</td>
+				<td>
+					<a href="{{getUrl 'surveyEditForm'}}&type=edit&eid={{$value.pkObject}}" edit>编辑</a>
+					<span>|</span>
+					<a href="javascript:;" aid="{{$value.pkObject}}" remove>删除</a>
+					<span>|</span>
+					<a href="javascript:;" box-set lid="{{$value.pkActivity}}">发布渠道</a>
+					<span>|</span>
+					<a href="javascript:;" send sid="{{$value.pkActivity}}">推送</a>
+					<span>|</span>
+					<a href="{{getUrl 'surveyResultCollect'}}&pkObject={{$value.pkObject}}">结果搜集</a>
+					<span>|</span>
+					<a href="javascript:;" aid="{{$value.pkObject}}" quote>引用问卷</a>
+				</td>
+			</tr>
+		{{/each}}
+	</tbody>
+</table>
+{{else}}
+<div class="tc">暂无数据</div>
+{{/if}}
+
+

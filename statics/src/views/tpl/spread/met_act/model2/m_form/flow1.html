@@ -1,0 +1,24 @@
+<!-- 会议流程4 表单模板-->
+
+<table cellpadding="0" cellspacing="0" border="0" width="380" class="table nohover noline">
+	<tr>
+		<td class="tr" width="100">
+			背景图片：
+		</td>
+		<td r-upload-wrap sub-wrap name="bg" class="clearfix">
+			<span sub-list>
+				<input type="text" class="form-control col-xs-8 fl" value="{{bg}}" r-upload-url>
+				<input type="hidden" value="{{bg}}" sub-name="bg" r-upload-url>			
+				<a href="javascript:;" class="btn btn-default fr" r-upload-btn>选择图片</a>		
+			</span>	
+		</td>
+	</tr>
+	<tr sub-wrap name="word">
+		<td class="tr">
+			编辑内容：
+		</td>
+		<td sub-list>
+			<textarea sub-name="word" class="editor" style="width:270px">{{word}}</textarea>
+		</td>
+	</tr>
+</table>

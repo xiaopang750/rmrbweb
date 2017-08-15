@@ -1,0 +1,11 @@
+<!-- 问题库选项 -->
+{{each options}}
+<li class="clearfix mb-10" aid="{{$value.pkSelect}}" change-list>
+	<span class="fl mr-5">
+		<input type="{{if questiontype == 'radio'}}radio{{else}}checkbox{{/if}}" option-type name="test" disabled="disabled">
+	</span>	
+	<span class="fl" option-name q-edit q-text-max="20" edit-type="option" org="{{$value.contents}}" aid="{{$value.pkSelect}}">
+		{{nowPage}}
+	</span>
+</li>
+{{/each}}

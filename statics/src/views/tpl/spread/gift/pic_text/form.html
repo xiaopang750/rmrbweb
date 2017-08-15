@@ -1,0 +1,94 @@
+<!-- 图文表单 -->
+{{each muliInfos}}
+<div class="tab-content {{if $index!=0}}none{{/if}}" widget-role="tab-content" sub-list name="test" >
+	<div class="item">
+		<p>
+			标题
+			<span class="red mt-5 ml-5 font-14">*</span>
+			<span class="gray ml-5 mt-5">(<span class="red">*</span>号标记的为必填项)</span>
+		</p>
+		<input type="text" class="form-control" value="{{$value.subject}}" sub-name="subject" sub-input="title">
+		<input type="hidden" value="{{$value.pkInfo}}" sub-name="pkInfo">
+	</div>
+	<div class="item">
+		<p>
+			作者
+			<span class="red mt-5 ml-5 font-14">*</span>
+		</p>
+		<input type="text" class="form-control" value="{{$value.creator}}" sub-name="creator" sub-input="author">
+	</div>
+	<div class="item">
+		<p>
+			上传
+			<span class="red mt-5 ml-5 font-14">*</span>
+		</p>
+		<div r-upload-wrap name="bg" class="clearfix">
+			<span>
+				<input type="text" class="form-control fl upload fl" value="{{$value.picurl}}" r-upload-url readonly="readonly" sub-input>
+				<input type="hidden" value="{{$value.picurl}}" sub-name="picurl" r-upload-url>			
+				<a href="javascript:;" class="btn btn-default fr" r-upload-btn iscut="true" {{if $index == 0}}w="18" h="10"{{else}}w="25" h="25"{{/if}} min="100" hmax="200" iscale="Y" isChangeType="Y">选择图片</a>
+			</span>				
+		</div>
+	</div>
+	<div class="item" inputTipWrap>
+		<p class="clearfix">
+			<span class="fl">
+				{{if actType == '001'}}
+				提示信息<span class="red mt-5 ml-5 font-14">*</span>
+				{{else}}
+				摘要
+				<span class="red mt-5 ml-5 font-14">
+					{{if getUrl('way') != 'multi'}}*{{/if}}
+				</span>
+				{{/if}}
+			</span>
+			<span class="fr mr-20">
+				<span>您还可以输入:</span>
+				<span tip1 class="green"></span>
+				<span>个字</span>
+			</span>
+		</p>
+		<textarea type="text" class="form-control" sub-name="activityAbstract" limit1 max="20" sub-input class="remark">{{$value.activityAbstract}}</textarea>
+	</div>
+	{{if actType != '001' && actType != '009' && actType != '006' && actType != '012'}}
+	<div class="item" inputTipWrap>
+		<p>
+			图文内容<span class="red mt-5 ml-5 font-14">*</span>
+		</p>
+		<textarea id="editor{{$index}}" sub-name="content">{{$value.content}}</textarea>
+	</div>
+	{{/if}}
+	{{if $value.url}}
+	<div class="item">
+		<p>	
+			{{if actType == '001'}}
+				会议邀约链接
+			{{else if actType == '002'}}
+				企业形象链接
+			{{else if actType == '003'}}
+				每日资讯链接
+			{{else if actType == '004'}}
+				促销活动链接
+			{{else if actType == '006'}}
+				电子优惠券链接
+			{{else if actType == '007'}}
+				到店有礼链接
+			{{else if actType == '009'}}
+				现场活动链接
+			{{else if actType == '010'}}
+				品牌建设链接	
+			{{/if}}
+		</p>
+		<input class="form-control" type="text" value="{{$value.url + '?pkActivity=' + pid}}" readonly="readonly">
+	</div>
+	{{/if}}
+	<input type="hidden" sub-name="url" value="{{$value.url}}">
+	{{if actType == '006' || actType == '007'}}
+		<div class="mb-20">
+			<input type="checkbox" sub-name="vdef10" {{if $value.vdef10 == "Y"}}checked="checked"{{/if}}>
+			<span>是否绑定会员后生效</span>
+		</div>
+	{{/if}}
+</div>
+{{/each}}
+

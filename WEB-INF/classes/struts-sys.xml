@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <constant name="struts.enable.DynamicMethodInvocation" value="true" />
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.ui.theme" value="simple"></constant>
+    <constant name="struts.action.extension" value="do,action,,"></constant>
+<!--   系统配置管理模块-->
+	<package name="rmrb-sys" namespace="/sys" extends="rmrb-default">
+		<!-- 渠道管理部分开始 -->
+			<!--添加渠道  -->
+		<action name="addChannel" class="com.rsdataservice.o2o.action.sys.SysChannelAction" method="addChannel">
+			<result type="json"></result>
+		</action>
+			<!-- 修改渠道 -->
+		<action name="updateChannel" class="com.rsdataservice.o2o.action.sys.SysChannelAction" method="updateChannel">
+			<result type="json"></result>
+		</action>
+			<!-- 删除渠道 -->
+		<action name="delChannel" class="com.rsdataservice.o2o.action.sys.SysChannelAction" method="delChannel">
+			<result type="json"></result>	
+		</action>
+			<!-- 根据ID查看渠道 -->
+		<action name="findChannel" class="com.rsdataservice.o2o.action.sys.SysChannelAction" method="findChannel">
+			<result type="json"></result>
+		</action>
+			<!-- 查看所有渠道 -->
+		<action name="findChannels" class="com.rsdataservice.o2o.action.sys.SysChannelAction" method="findChannelByCorp">
+			<result type="json"></result>
+		</action>
+		<!-- 根据渠道查看隶属旗下的公众号-->
+		<action name="findAccounts" class="com.rsdataservice.o2o.action.sys.SysChannelAction" method="findAccountByPkChannel">
+			<result type="json"></result>
+		</action>
+		<!-- 渠道管理部分结束 -->
+		<!-- 公众号管理开始 -->
+		<!-- 进入公众号编辑页 -->
+		<action name="toAccount" class="com.rsdataservice.o2o.action.sys.PublicAccountAction">
+			<result>../views/main/way/bind.jsp</result>
+		</action>
+		<!-- 查看公司旗下的所有公众号 -->
+		<action name="findAccounts" class="com.rsdataservice.o2o.action.sys.PublicAccountAction" method="findAccountByCorp">
+			<result type="json"></result>
+		</action>
+		<!-- 添加公众号 -->
+		<action name="addAccount" class="com.rsdataservice.o2o.action.sys.PublicAccountAction" method="addAccount">
+			<result type="json"></result>
+		</action>
+		<!-- 判断公众号是否合法 -->
+		<action name="judgeByAccountId" class="com.rsdataservice.o2o.action.sys.PublicAccountAction" method="findByAccountId">
+			<result type="json"></result>
+		</action>
+		<!-- 修改公众号 -->
+		<action name="updateAccount" class="com.rsdataservice.o2o.action.sys.PublicAccountAction" method="updateAccount">
+			<result type="json"></result>
+		</action>
+		<!-- 删除公众号 -->
+		<action name="delAccount" class="com.rsdataservice.o2o.action.sys.PublicAccountAction" method="delAccount">
+			<result type="json"></result>
+		</action>
+		<!-- 根据公众号ID查看公众号 -->
+		<action name="findCountInfoById" class="com.rsdataservice.o2o.action.sys.PublicAccountAction" method="findByPublicAccountId">
+			<result type="json"></result>
+		</action>
+		<action name="toAccountEdit" class="com.rsdataservice.o2o.action.sys.PublicAccountAction" method="toAccountEdit">
+			<result>../views/main/way/bind_form.jsp</result>
+		</action>
+		<!-- 公众号管理结束 -->
+		<!-- 菜单管理部分开始 -->
+		<action name="findMenus" class="com.rsdataservice.o2o.action.sys.MenuAction" method="parseMenu">
+			<result type="json"></result>
+		</action>
+		<!-- 菜单管理部分结束 -->
+		<!-- 区域管理部分开始 -->
+			<!-- 进入区域管理页 -->
+			<action name="toAreaManage" class="com.rsdataservice.o2o.action.sys.AreaAction">
+				<result></result>
+			</action>
+<!-- 			添加区域信息 -->
+<!-- 			<action name="addAreaInfo" class="com.rsdataservice.o2o.action.sys.AreaAction" method="addArea"> -->
+<!-- 				<result type="json"></result> -->
+<!-- 			</action> -->
+<!-- 			修改区域信息 -->
+<!-- 			<action name="updateAreaInfo" class="com.rsdataservice.o2o.action.sys.AreaAction" method="updateArea"> -->
+<!-- 				<result type="json"></result> -->
+<!-- 			</action> -->
+			<!-- 通过区域级别查看区域信息 -->
+			<action name="queryByLevel" class="com.rsdataservice.o2o.action.sys.AreaAction" method="queryAreaByLevel">
+				<result type="json"></result>
+			</action>
+			<!-- 查看子区域信息 -->
+			<action name="queryChildrenArea" class="com.rsdataservice.o2o.action.sys.AreaAction" method="findChildrenAreaInfo">
+				<result type="json"></result>
+			</action>
+		<!-- 区域管理部分结束 -->
+		<!-- 公司管理部分开始 -->
+			<!-- 进入公司管理页 -->
+			<action name="toCorpManage" class="com.rsdataservice.o2o.action.sys.CorpAction">
+				<result>../views/main/admin/company/list.jsp</result>
+			</action>
+			<!-- 添加公司 -->
+			<action name="addCorpInfo" class="com.rsdataservice.o2o.action.sys.CorpAction" method="addCorp">
+				<result type="json"></result>
+			</action>
+			<!-- 修改公司 -->
+			<action name="updateCorpInfo" class="com.rsdataservice.o2o.action.sys.CorpAction" method="updateCorp">
+				<result type="json"></result>
+			</action>
+			<!-- 删除公司信息 -->
+			<action name="delCorpInfo" class="com.rsdataservice.o2o.action.sys.CorpAction" method="delCorp">
+				<result type="json"></result>
+			</action>
+			<!-- 查看公司信息 -->
+			<action name="findCorp" class="com.rsdataservice.o2o.action.sys.CorpAction" method="findCorp">
+				<result type="json"></result>
+			</action>
+			<!-- 查看子公司信息 -->
+			<action name="findChildrenCorp" class="com.rsdataservice.o2o.action.sys.CorpAction" method="findChildren">
+				<result type="json"></result>
+			</action>
+			<!-- 查看所有公司信息 -->
+			<action name="findAllCorpInfo" class="com.rsdataservice.o2o.action.sys.CorpAction" method="findAll">
+				<result type="json"></result>
+			</action>
+			<action name="findResources" class="com.rsdataservice.o2o.action.sys.CorpAction" method="findResources">
+				<result type="json"></result>
+			</action>
+			<!-- 验证公司系统管理员 -->
+			<action name="judgeUserForCorp" class="com.rsdataservice.o2o.action.sys.CorpAction" method="judgeUserForCorp">
+				<result type="json"></result>
+			</action>
+			<!-- 查看子企业的数据信息 -->
+			<action name="findChildrenCorpDataInfo" class="com.rsdataservice.o2o.action.sys.CorpAction" method="findChildrenCorpDataInfo">
+				<result type="json"></result>
+			</action>
+			<action name="toChildrenCorpDataInfo" class="com.rsdataservice.o2o.action.sys.CorpAction" method="toChildrenCorpDataInfo">
+				<result>../views/main/admin/company/detail.jsp</result>
+			</action>
+		<!-- 公司管理部分结束 -->
+		<!-- 角色管理部分开始 -->
+			<!-- 进入角色管理页面 -->
+			<action name="toRoleManage" class="com.rsdataservice.o2o.action.sys.RoleAction">
+				<result>../views/main/admin/role/list.jsp</result>
+			</action>
+			<!-- 进入角色编辑页 -->
+			<action name="toRoleEditPage" class="com.rsdataservice.o2o.action.sys.RoleAction" method="toRoleEditPage">
+				<result>../views/main/admin/role/add.jsp</result>
+			</action>
+			<!-- 添加角色 -->
+			<action name="addRole" class="com.rsdataservice.o2o.action.sys.RoleAction" method="addRole">
+				<result type="json"></result>
+			</action>
+			<!-- 修改角色 -->
+			<action name="updateRole" class="com.rsdataservice.o2o.action.sys.RoleAction" method="updateRole">
+				<result type="json"></result>
+			</action>
+			<!-- 删除角色 -->
+			<action name="deleteRole" class="com.rsdataservice.o2o.action.sys.RoleAction" method="deleteRole">
+				<result type="json"></result>
+			</action>
+			<!-- 根据角色主键查看角色 -->
+			<action name="findRole"  class="com.rsdataservice.o2o.action.sys.RoleAction" method="findRoleById">
+				<result type="json"></result>
+			</action>
+			<!-- 分页查看角色信息 -->
+			<action name="findRoles" class="com.rsdataservice.o2o.action.sys.RoleAction" method="findRoleByPage">
+				<result type="json"></result>
+			</action>
+			<!-- 查看所有角色信息 -->
+			<action name="findRoleInfoByCorp" class="com.rsdataservice.o2o.action.sys.RoleAction" method="findRoleInfoByCorp">
+				<result type="json"></result>
+			</action>
+		<!-- 角色管理部分结束 -->
+		<!-- 用户管理部分开始 -->
+			<!-- 进入用户管理页面 -->
+			<action name="toUserManage" class="com.rsdataservice.o2o.action.sys.UserAction"  >
+				<result>../views/main/admin/user/list.jsp</result>
+			</action>	
+			<!-- 进入用户编辑页 -->
+			<action name="toUserEditPage" class="com.rsdataservice.o2o.action.sys.UserAction" method="toUserEditPage">
+				<result>../views/main/admin/user/add.jsp</result>
+			</action>
+			<!-- 添加用户 -->
+			<action name="addUser" class="com.rsdataservice.o2o.action.sys.UserAction" method="addUserInfo">
+				<result type="json"></result>
+			</action>
+			<!-- 修改用户 -->
+			<action name="updateUser" class="com.rsdataservice.o2o.action.sys.UserAction"  method="updateUserInfo">
+				<result type="json"></result>
+			</action>
+			<!-- 删除用户 -->
+			<action name="deleteUser" class="com.rsdataservice.o2o.action.sys.UserAction" method="deleteUser">
+				<result type="json"></result>
+			</action>
+			<!-- 根据ID查看用户信息 -->
+			<action name="findUser" class="com.rsdataservice.o2o.action.sys.UserAction" method="findUserById">
+				<result type="json"></result>
+			</action>
+			<!-- 分页查看用户信息 -->
+			<action name="findUsers" class="com.rsdataservice.o2o.action.sys.UserAction" method="findUserByPage">
+				<result type="json"></result>
+			</action>
+			<!-- 查看所有用户信息 -->
+			<action name="findAllUserInfo" class="com.rsdataservice.o2o.action.sys.UserAction" method="findAll">
+				<result type="json"></result>
+			</action>
+			<!-- 修改用户密码 -->
+			<action name="updateUserPass" class="com.rsdataservice.o2o.action.sys.UserAction" method="updateUserPass">
+				<result type="json"></result>
+			</action>
+		<!-- 用户管理部分结束 -->
+		<!-- 用户角色管理部分开始 -->
+			<!-- 进入用户角色管理页 -->
+			<action name="toUserRoleManage" class="com.rsdataservice.o2o.action.sys.UserRoleAction">
+				<result>../views/main/admin/role/role_list.jsp</result>
+			</action>
+			<!-- 查看公司旗下所有用户 -->
+			<action name="findAllRole" class="com.rsdataservice.o2o.action.sys.UserRoleAction" method="findAllRole">
+				<result type="json"></result>
+			</action>
+			<!-- 分页查看角色下的所有用户 -->
+			<action name="findUserByRole" class="com.rsdataservice.o2o.action.sys.UserRoleAction" method="findUserByRoleId">
+				<result type="json"></result>
+			</action>
+			<!-- 分页查看公司旗下不是该角色下的用户 -->
+			<action name="findUserByNotRole" class="com.rsdataservice.o2o.action.sys.UserRoleAction" method="findUserNotRole">
+				<result type="json"></result>
+			</action>
+			<!-- 编辑用户角色 -->
+			<action name="editUserRole" class="com.rsdataservice.o2o.action.sys.UserRoleAction" method="editUserRole">
+				<result type="json"></result>
+			</action>
+			<action name="findUserRoleInfos" class="com.rsdataservice.o2o.action.sys.UserRoleAction" method="findUserByRole">
+				<result type="json"></result>
+			</action>
+		<!-- 用户角色管理部分结束 -->
+		<!-- 公司功能菜单分配部分开始-->
+			<!-- 进入公司功能菜单分配页 -->
+			<action name="toFunMenuManage" class="com.rsdataservice.o2o.action.sys.FuncmenuAction">
+				<result>../views/main/admin/power/power.jsp</result>
+			</action>
+			<!-- 查看可供分配的菜单信息 -->
+			<action name="adminAllocate" class="com.rsdataservice.o2o.action.sys.FuncmenuAction" method="adminAllocate">
+				<result type="json"></result>
+			</action>
+			<!-- 修改公司功能菜单权限 -->
+			<action name="updatePermission" class="com.rsdataservice.o2o.action.sys.FuncmenuAction" method="updatePermission">
+				<result type="json"></result>
+			</action>
+		<!-- 公司功能菜单分配部分结束 -->
+		<!-- 角色菜单管理部分开始 -->
+			<!-- 进入角色菜单管理页面 -->
+			<action name="toPowerFunc" class="com.rsdataservice.o2o.action.sys.PowerFuncAction" >
+				<result>../views/main/admin/power/role.jsp</result>
+			</action>
+			<!-- 查询需要分配权限的角色菜单信息 -->
+			<action name="findNeedMenu" class="com.rsdataservice.o2o.action.sys.PowerFuncAction" method="findNeedMenu">
+				<result type="json"></result>
+			</action>
+			<!-- 为角色分配菜单权限 -->
+			<action name="powerFuncAllocate" class="com.rsdataservice.o2o.action.sys.PowerFuncAction" method="powerFuncAllocate">
+				<result type="json"></result>
+			</action>
+		<!-- 角色菜单管理页面结束 -->
+		<!-- 店铺管理部分开始 -->
+			<!-- 进入店铺管理页面 -->
+			<action name="toShopManage" class="com.rsdataservice.o2o.action.sys.ShopareaAction">
+				<result>../views/main/admin/area/area.jsp</result>
+			</action>
+			<!-- 查看店铺信息 -->
+			<action name="findShopListInfo" class="com.rsdataservice.o2o.action.sys.ShopareaAction" method="findShopByCorp">
+				<result type="json"></result>
+			</action>
+			<!-- 根据ID查看店铺信息 -->
+			<action name="findShopById" class="com.rsdataservice.o2o.action.sys.ShopareaAction" method="findShopareaById">
+				<result type="json"></result>
+			</action>
+			<!-- 添加店铺信息 -->
+			<action name="addShop" class="com.rsdataservice.o2o.action.sys.ShopareaAction" method="addShop">
+				<result type="json"></result>
+			</action>
+			<!-- 修改店铺信息 -->
+			<action name="updateShop" class="com.rsdataservice.o2o.action.sys.ShopareaAction" method="updateShop">
+				<result type="json"></result>
+			</action>
+			<!-- 删除店铺信息 -->
+			<action name="deleteShop" class="com.rsdataservice.o2o.action.sys.ShopareaAction" method="deleteShopareaById">
+				<result type="json"></result>
+			</action>
+		<!-- 店铺管理部分结束 -->
+		
+		<!-- 统计在线用户 -->
+		<action name="onlineUser" class="com.rsdataservice.o2o.action.sys.LoginUserCount" method="findOnlineUser">
+				<result name="onlineuser">../views/main/onlineuser.jsp</result>
+		</action>
+		<action name="quitSystem" class="com.rsdataservice.o2o.action.sys.LoginUserCount" method="quitSystem">
+				<result type="json"></result>
+		</action>
+		
+		<!-- 操作日志 -->
+		<action name="findlog" class="com.rsdataservice.o2o.action.sys.OperatorLogAction" method="findLogByPage">
+				<result name="showlog">../operatorlist.jsp</result>
+		</action>
+		
+		<!-- 活动积分规则开始 -->
+			<!-- 进入积分规则列表页 -->
+			<action name="toIntegralRuleList" class="com.rsdataservice.o2o.action.sys.PointRuleAction" method="toIntegralRuleList">
+				<result>../views/main/spread/score/list.jsp</result>
+			</action>
+			<!-- 进入积分规则编辑页 -->
+			<action name="toIntegralRuleEdit" class="com.rsdataservice.o2o.action.sys.PointRuleAction" method="toIntegralRuleEdit">
+				<result>../views/main/spread/score/form.jsp</result>
+			</action>
+			<!-- 进入积分领取详情列表页 -->
+			<action name="toIntegralReceiveDetail" class="com.rsdataservice.o2o.action.sys.PointRuleAction" method="toIntegralReceiveDetail">
+				<result>../views/main/spread/score/detail.jsp</result>
+			</action>
+			<!-- 分页查看积分领取详情 -->
+			<action name="findPointReceiveDetail" class="com.rsdataservice.o2o.action.sys.PointRuleAction" method="findPointReceiveDetail">
+				<result  type="json"></result>
+			</action>
+			
+			<!-- 查看隶属于活动的积分规则 -->
+			<action name="findIntegralByActivity" class="com.rsdataservice.o2o.action.sys.PointRuleAction" method="findIntegralByActivity">
+				<result type="json"></result>
+			</action>
+			<!-- 添加活动积分规则 -->
+			<action name="addActIntegral" class="com.rsdataservice.o2o.action.sys.PointRuleAction" method="addActIntegral">
+				<result type="json"></result>
+			</action>
+			<!-- 修改活动积分规则 -->
+			<action name="updateActIntegral" class="com.rsdataservice.o2o.action.sys.PointRuleAction" method="updateActIntegral">
+				<result type="json"></result>
+			</action>
+			<!-- 删除活动积分规则 -->
+			<action name="delActIntegral" class="com.rsdataservice.o2o.action.sys.PointRuleAction" method="delActIntegral">
+				<result type="json"></result>
+			</action>
+			<!-- 根据主键查看积分规则 -->
+			<action name="findActIntegralByPk" class="com.rsdataservice.o2o.action.sys.PointRuleAction" method="findActIntegralByPk">
+				<result type="json"></result>
+			</action>
+		<!-- 活动积分规则结束 -->
+		
+		
+		<!-- 系统消息 -->
+		<action name="addMessage" class="com.rsdataservice.o2o.action.sys.SysMessageAction" method="addSysMessage">
+				<result type="json"></result>
+		</action>
+		<action name="updateMessage" class="com.rsdataservice.o2o.action.sys.SysMessageAction" method="editSysMessage">
+				<result type="json"></result>
+		</action>
+		<action name="findMessageById" class="com.rsdataservice.o2o.action.sys.SysMessageAction" method="findMsgById">
+				<result type="json"></result>
+		</action>
+		<action name="deleteMsg" class="com.rsdataservice.o2o.action.sys.SysMessageAction" method="deleteMsg">
+				<result type="json"></result>
+		</action>
+		<action name="updateStatus" class="com.rsdataservice.o2o.action.sys.SysMessageAction" method="updateGetPasswordMsgStatus">
+				<result type="json"></result>
+		</action>
+		<action name="findOneMsg" class="com.rsdataservice.o2o.action.sys.SysMessageAction" method="findMsgByStatusAndType">
+				<result type="json"></result>
+		</action>
+		<action name="findMsgByPage" class="com.rsdataservice.o2o.action.sys.SysMessageAction" method="findMsgByPage">
+				<result type="json"></result>
+		</action>
+		
+		<!-- 功能菜单处理维护开始 -->
+			<!-- 进入功能菜单维护页 -->
+			<action name="toFunctionMenu" class="com.rsdataservice.o2o.action.sys.FunctionMenuAction" method="toFunctionMenu">
+				<result>../views/main/admin/menu/index.jsp</result>
+			</action>
+			<!-- 查看所有功能菜单 -->
+			<action name="findFunctionMenuAll" class="com.rsdataservice.o2o.action.sys.FunctionMenuAction" method="findFunctionMenuAll">
+				<result type="json"></result>
+			</action>
+			<!-- 添加功能菜单 -->
+			<action name="saveMenu" class="com.rsdataservice.o2o.action.sys.FunctionMenuAction" method="saveMenu">
+				<result type="json"></result>
+			</action>
+			<!-- 修改功能菜单 -->
+			<action name="updateMenu" class="com.rsdataservice.o2o.action.sys.FunctionMenuAction" method="updateMenu">
+				<result type="json"></result>
+			</action>
+			<!-- 删除功能菜单 -->
+			<action name="deleteMenu" class="com.rsdataservice.o2o.action.sys.FunctionMenuAction" method="deleteMenu">
+				<result type="json"></result>
+			</action>
+			<!-- 根据menuCode查看功能菜单 -->
+			<action name="findFunctionMenuByCode" class="com.rsdataservice.o2o.action.sys.FunctionMenuAction" method="findFunctionMenuByCode">
+				<result type="json"></result>
+			</action>
+		<!-- 功能菜单处理维护结束 -->
+	</package>
+</struts>
+
+
+
+
+
+

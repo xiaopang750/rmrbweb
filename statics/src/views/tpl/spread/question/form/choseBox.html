@@ -1,0 +1,38 @@
+<div class="nr-box choseBox" choseBox>
+	<a href="javascript:;" class="close" sc="close">×</a>
+	<!-- 筛选 -->
+	<div class="select-wrap mb-40">
+		<ul class="clearfix">
+			<li>
+				<span class="fl mt-5 mr-5">选择类别：</span>
+				<select select-ku-way class="form-control col-xs-2">
+					<option value="">请选择</option>
+					{{each way}}
+						<option value="{{$value.pkDictionarySub}}" aid="{{$value.pkDictionarySub}}">{{$value.dataName}}</option>
+					{{/each}}
+				</select>
+			</li>
+			<li>
+				<span class="fl mt-5 mr-5">选择题型：</span>
+				<select select-ku-type class="form-control col-xs-2">
+					<option value="">请选择</option>
+					{{each type}}
+						<option value="{{$value.dataCode}}" aid="{{$value.dataCode}}">{{$value.dataName}}</option>
+					{{/each}}
+				</select>
+			</li>
+			<li>
+				<span class="fl mt-5 mr-5">选择题目：</span>
+				<select question-select-wrap class="form-control col-xs-2">
+					<option value="">请选择</option>
+				</select>
+			</li>
+		</ul>
+	</div>
+	<div class="question-view mb-20" question-view>
+		
+	</div>
+	<div class="tc wj-copy-btn">
+		<a href="javascript:;" class="btn btn-primary" sc="confirm">引用该问题</a>	
+	</div>
+</div>

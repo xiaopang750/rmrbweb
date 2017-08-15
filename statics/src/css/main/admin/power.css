@@ -1,0 +1,25 @@
+/**
+ *description:权限管理
+ *author:fanwei
+ *date:2014/08/06
+ */
+
+
+.sys-role {
+	width: 200px;
+	margin-right: 10px;
+} 
+
+.sys-role li {
+	cursor: pointer;
+}
+
+.sys-role li:hover {
+	color:#ccc;
+}
+
+.power-btn {
+	width: 100px;
+	height: 28px;
+}
+

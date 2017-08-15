@@ -1,0 +1,48 @@
+<!-- 手机页面模板 -->
+{{if pages.length}}
+<table cellspacing="0" cellpadding="0" border="0" width="90%" class="table striped auto mt-20">
+	<thead>
+		<tr>
+			<td width="10%">页面名称</td>
+			<td width="10%">访问量</td>
+			<td width="50%">页面地址</td>
+			<td width="10%">页面状态</td>
+			<td width="20%">操作</td>
+		</tr>
+	</thead>
+	<tbody>
+		{{each pages}}
+		<tr data-ele="list-wrap">
+			<td>{{$value.webname}}</td>
+			<td>{{$value.visitAccount}}</td>
+			<td>
+				<div class="mt-5 clearfix pl-20">
+					<!-- <span class="fl">{{cutDomain $value.weburl}}</span> -->
+					<span class="fl" page="{{$value.pkWeblist}}" site="{{$value.referId}}">		
+						{{cutDomainName $value.weburl}}
+					</span>
+					<span class="fl mr-10">.html</span>
+					<span class="modify-area fl">
+						<!-- <a href="javascript:;" trigger-btn no-hide class="fl mr-10">修改</a> -->
+						<span view-btn class="{{if $value.isused == 0}}none{{/if}} fl mr-10">
+							<a href="javascript:;" class="fl" data-ele="show-code" url="{{$value.reserve10}}">预览</a>
+						</span>
+						<a href="javascript:;" class="fl" copy url="{{$value.reserve10}}" pkSite="{{$value.referId}}" pkPage="{{$value.pkWeblist}}">复制完整链接</a>
+					</span>
+				</div>
+			</td>
+			<td>
+				<div class="r-btn turn-on-off-btn {{if $value.isused == 1}}active{{/if}}" data-ele="switch" pageId="{{$value.pkWeblist}}"></div>
+			</td>
+			<td>
+				<a class="" href="{{getUrl 'sitePageEdit'}}{{'&modelCode='+ $value.modelcode + '&pkSite='+ $value.referId + '&pkPage='+ $value.pkWeblist}}">编辑</a>
+				<span>|</span>
+				<a href="javascript:;" remove siteId="{{$value.referId}}" pageId="{{$value.pkWeblist}}">删除</a>
+			</td>
+		</tr>
+		{{/each}}
+	</tbody>
+</table>
+{{else}}
+<div class="tc">该站点已经删除</div>
+{{/if}}

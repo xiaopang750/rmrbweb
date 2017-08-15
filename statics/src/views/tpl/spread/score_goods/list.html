@@ -1,0 +1,53 @@
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="table striped">
+	<thead>
+	<tr>
+		<td colspan="5">
+			<div>
+				<a href="javascript:;" class="fl font-12 default" view-code>
+					商品二维码
+				</a>
+				<a class="btn btn-primary fr" href="{{getUrl 'productExchangeEdit'}}" add-btn>
+					添加商品
+				</a>
+			</div>
+		</td>
+	</tr>
+	</thead>
+
+	{{if exchanges.length}}
+	<thead>
+		<tr>
+			<td width="10%">兑换商品</td>
+			<td width="30%" height="50">图片</td>
+			<td width="10%">所需积分</td>
+			<td width="30%">描述</td>
+			<td width="20%">操作</td>
+		</tr>
+		</thead>
+		{{each exchanges}}
+		<tr rule-list>
+			<td>{{$value.exchangeProduct}}</td>
+			<td>
+				<img src="{{$value.productPrcUrl}}" height="100">
+			</td>
+			<td>{{$value.exchangeIntegral}}</td>
+			<td>{{$value.des}}</td>
+			<td>
+				<a href="{{getUrl 'productExchangeEdit'}}&pkExchange={{$value.pkExchange}}">编辑</a>
+				<span>|</span>
+				<a href="javascript:;" aid="{{$value.pkExchange}}" remove>删除</a>
+				<span>|</span>
+				<a href="javascript:;" aid="{{$value.pkExchange}}" exchange>兑换</a>
+				<span>|</span>
+				<a href="{{getUrl 'productExchangePart'}}&pkExchange={{$value.pkExchange}}">兑换详情</a>
+			</td>
+		</tr>
+		{{/each}}
+	{{else}}
+		<tr colspan="4">
+			<td>
+				暂无数据
+			</td>
+		</tr>	
+	{{/if}}
+</table>

@@ -1,0 +1,70 @@
+/**
+ *description:积分规则
+ *author:fanwei
+ *date:2014/09/02
+ */
+
+/* .score-wrap {
+	width: 450px;
+	margin-top:10px;
+} 
+
+.score-wrap.form td {
+	padding-bottom: 20px;
+}
+
+.score-wrap.form td input {
+	width: 300px;
+	height: 28px;
+	line-height: 28px;
+	border:1px solid #ccc;
+	padding-left:2px;
+}
+
+.score-wrap.form td select {
+	width: 300px;
+	height: 28px;
+	border:1px solid #ccc;
+}
+
+.score-wrap.form textarea {
+	width: 300px;
+	height: 100px;
+	padding-left:2px;
+	border:1px solid #ccc;
+}
+
+.score-wrap .upload-input {
+	width: 208px!important;
+} */
+
+.tab {
+	border:1px solid #ccc;
+	border-bottom: none;
+	border-right: none;
+	border-top:none;
+}
+
+.tab li {
+	width: 50px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	padding:0 20px;
+	float: left;
+	border-right:1px solid #ccc;
+	border-top:1px solid #ccc;
+	cursor: pointer;
+}
+
+.tab li:hover,.tab li.active {
+	background: #ccc;
+	color:#fff;
+}
+
+.exchange-list-wrap {
+	margin-top:0;
+}
+
+
+

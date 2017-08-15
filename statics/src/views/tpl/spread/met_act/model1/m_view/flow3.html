@@ -1,0 +1,24 @@
+<!-- 会议流程3 预览模板-->
+<img src="{{bg}}" class="bg" width="234" height="392" data-ele="bg">
+<div class="cover">
+	<div class="line"></div>
+	<ul view-list-wrap>
+		{{each List}}
+		<li widget-role="tab-head" class="{{if $index == iNow}}active{{/if}}">
+			<dl class="clearfix">
+				<dt class="rel">
+					<span remove class="remove-list {{if $index==0}}none{{/if}}">×</span>
+					<img src="{{$value.headPic}}">
+				</dt>
+				<dd>
+					{{$value.name}}
+				</dd>
+			</dl>
+		</li>
+		{{/each}}
+		<li data-ele="ele-add" class="tc ele-add" list-add>
+			<span class="r-btn mobile-list-add mt-25 mb-5"></span>
+		</li>
+	</ul>
+
+</div>

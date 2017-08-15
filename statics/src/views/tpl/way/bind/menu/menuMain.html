@@ -1,0 +1,24 @@
+<!-- 主菜单 -->
+{{each data.menu_list}}
+	<div class="main-list move" role="main-list" sort-list-main move list-id="{{$value['pkMenuid']}}">
+		<div class="list list-head" sc="hover-list" {{if !$value['menuType'] && !$value['menu_son_list'].length}}select-type="0"{{else if $value['menuType'] && !$value['menu_son_list'].length}}select-type={{$value['menuType']}}{{else if $value['menu_son_list'].length}}select-type="-1"{{/if}} list-id="{{$value['pkMenuid']}}" list-parent="parent">
+			<i class="trangle"></i>
+			<a href="javascript:void(0);" class="inner_menu_link first" sc="inner_menu_link">
+				<strong sc="main-name">{{$value['menuname']}}</strong>
+			</a>
+			<span class="menu_opr">
+				<span sc="func-btn-area" class="func-btn-area">
+		            <a href="javascript:void(0);" class="add" sc="list-add" role="main" list-id="{{$value['pkMenuid']}}">添加</a>
+		            <a href="javascript:void(0);" class="edit" sc="list-edit-main" role="main" list-id="{{$value['pkMenuid']}}" name="{{$value['menuname']}}" editor>编辑</a>
+		            <a href="javascript:void(0);" class="del" sc="list-del" role="main" list-id="{{$value['pkMenuid']}}" type="main">删除</a>
+	            </span>
+	            <a href="javascript:void(0);" class="sort" sc="list-sort" role="main">排序</a>
+	        </span>
+		</div>
+		<ul sc="sub-wrap" class="sub-wrap" list-id="{{$value['pkMenuid']}}">
+			{{each $value['menu_son_list'] as $value2 index2}}
+				{{include './menuSub' $value2}}
+			{{/each}}
+		</ul>
+	</div>
+{{/each}}	

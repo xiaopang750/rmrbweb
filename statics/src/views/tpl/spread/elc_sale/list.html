@@ -1,0 +1,51 @@
+<!-- 电子优惠券列表 -->
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="table striped auto mt-20">
+	<thead>
+		<tr>
+			<td width="5%">序号</td>
+			<td width="10%">活动名称</td>
+			<td width="20%">活动主题</td>
+			<td width="20%">活动效果</td>
+			<td width="15%">活动开始时间</td>
+			<td width="15%">活动结束时间</td>
+			<td width="15%">管理</td>
+		</tr>
+	</thead>
+	<tbody>
+		{{each coupons}}
+		<tr>
+			<td>{{$index + 1}}</td>
+			<td>{{$value.reserve1}}</td>
+			<td>{{$value.reserve2}}</td>
+			<td>
+				<p>发放数量:{{$value.couponsNum}}</p>
+				<p>
+					<a href="{{getUrl 'couponsDetail'}}{{'&pid=' + $value.couponsId}}">累计领取:{{$value.couponsNum - $value.residueNum}}</a>
+				</p>
+				<p>累计核销:{{$value.reserve5}}</p>
+				<p>当日领取:{{$value.reserve3}}</p>
+				<p>当日核销:{{$value.reserve4}}</p>
+			</td>
+			<td>
+				{{$value.startDate}}
+			</td>
+			<td>
+				{{$value.endDate}}
+			</td>
+			<td>
+				<a href="{{getUrl 'couponsEdit'}}{{'&aid=' + $value.couponsId + '&pid=' + $value.pkActivity}}">编辑</a>
+				<span>|</span>
+				<a href="javascript:;" remove aid="{{$value.couponsId}}">删除</a>
+				<span>|</span>
+				<a href="javascript:;" box-set lid="{{$value.pkActivity}}">发布渠道</a>
+				<span>|</span>
+				<a href="javascript:;" send sid="{{$value.pkActivity}}">推送</a>
+				<span>|</span>
+				<a href="{{getUrl 'integralRuleList'}}{{'&pkActivity=' + $value.pkActivity}}">积分规则</a>
+				<span>|</span>
+				<a href="{{getUrl 'singList'}}{{'&pkActivity=' + $value.pkActivity}}">报名情况</a>
+			</td>
+		</tr>
+		{{/each}}
+	</tbody>
+</table>

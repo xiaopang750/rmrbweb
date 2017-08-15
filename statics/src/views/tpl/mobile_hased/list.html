@@ -1,0 +1,75 @@
+{{if sites}}
+	{{each sites}}
+	<li class="hased" mobile-list link="{{getUrl 'pageList'}}{{'&pkSite=' + $value.siteBasic.siteId}}" name="{{$value.siteBasic.reserve2}}">
+		<span class="r-btn mobile-remove" remove aid="{{$value.siteBasic.siteId}}"></span>
+		<div class="domain-related">
+			<a href="javascript:;" class="font-14" domain-related aid="{{$value.siteBasic.siteId}}" ip="{{domainIp}}" url="{{$value.domain}}">域名映射</a>
+		</div>
+		<div class="mobile-view-wrap" view-wrap>
+			{{if $value.siteBasic.modelcode == "indexModelOne"}}
+				{{include '../mobile_view/main/type1' $value}}
+			{{else if  $value.siteBasic.modelcode == "indexModelTwo"}}	
+				{{include '../mobile_view/main/type2' $value}}
+			{{else if  $value.siteBasic.modelcode == "indexModelThree"}}
+				<!-- <div class="self tc font-30">自定义模板</div> -->
+				<div class="mobile-view-inner">
+					<div class="mobile-lead"></div>
+					<div>
+						<img src="{{basePath}}/lib/logo/snail_logo_l2.jpg" alt="金蜗牛">
+						<!-- <p>自定义模板</p> -->
+					</div>
+				</div>
+			{{/if}}
+			<div class="mobile-lay">
+				<div class="shadow"></div>
+				<div class="content">
+					<div class="inner font-14 bold">
+						<p>
+							<span class="yellow">网站名称：</span>
+							<span class="white">{{$value.siteBasic.siteName}}</span>
+						</p>
+						<p>
+							<span class="yellow">行业类型：</span>
+							<span class="white">{{$value.siteBasic.siteProfession}}</span>
+						</p>
+						<p>
+							<span class="yellow">建站者：</span>
+							<span class="white">{{$value.siteBasic.creator}}</span>
+						</p>
+						<p>
+							<span class="yellow">建站时间：</span>
+							<span class="white">
+								{{if $value.siteBasic.createtime}}
+									{{($value.siteBasic.createtime + "").substring(0,10)}}
+								{{/if}}
+							</span>
+						</p>
+						<p>
+							<span class="yellow">目前状态：</span>
+							<span class="white">
+								{{if $value.siteBasic.isused == "1"}}
+									启用
+								{{else}}
+									未启用	
+								{{/if}}
+							</span>
+						</p>
+					</div>
+					<a class="detail" href="{{getUrl 'pageList'}}{{'&pkSite=' + $value.siteBasic.siteId}}">
+						<span class="r-icon mobile-hased-detail pointer"></span>
+					</a>
+				</div>
+				
+			</div>
+		</div>
+	</li>
+	{{/each}}
+{{/if}}
+<li class="build">
+	<div class="mobile-view-wrap add">
+		<span class="mobile-build-wrap">
+			<a class="r-btn mobile-build-btn" href="{{getUrl 'siteAddForm'}}"></a>
+			<p class="tc font-14 mt-5">新建手机网站</p>
+		</span>
+	</div>
+</li>

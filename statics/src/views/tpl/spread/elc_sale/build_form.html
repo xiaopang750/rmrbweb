@@ -1,0 +1,66 @@
+<!-- 电子优惠券新建 -->
+<li>
+	<p class="mb-10">优惠券图库</p>
+	<div class="upload-content clearfix">
+		<input type="text" class="form-control fl col-xs-8 mr-6 edit-main" elc-select-area readonly="readonly" form_check="sys" ischeck="true" name="coupons.reserve1" value="{{reserve1}}" style-name re="(.+)">
+		<div script-role="check_wrap" class="none">
+			<input type="text" name="coupons.couponsPic" value="{{couponsPic}}" form_check="sys" ischeck="true" re=".+"  style-url>
+		</div>
+		<a href="javascript:;" class="btn btn-default fr" elc-select-btn>选择样式</a>
+		<div>
+			<span class="gray fl ml-5 mt-5">(<span class="red">*</span>号标记的为必填项)</span>
+		</div>
+	</div>
+</li>
+<li script-role="check_wrap">
+	<div class="clearfix">
+		<!-- <span class="mr-10">
+			<span>20元</span>
+			<input type="radio" name="coupons.couponsLimit" id="20" value="20" {{if couponsLimit == 20}}checked="checked"{{/if}}>
+		</span>
+		<span class="mr-10">
+			<span>30元</span>
+			<input type="radio" name="coupons.couponsLimit" id="30" value="30" {{if couponsLimit == 30}}checked="checked"{{/if}}>
+		</span>
+		<span class="mr-10">
+			<span>50元</span>
+			<input type="radio" name="coupons.couponsLimit" id="50" value="50" {{if couponsLimit == 50}}checked="checked"{{/if}}>
+		</span>
+		<span class="mr-10">
+			<span>100元</span>
+			<input type="radio" name="coupons.couponsLimit" id="100" value="100" {{if couponsLimit == 100}}checked="checked"{{/if}}>
+		</span> -->
+
+		<p class="mb-10">面值(元)</p>
+		<input type="text" class="form-control col-xs-11" form_check="sys" ischeck="true" name="coupons.couponsLimit" tip="此项为必填" wrong="请输入999以内的数" re="(\d{1,3})" value="{{couponsLimit}}">
+		<span class="red mt-5 ml-5 font-14 fr">*</span>
+	</div>
+</li>
+<li script-role="check_wrap" class="clearfix">
+	<p class="mb-10">最小消费金额(元)</p>
+	<input type="text" class="form-control col-xs-11" form_check="sys" ischeck="true" name="coupons.minimunExpense" tip="此项为必填" wrong="输入格式不正确" re="((\d|\.)+)" value="{{minimunExpense}}">
+	<span class="red mt-5 ml-5 font-14 fr">*</span>
+</li>
+<li script-role="check_wrap" class="clearfix">
+	<p class="mb-10">开始时间</p>
+	<input type="text" class="form-control col-xs-11" date form_check="sys" ischeck="true" name="coupons.startDate" tip="此项为必填" wrong="输入格式不正确" re="(\d{4}\-\d{2}\-\d{2})" value="{{startDate}}" readonly="readonly">
+	<span class="red mt-5 ml-5 font-14 fr">*</span>
+</li>
+<li script-role="check_wrap" class="clearfix">
+	<p class="mb-10">结束时间</p>
+	<input type="text" class="form-control col-xs-11" date form_check="sys" ischeck="true" name="coupons.endDate" tip="此项为必填" wrong="输入格式不正确" re="(\d{4}\-\d{2}\-\d{2})" value="{{endDate}}" readonly="readonly">
+	<span class="red mt-5 ml-5 font-14 fr">*</span>
+</li>
+<li script-role="check_wrap" class="clearfix">
+	<p class="mb-10">发放数量(张)</p>
+	<input type="text" class="form-control col-xs-11" form_check="sys" ischeck="true" name="coupons.couponsNum" tip="此项为必填" wrong="输入格式不正确" re="(\d+)" value="{{couponsNum}}">
+	<span class="red mt-5 ml-5 font-14 fr">*</span>
+</li>
+<!-- <li>
+	<p>抢券成功提示信息</p>
+	<input type="text" class="input-text" form_check="sys" ischeck="true" name="coupons.successalert" tip="此项为必填" wrong="成功提示信息不能超过20个字" re="(.{1,20})" value="{{successalert}}">
+</li>
+<li>
+	<p>抢券失败提示信息</p>
+	<input type="text" class="input-text" form_check="sys" ischeck="true" name="coupons.failalert" tip="此项为必填" wrong="失败提示信息不能超过20个字" re="(.{1,20})" value="{{failalert}}">
+</li> -->

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+    <constant name="struts.enable.DynamicMethodInvocation" value="true" />
+    <constant name="struts.devMode" value="false" />
+    <constant name="struts.ui.theme" value="simple"></constant>
+    <constant name="struts.action.extension" value="do,action,,"></constant>
+
+	<package name="rmrb-dictionary" namespace="/dictionary" extends="rmrb-default">
+	    <!-- 主表 -->
+		<action name="addDataMain" class="com.rsdataservice.o2o.action.dictionary.DictionaryMainAction" method="addDictionaryMain">
+			<result type="json"></result>
+		</action>
+		<action name="updateDataMain" class="com.rsdataservice.o2o.action.dictionary.DictionaryMainAction" method="updateDictionaryMain">
+			<result type="json"></result>
+		</action>
+		<action name="deleteDataMain" class="com.rsdataservice.o2o.action.dictionary.DictionaryMainAction" method="deleteDictionaryMain">
+			<result type="json"></result>
+		</action>
+		<action name="findDataMain" class="com.rsdataservice.o2o.action.dictionary.DictionaryMainAction" method="findData">
+			<result type="json"></result>
+		</action>
+		<action name="findDataPage" class="com.rsdataservice.o2o.action.dictionary.DictionaryMainAction" method="findDataByPage">
+			<result type="json"></result>
+		</action>
+		
+		<!-- 子表 -->
+		<action name="addDataSub" class="com.rsdataservice.o2o.action.dictionary.DictionarySubAction" method="addDictionarySub">
+			<result type="json"></result>
+		</action>
+		<action name="updateDataSub" class="com.rsdataservice.o2o.action.dictionary.DictionarySubAction" method="updateDictionarySub">
+			<result type="json"></result>
+		</action>
+		<action name="deleteDataSub" class="com.rsdataservice.o2o.action.dictionary.DictionarySubAction" method="deleteDictionarySub">
+			<result type="json"></result>
+		</action>
+		<action name="findDataSubPage" class="com.rsdataservice.o2o.action.dictionary.DictionarySubAction" method="findDataByPage">
+			<result type="json"></result>
+		</action>
+		<action name="findDataSub" class="com.rsdataservice.o2o.action.dictionary.DictionarySubAction" method="findData">
+			<result type="json"></result>
+		</action>
+		<action name="findDataByPk" class="com.rsdataservice.o2o.action.dictionary.DictionarySubAction" method="findDataByPk">
+			<result type="json"></result>
+		</action>
+	</package>
+</struts>

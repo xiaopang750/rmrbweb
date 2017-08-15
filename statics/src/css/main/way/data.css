@@ -1,0 +1,147 @@
+/**
+ *description:渠道数据
+ *author:fanwei
+ *date:2014/08/03
+ */
+
+.data-icon {
+	display: inline-block;
+	background-image:url('../../../../assets/main/way/base.png');
+	background-repeat: no-repeat;
+	vertical-align: middle;
+}
+
+.clearfix:after {
+	visibility:hidden;
+	display:inline-block;
+	font-size:0;
+	content:" ";
+	clear:both;
+	height:0;
+}
+
+.data1 {
+	width: 39px;
+	height: 26px;
+	background-position:0 -7px; 
+}
+
+.data2 {
+	width: 30px;
+	height: 24px;
+	background-position:0 -50px; 
+}
+
+.data3 {
+	width: 31px;
+	height: 33px;
+	background-position:0 -91px; 
+}
+
+.data4 {
+	width: 24px;
+	height: 35px;
+	background-position:0 -149px; 
+}
+
+.data5 {
+	width: 31px;
+	height: 31px;
+	background-position:0 -201px; 
+}
+
+.data6 {
+	width: 25px;
+	height: 31px;
+	background-position:0 -254px; 
+}
+
+.data7 {
+	width: 16px;
+	height: 16px;
+	background-position:0 -303px; 
+}
+
+.data8 {
+	width: 16px;
+	height: 15px;
+	background-position:0 -337px; 
+}
+
+.data8.active {
+	background-position:0 -363px; 
+}
+
+.w30 {
+	width: 30%;
+}
+
+.w70 {
+	width: 70%;
+}
+
+.data-tile {
+	padding-bottom: 20px;
+	border-bottom: 1px dashed #dae1e5;
+	margin-bottom: 15px;
+}
+
+.data-wrap {
+	width: 95%;
+	margin:0 auto;
+}
+
+.point-area ul {
+	margin-top:-2px;
+}
+
+.point-area ul li {
+	float: left;
+}
+
+.data-num table td {
+	padding-bottom: 20px;
+}
+
+.data-num dt {
+	width: 40px;
+	text-align: center;
+}
+
+.data-num dd p {
+	font-size: 15px;
+	color:#524f4a;
+}
+
+.data-num dd {
+	position: relative;
+	top: -10px;
+}
+
+.data-num dd span {
+	font-size: 14px;
+	color:#524f4a;
+}
+
+.data-num dd .num {
+	font-size: 24px;
+	color:#399dea;
+}
+
+.chart-area {
+	width: 100%;
+}
+
+.chart1 {
+	width: 40%;
+}
+
+.chart2 {
+	width: 60%;
+}
+
+.chart3 {
+	width: 100%
+}
+
+

@@ -1,0 +1,52 @@
+<!-- 主模板1 -->
+<div class="main-type1">
+	<div class="mobile-view-inner">
+		<!-- mobile-lead -->
+		<div class="mobile-lead"></div>
+		<div id="mobile-view">
+			<div>
+				<!-- mobile-head -->
+				<div class="mobile-head clearfix" data-ele="cd-test" data-name="{{content.logo.modelName}}">
+					<img src="{{content.logo.modelData.logoUrl}}" width="232" height="28">
+				</div>
+				<!-- mobile-nav -->
+				<div class="mobile-nav" data-ele="cd-test" data-name="{{content.textNav.modelName}}">
+					<ul class="clearfix">
+						{{each content.textNav.modelData}}
+							<li style="background:{{$value.labelColor}}">
+								<span style="color:{{$value.fontColor}}">{{$value.textName}}</span>
+							</li>
+						{{/each}}
+					</ul>
+				</div>
+				<!-- mobile-banner -->
+				<div class="mobile-banner" data-ele="cd-test" data-name="{{content.point.modelName}}">
+					<ul class="clearfix">
+						{{each content.point.modelData}}
+							<li>
+								<img src="{{$value.imgUrl}}">
+							</li>
+						{{/each}}
+					</ul>
+				</div>
+				<!-- mobile-add -->
+				<div class="mobile-add" data-ele="cd-test" data-name="{{content.textAdv.modelName}}">
+					<div class="ml-7 mt-5">
+						<h2 class="font_14 bold" style="color:{{content.textAdv.modelData.mainFontColor}}">{{content.textAdv.modelData.mainTitle}}</h2>
+						<h3 style="color:{{content.textAdv.modelData.subFontColor}}">{{content.textAdv.modelData.subTitle}}</h3>
+					</div>
+				</div>
+				<!-- mobile-nav -->
+				<div class="mobile-list" data-ele="cd-test" data-name="{{content.modelars.modelName}}">
+					<ul>
+						{{each content.modelars.modelData}}
+						<li>
+							<span style="color:{{$value.fontColor}}">{{$value.modelName}}</span>
+						</li>
+						{{/each}}
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

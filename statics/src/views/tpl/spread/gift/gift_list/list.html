@@ -1,0 +1,86 @@
+<!-- 到店有礼列表模板 -->
+{{if activities.length}}
+	{{each activities}}
+	<li class="main-list">
+		<div class="list show rel">
+			<div class="top rel font-14">
+				<dl>
+					<dt>
+						<table cellpadding="0" cellspacing="0" border="0" width="100%">
+							<tr>
+								<td width="100">名称：</td>
+								<td>{{$value.activitytopic}}</td>
+							</tr>
+							<tr>
+								<td>发布状态：</td>
+								<td>
+									{{if $value.activitystatus == "001"}}
+									<span class="red">新建</span>
+									{{else if $value.activitystatus == "002"}}
+									<span class="blue">等待推送</span>
+									{{else if $value.activitystatus == "003"}}
+									<span class="yellow">进行中</span>
+									{{/if}}
+								</td>
+							</tr>
+						</table>
+					</dt>
+					<dd class="rel">
+						<!-- <img src="{{$value.activityheader}}" width="100%" class="bg"> -->
+						<div class="content">
+							{{$value.activitycontent}}
+						</div>
+						<div class="qcode">
+							<a href="javascript:;" class="r-btn download" qcode-btn aid="{{$value.pkActivity}}"></a>
+							<p>下载二维码</p>
+						</div>
+					</dd>
+				</dl>
+			</div>
+			{{if listType != 'nofunc'}}
+			<div class="bot">
+				<ul class="clearfix font-14 pl-20">
+					<li>
+						<span class="r-icon met-edit mr-2"></span>
+						<a href="{{getUrl 'muliEdit'}}{{'&pkActivity=' + $value.pkActivity}}">编辑</a>
+					</li>
+					<li>
+						<span class="r-icon met-remove mr-2"></span>
+						<a href="javascript:;" remove rid="{{$value.pkActivity}}">删除</a>
+					</li>
+					<li>
+						<span class="r-icon met-set mr-2"></span>
+						<a href="javascript:;" box-set lid="{{$value.pkActivity}}">发布渠道</a>
+					</li>
+					<li>
+						<span class="r-icon met-send mr-2"></span>
+						<a href="javascript:;" send sid="{{$value.pkActivity}}">推送</a>
+					</li>
+				</ul>
+				<ul  class="clearfix font-14 pl-20">
+					<li class="ml-10">
+						<a href="{{getUrl 'singList'}}{{'&pkActivity=' + $value.pkActivity}}">报名情况</a>
+					</li>
+					<li class="ml-10">
+						<a href="{{getUrl 'reviewList'}}{{'&pkActivity=' + $value.pkActivity}}">评论情况</a>
+					</li>
+					<li class="ml-10">
+						<a href="{{getUrl 'integralRuleList'}}{{'&pkActivity=' + $value.pkActivity}}">积分规则</a>
+					</li>
+					<li class="ml-10">
+						<a href="javascript:;" aid="{{$value.pkActivity}}" verification>核销</a>
+					</li>
+					<li class="ml-10">
+						<a href="javascript:;" pid="{{$value.pkActivity}}" set-time>有效期</a>
+					</li>
+				</ul>	
+			</div>
+			{{/if}}
+		</div>
+	</li>
+	{{/each}}
+{{else}}
+<div class="noData">
+	<p>暂无数据</p>
+</div>
+{{/if}}

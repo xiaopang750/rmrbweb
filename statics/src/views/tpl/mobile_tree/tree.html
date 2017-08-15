@@ -1,0 +1,49 @@
+<!-- tree-module -->
+<div class="tree-moudle" m-tree-wrap>
+	<span class="r-btn tree-btn">
+		<div class="m-add" m-add link="{{getUrl 'pageAddForm'}}"></div>
+		<div class="m-slide" m-slide></div>
+	</span>
+	<div class="tree-main" m-tree-main>
+		<ul>
+			{{each tree}}
+			<li class="main-list" m-tree-list>
+				<dl>
+					<dt class="clearfix" m-tree-head>
+						<span class="r-icon mobile-tree-dec ml-17 mr-6 fl mt-10"></span>
+						<a class="font-14 blue bold fl mt-5 m-select" href="{{getUrl 'sitePageEdit'}}{{'&modelCode=' + $value.modelCode + '&pkSite=' + $value.pageId + '&pkPage=' + $value.pageId}}" m-select parentName="{{$value.parentName}}" pkSite="{{$value.pageId}}" parentId="{{$value.pageId}}" tree-add>
+							{{$value.pageName}}
+						</a>
+					</dt>
+					{{if $value.child.length}}
+					<dd m-tree-content {{if !$value.child}}status="no-data"{{/if}}>
+						<ul>
+							{{if $value.child}}
+								{{each $value.child as value1 index}}
+								<li>
+									<span class="r-icon mobile-tree-list fl"></span>
+									<a href="{{getUrl 'sitePageEdit'}}{{'&modelCode=' + value1.modelCode + '&pkSite=' + $value.pageId + '&pkPage=' + value1.pageId}}" m-select class="m-select fl mt-9" parentName="{{value1.pageName}}" pkSite="{{$value.pageId}}" parentId="{{value1.pageId}}" tree-add>
+										{{value1.pageName}}
+									</a>
+									<div class="clear"></div>
+									<ul>
+										{{each value1.child as value2 index}}
+										<li>
+											<span class="r-icon mobile-tree-list fl"></span>
+											<a href="{{getUrl 'sitePageEdit'}}{{'&modelCode=' + value2.modelCode + '&pkSite=' + $value.pageId + '&pkPage=' + value2.pageId}}" class="m-select fl mt-9">{{value2.pageName}}</a>
+											<div class="clear"></div>
+										</li>
+										{{/each}}
+									</ul>
+								</li>
+								{{/each}}
+							{{/if}}
+						</ul>
+					</dd>
+					{{/if}}
+				</dl>
+			</li>
+			{{/each}}
+		</ul>
+	</div>
+</div>

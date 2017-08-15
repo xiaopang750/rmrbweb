@@ -1,0 +1,41 @@
+<!-- 后台配置-角色管理 -->
+{{if roles.length}}
+<table cellpadding="0" cellspacing="0" border="0" width="90%" class="table striped auto mt-20">
+<thead>
+	<tr>
+		<td class="tr" colspan="5">
+			<a class="btn btn-primary pl-50 pr-50" href="{{getUrl 'roleEdit'}}&type=add" add>添加</a>
+		</td>
+	</tr>
+	<tr>
+		<td>角色名称</td>
+		<td>角色备注</td>
+		<td>用户限制</td>
+		<td>操作</td>
+	</tr>	
+</thead>
+<tbody>
+	{{each roles}}
+	<tr list>
+		<td>{{$value.roleName}}</td>
+		<td>{{$value.roleMemo}}</td>
+		<td>{{$value.usercount}}</td>
+		<td>
+			<a href="{{getUrl 'roleEdit'}}&type=edit&aid={{$value.pkRole}}" edit>编辑</a>
+			<span>|</span>
+			<a href="javascript:;" remove aid="{{$value.pkRole}}">删除</a>
+			<span>|</span>
+			<a href="{{getUrl 'roleUserList'}}&aid={{$value.pkRole}}" role>管理用户</a>
+			<span>|</span>
+			<a href="{{getUrl 'rolePower'}}&pkRole={{$value.pkRole}}">角色权限</a>
+		</td>
+	</tr>
+	{{/each}}
+</tbody>
+</table>
+{{else}}
+<div class="noData">
+	<p>暂无数据</p>
+	<a class="btn btn-primary" href="{{getUrl 'roleEdit'}}&type=add" add>添加</a>
+</div>
+{{/if}}

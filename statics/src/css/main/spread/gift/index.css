@@ -1,0 +1,19 @@
+/**
+ *description:到店有礼首页
+ *author:fanwei
+ *date:2014/07/31
+ */
+
+.gift-index {
+	padding:50px 0;
+}
+
+.gift-index td {
+	padding:20px 0;
+	text-align: center;
+}
+
+.gift-index td p {
+	padding:5px;
+	font-size: 14px;
+}

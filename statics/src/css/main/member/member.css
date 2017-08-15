@@ -1,0 +1,292 @@
+/**
+ *description:会员互动
+ *author:fanwei
+ *date:2014/08/11
+ */
+
+.online-left {
+	width: 272px;
+	padding:8px 5px;
+	border:1px solid #d9d9d9;
+	border-radius: 5px;
+	background: #f4f4f4;
+}
+
+.online-left .third-area ul {
+	width: 273px;
+}
+
+.online-left .third-area ul li {
+	float: left;
+	margin-right:5px;
+}
+
+.online-left .third-area ul li a {
+	width: 86px;
+	height: 50px;
+	display: block;
+	background: url('../../../../assets/main/activity/third-bg.png') no-repeat -86px 0;
+}
+
+.online-left .third-area ul li a:hover,.online-left .third-area ul li.active a {
+	background-position: 0 0;
+}
+
+.online-left .third-area .icon {
+	background-image: url('../../../../assets/main/activity/third-icon.png');
+	background-repeat:no-repeat;
+	width: 33px;
+	height: 33px;
+	display: block;
+	float: left;
+	margin:8px 0 0 10px;
+}
+
+.online-left .third-area .num {
+	color:#f00;
+	font-size: 18px;
+	margin:12px 0 0 5px;
+	float: left;
+}
+
+.online-left .third-area .weixin {
+	background-position: 0 -26px;
+}
+
+.online-left .third-area .weibo {
+	background-position: 0 -78px;
+}
+
+.online-left .third-area .qq {
+	background-position: 0 -128px;
+}
+
+.member-btn {
+	width: 83px;
+	height: 28px;
+	border:1px solid #ccc;
+	border-radius: 5px;
+	background: #f1f1f1;
+	line-height: 28px;
+	text-align: center;
+	color:#7495a4;
+	display: inline-block;
+}
+
+.member-btn:active,.member-btn.active {
+	background: #ccc;
+	color:#fff;
+}
+
+.refresh-btn .set-text {
+	width: 166px;
+	height: 28px;
+	border:1px solid #ccc;	
+}
+
+.member-bg {
+	border:1px solid #bfbebe;
+	border-radius: 5px;
+	background: #fff;
+}
+
+.member-info .inner {
+	border: 1px solid #bfbebe;
+	border-radius: 5px;
+	background: #ececec;
+}
+
+.member-list ul li {
+	width: 100%;
+	height: 52px;
+	line-height: 52px;
+	background: #ececec;
+	position: relative;
+	border-radius: 5px;
+	border:1px solid #ccc;
+	margin-bottom: 5px;
+	cursor: pointer;
+}
+
+.member-list ul li.active {
+	border:1px solid #999;
+}
+
+.member-list .member-btn {
+	position: absolute;
+	right: 10px;
+	top:10px;
+}
+
+.member-detail p {
+	margin-bottom: 10px;
+}
+
+.online-wrap {
+	width: 930px;
+	margin:0 auto;
+	padding-top:20px;	
+}
+
+.online-right {
+	padding:6px;
+	width: 610px;
+	background: #f4f4f4;
+}
+
+.online-right .view-text {
+	height: 300px;
+	overflow: auto;
+}
+
+.online-right .view-text ul li {
+	margin-bottom: 20px;
+	color:#000;
+}
+
+.online-right .view-text ul li .time {
+	font-size: 14px;
+}
+
+.online-right .view-text ul li p {
+	margin-bottom: 5px;
+}
+
+.online-right .input-area {
+	height: 200px;
+	width: 100%;
+	overflow: auto;
+}
+
+.search-area {
+	height: 300px;
+	overflow: auto;
+}
+
+.search-area ul li {
+	cursor: pointer;
+}
+
+/* 评论详情 */
+.commonts-detail {
+
+}
+
+.commonts-detail {
+	width: 700px;
+	margin:10px auto 0 auto;
+	word-break:break-all;
+}
+
+
+.commonts-area {
+	border:1px solid #ccc;
+	padding:5px;
+	width: 690px;
+	height: 200px;
+	border-radius: 5px;
+}
+
+.commonts-area:focus {
+	border:1px solid #FFB941;
+}
+
+.send-btn {
+	color: #fff;
+	display: inline-block;
+	height: 26px;
+	line-height: 26px;
+	padding: 0 15px;
+	border:1px solid #ffa00a;
+	background: #ffa00a;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+
+.commonts-detail ul {
+	margin-bottom: 10px;
+}
+
+.commonts-detail ul li  {
+	padding:10px 0;
+	border-bottom: 1px solid #ccc;
+	position: relative;
+}
+
+.commonts-detail .reply-btn {
+	position: absolute;
+	right:0;
+	top: 10px;
+}
+
+.WB_media_expand {
+	padding:5px;
+	font-size: 12px;
+	margin: 10px 0 6px;
+	border-radius: 3px;
+	border:1px solid #ccc;
+	zoom: 1;
+	width: 690px;
+	height: 50px;
+}
+
+.more-btn {
+	color: #fff;
+	display: none;
+	height: 26px;
+	line-height: 26px;
+	padding: 0 15px;
+	border:1px solid #ccc;
+	background: #ccc;
+	border-radius: 5px;
+}
+
+.more-btn.active {
+	display: inline-block;
+}
+
+.reply-area {
+	display: none;
+}
+
+.bg-gray {
+	background: #ccc;
+	border:1px solid #ccc;
+}
+
+/* 智能回复 */
+/* .auto-add {
+	width: 700px;
+	margin:0 auto;
+}
+
+.auto-add table td {
+	padding-bottom: 20px;
+}
+
+.auto-add table input {
+	width: 400px;
+	height: 28px;
+	line-height: 28px;
+	border:1px solid #ccc;
+	padding:2px;
+}
+
+.auto-add textarea {
+	width: 400px;
+	height: 300px;
+	padding:2px;
+	border:1px solid #ccc;
+}
+
+.auto-add button {
+	width: 200px;
+	height: 28px;
+} */
+
+
+
+
+
+

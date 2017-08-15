@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+    <constant name="struts.enable.DynamicMethodInvocation" value="true" />
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.ui.theme" value="simple"></constant>
+    <constant name="struts.action.extension" value="do,action,,"></constant>
+
+	<package name="rmrb-account" namespace="/account" extends="rmrb-default">
+		
+		<action name="account*" class="com.rsdataservice.o2o.action.sys.AccountAction" method="{1}">
+			<result type="json"></result>
+		</action>
+		<action name="public*" class="com.rsdataservice.o2o.action.sys.PublicAccountAction" method="{1}">
+		    <result type="json"></result>
+		</action>
+		<action name="shoparea*" class="com.rsdataservice.o2o.action.sys.ShopareaAction" method="{1}">
+		     <result type="json"></result>
+		</action>
+		<action name="wxmenu*" class="com.rsdataservice.o2o.action.sys.WxmenuAction" method="{1}">
+		     <result type="json"></result>
+		</action>
+		<action name="toWxmenuPage" class="com.rsdataservice.o2o.action.sys.WxmenuAction" method="activityIndex">
+		     <result name="007">../views/main/way/menu.jsp</result>
+		</action>
+	</package>
+</struts>

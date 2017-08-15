@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+    <constant name="struts.enable.DynamicMethodInvocation" value="true" />
+    <constant name="struts.devMode" value="false" />
+    <constant name="struts.ui.theme" value="simple"></constant>
+    <constant name="struts.action.extension" value="do,action,,"></constant>
+
+	<package name="rmrb-ku" namespace="/ku" extends="rmrb-default">
+		<!-- 知识库 -->
+		<!-- 知识库表单页地址 -->
+		<action name="toKnowledgestorgerFromPage" class="com.rsdataservice.o2o.action.jumppage.JumpPageAction" method="knowledgestorgIndex">
+		     <result name="toKnowledgestorgForm">../views/main/admin/knowlege/form.jsp</result>
+		</action>
+		<!-- 知识库列表页地址 -->
+		<action name="toKnowledgestorgerListPage" class="com.rsdataservice.o2o.action.jumppage.JumpPageAction" method="knowledgestorgIndexList">
+		     <result name="toKnowledgestorgList">../views/main/admin/knowlege/list.jsp</result>
+		</action>
+		<action name="knowledgestorge*" class="com.rockstars.o2o.action.ku.KnowledgestorgeAction" method="{1}">
+			<result type="json"></result>
+		</action>
+		
+		<!-- 问题库 -->
+		<action name="addQuestion" class="com.rockstars.o2o.action.ku.QuestionstorgeAction" method="addRmrbBdQuestionstorge">
+			<result type="json"></result>
+		</action>
+		<action name="deleteQuestion" class="com.rockstars.o2o.action.ku.QuestionstorgeAction" method="deleteRmrbBdQuestionstorge">
+			<result type="json"></result>
+		</action>
+		<action name="updateQuestion" class="com.rockstars.o2o.action.ku.QuestionstorgeAction" method="updateRmrbBdQuestionstorge">
+			<result type="json"></result>
+		</action>
+		<action name="findQuestion" class="com.rockstars.o2o.action.ku.QuestionstorgeAction" method="findRmrbBdQuestionstorge">
+			<result type="json"></result>
+		</action>
+		<action name="findQuestionById" class="com.rockstars.o2o.action.ku.QuestionstorgeAction" method="findQuestionById">
+			<result type="json"></result>
+		</action>
+		<action name="findQuestionAndSelect" class="com.rockstars.o2o.action.ku.QuestionstorgeAction" method="findQuestionAndOption">
+			<result type="json"></result>
+		</action>
+		<action name="surveyProfession" class="com.rockstars.o2o.action.ku.QuestionstorgeAction" method="surveyProfession">
+			<result type="json"></result>
+		</action>
+		<action name="questionType" class="com.rockstars.o2o.action.ku.QuestionstorgeAction" method="questionType">
+			<result type="json"></result>
+		</action>
+		<action name="deleteQuestionAndSelect" class="com.rockstars.o2o.action.ku.QuestionstorgeAction" method="deleteQuestionAndSelectByBetch">
+			<result type="json"></result>
+		</action>
+		<action name="addQuestionAndSelect" class="com.rockstars.o2o.action.ku.QuestionstorgeAction" method="addQuestionAndSelect">
+			<result type="json"></result>
+		</action>
+		<action name="findQuestionByName" class="com.rockstars.o2o.action.ku.QuestionstorgeAction" method="findQuestionByName">
+			<result type="json"></result>
+		</action>
+		
+		
+		<!-- 问题选项 -->
+		<action name="addSelect" class="com.rockstars.o2o.action.ku.QuestionSelectAction" method="addRmrbQuestionSelect">
+			<result type="json"></result>
+		</action>
+		<action name="deleteSelect" class="com.rockstars.o2o.action.ku.QuestionSelectAction" method="deleteRmrbQuestionSelect">
+			<result type="json"></result>
+		</action>
+		<action name="updateSelect" class="com.rockstars.o2o.action.ku.QuestionSelectAction" method="updateRmrbQuestionSelect">
+			<result type="json"></result>
+		</action>
+		<action name="findSelect" class="com.rockstars.o2o.action.ku.QuestionSelectAction" method="findRmrbQuestionSelect">
+			<result type="json"></result>
+		</action>
+		<action name="addSelectByBetch" class="com.rockstars.o2o.action.ku.QuestionSelectAction" method="addSelectByBetch">
+			<result type="json"></result>
+		</action>
+		<action name="updateSelectOrder" class="com.rockstars.o2o.action.ku.QuestionSelectAction" method="updateSelectOrder">
+			<result type="json"></result>
+		</action>
+	</package>
+</struts>

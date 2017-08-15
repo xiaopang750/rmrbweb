@@ -1,0 +1,4 @@
+/*TMODJS:{"version":18,"md5":"26ec8432d2591aa9e51a24a3e4951054"}*/
+define(function(require) {
+    return require("../../templates")("box/spread/exchange", ' <div class="nr-box score-exchange" change-box> <a href="javascript:;" class="close" sc="close">×</a> <div class="inner-wrap"> <div class="tc font-14 mb-20">积分兑换</div> <table cellpadding="0" cellspacing="0" border="0" width="100%" class="table noline nohover"> <tr> <td width="80"> 手机号码 </td> <td> <input class="form-control" type="text" tel-input> </td> </tr> <tr> <td> </td> <td class="tl"> <a href="javascript:;" class="btn btn-primary pl-20 pr-20" sc="confirm">确定</a> <a href="javascript:;" class="btn btn-danger pl-20 pr-20" sc="close">取消</a> </td> </tr> </table> </div> </div>');
+});

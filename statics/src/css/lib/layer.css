@@ -1,0 +1,425 @@
+html,body {
+	min-height: 100%;
+}
+
+body {
+	background: url("../../../assets/lib/bg/tree_nav.jpg") repeat-y;
+	min-width: 1200px;
+}
+
+/* header */
+.main-header-wrap {
+	width: 100%;
+	height: 80px;
+	background: #1c1c1c;
+}
+
+.main-header-wrap h1 a {
+	display: block;
+	width: 315px;
+	height: 58px;
+}
+
+.main-header-wrap .user-info {
+	color: #b5b5b5;
+	font-size: 15px;
+	height: 80px;
+	line-height: 80px;
+}
+
+.main-header-wrap .login-out {
+	width: 78px;
+	height: 80px;
+	display: block;
+	line-height: 80px;
+	background: #353535;
+	text-align: center;
+	color:#c5c9cb;
+	font-size: 15px;
+	cursor: pointer;
+}
+
+
+/* lead-line */
+.head-list {
+	width: 100%;
+	height: 36px;
+	position: relative;
+}
+
+.head-list .line {
+	width: 85%;
+	height: 0px;
+	border-bottom:1px dashed #909090;
+	overflow: hidden;
+	position: absolute;
+	right:0;
+	top:16px;
+}
+
+/* main-content */
+.main-layer-content {
+	width: 100%;
+	position: relative;
+}
+
+.main-content {
+	margin-left:236px;
+	min-height: 100%;
+}
+
+/* bread */
+.bread {
+	width: 100%;
+	height: 45px;
+	background: #fff;
+	border-bottom: 1px solid #cdd4da;
+	position: relative;
+	z-index: 500;
+}
+
+.bread .r-g-btn {
+	position: absolute;
+	right:5px;
+	top:5px;
+}
+
+.bread .bread-text {
+	font-size: 13px;
+	line-height: 45px;
+	color:#6d85a1;
+	font-weight: bold;
+	margin-left:14px;
+}
+
+
+/* left-tree */
+.main-tree {
+	width: 236px;
+	position: absolute;
+	left:0;
+}
+
+.main-tree .main ul li {
+	width: 127px;
+	height: 94px;
+	background: #36363b;
+	border-bottom: 1px solid #565656;
+	font-size: 15px;
+	text-align: center;
+	color:#c5c5c5;
+	cursor: pointer;
+}
+
+.main-tree .main ul li a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	color:#c5c5c5;
+}
+
+/* bg-layer */
+.r-bg-layer {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	left:0;
+	top:0;
+	z-index: -1;
+	margin-left:236px;
+	background: url('../../../assets/lib/bg/main_bg.jpg') repeat;
+}
+
+.main-tree .main ul li:last-child {
+	border-bottom: none;
+}
+
+.main-tree .main ul li.active .text {
+	color:#d7850c;
+}
+
+.main-tree .main ul li.active .mobile {
+	background-position: -7px -80px;
+} 
+
+.main-tree .main ul li.active .way {
+	background-position: -3px -153px;
+} 
+
+.main-tree .main ul li.active .spread {
+	background-position: 0 -228px;
+} 
+
+.main-tree .main ul li.active .member {
+	background-position: -3px -309px;
+} 
+
+.main-tree .main ul li.active .admin {
+	background-position: -1px -465px;
+	
+} 
+
+.main-tree .main ul li.active .data {
+	background-position: -3px -387px;
+} 
+
+.main-tree .sub-nav {
+	width: 109px;
+}
+
+.main-tree .sub-nav .tab-content {
+	display: none;
+}
+
+.main-tree .sub-nav dl dt {
+	height: 45px;
+	color:#4b4d4e;
+	border-bottom: 1px solid #ccc;
+}	
+
+.main-tree .sub-nav dl dd li {
+	height: 36px;
+	line-height: 36px;
+	text-align: center;
+	position: relative;
+}
+
+.main-tree .sub-nav dl dd li .mark {
+	display: block;
+	height: 36px;
+	width: 7px;
+	background: #ffaa3d;
+	position: absolute;
+	left:0;
+	top:0;
+	display: none;
+}
+
+.main-tree .sub-nav dl dd li a {
+	color:#696f73;
+}
+
+.main-tree .sub-nav dl dd li a.dis {
+	color:#ccc;
+}
+
+.main-tree .sub-nav dl dd li.active {
+	background: #fff;
+}
+
+.main-tree .sub-nav dl dd li.active .mark {
+	display: block;
+}
+
+
+/* mobile */
+.mobile-view-wrap {
+	width: 274px;
+	height: 580px;
+	background: url("../../../assets/main/mobile/mobile_view.png") no-repeat;
+	position: relative;
+	background-position: 0 -580px;
+	overflow: hidden;
+	z-index: 1;
+}
+
+.mobile-view-wrap .self {
+	padding-top: 250px;
+}
+
+
+.mobile-view-wrap .mobile-name {
+	width: 100%;
+	position: absolute;
+	bottom: -40px;
+	left:0;
+	text-align: center;
+	color: #000;
+	font-size: 18px;
+}
+
+.mobile-view-wrap .view-img {
+	position: absolute;
+	left:21px;
+	top:100px;
+}
+
+.mobile-view-wrap:hover,.mobile-view-wrap.active {
+	background-position: 0 0;
+}
+
+.mobile-view-wrap.add {
+	background-position: 0 -1160px;
+}
+
+.mobile-view-wrap.add .mobile-build-wrap {
+	position: absolute;
+	margin:-41px 0 0 -41px;
+	left:50%;
+	top:50%;
+}
+
+.mobile-select-btn {
+	position: absolute;
+	bottom: 20px;
+	left:111px;
+}
+
+/* 树形菜单-手机建站 */
+.tree-moudle {
+	position: relative;
+	z-index: 500;
+}
+
+.tree-moudle .m-select.active {
+	color:#f72509;
+}
+
+.tree-moudle .tree-btn {
+	position: relative;
+	cursor: default;
+}
+
+.tree-moudle .m-add {
+	width: 86px;
+	height: 28px;
+	position: absolute;
+	left:0;
+	top:0;
+	cursor: pointer;
+}
+
+.tree-moudle .m-slide {
+	width: 19px;
+	height: 28px;
+	position: absolute;
+	top:0;
+	right:0;
+	cursor: pointer;
+}
+
+.tree-main {
+	border:1px solid #ccc;
+	border-bottom: none;
+	width: 260px;
+	position: absolute;
+	left:0;
+	top:43px;
+	display: none;	
+	background: #fff;
+}
+
+.tree-main.active {
+	display: block;
+}
+
+.tree-main ul li.main-list {
+	width: 260px;
+	float: left;
+}
+
+.tree-main ul li dt {
+	padding:5px 0;
+	border-bottom: 1px solid #ccc;
+	line-height: normal;
+	height: 25px;
+	overflow: hidden;
+}
+
+.tree-main ul li dd {
+	width: 100%;
+	border-bottom: 1px solid #ccc;
+}
+
+.tree-main ul li dd.active {
+	display: block;
+	border-top:none;
+}
+
+.tree-main ul li dd ul li {
+	position: relative;
+	margin-left:20px;
+}
+
+.tree-main ul li dd ul li .mobile-tree-list {
+	-position: absolute;
+}
+
+/* inner-wrap */
+.inner-wrap {
+	width: 90%;
+	margin:20px auto 0 auto;
+}
+
+/* fenye */
+.fenye {
+	display: none;
+}
+
+.fenye .r-btn {
+	margin:5px;
+}
+
+.fenye span:hover {
+	color:#cdcdcd;
+}
+
+.fenye .end {
+	color:#cdcdcd;
+	cursor: default;
+}
+
+
+/* admin */
+.admin-wrap {
+	width: 95%;
+	margin:20px auto 0 auto;
+}
+
+.admin-wrap table {
+	border-collapse: collapse;
+}
+
+.admin-wrap table td {
+	border:1px solid #ccc;
+	text-align: center;
+	padding:10px 0;
+	word-break:break-all;
+}
+
+.admin-wrap button {
+	width: 100px;
+	height: 30px;
+}
+
+/* 返回按钮 */
+.page-back {
+	position: absolute;
+	right:5px;
+	top:8px;
+}
+
+/* 无数据显示 */
+.noData {
+	margin-top:20px;
+	text-align: center;
+}
+
+.noData p {
+	margin-bottom: 10px;
+}
+
+.noData .btn {
+	padding-left: 80px;
+	padding-right: 80px;
+}
+
+/* 二维码公共样式 */
+.g-qcode {
+	border:1px solid #ccc;
+	background: #fff;
+	padding:10px;
+}
+
+
+

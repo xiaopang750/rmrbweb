@@ -1,0 +1,122 @@
+/**
+ *description: 登录
+ *author:fanwei
+ *date:2014/07/20
+ */
+
+body {
+	background-image:none;
+}
+
+.header {
+	clear: both;
+	width: 100%;
+	height: 68px;
+}
+
+.logobox {
+	width: 960px;
+	margin:0 auto;
+	padding-top: 15px;
+}
+
+.content-wrap {
+	background-image: url(../../../../assets/main/login/banner_bg.jpg);
+	background-repeat: no-repeat;
+	background-position: center 0px;
+	clear: both;
+	height: 458px;
+	width: 100%;
+}
+
+.login-box {
+	clear: both;
+	height: 458px;
+	width: 960px;
+	margin:0 auto;
+}
+
+.login-bg {
+	padding:60px 0 0 40px;
+}
+
+.login-window {
+	background: url(../../../../assets/main/login/login_bg.png) no-repeat left top;
+	height: 268px;
+	width: 288px;
+}
+
+.user-input-box {
+	background: url(../../../../assets/main/login/user_input_bg.gif) no-repeat;
+	clear: both;
+	height: 32px;
+	margin-bottom: 8px;
+}
+
+.pass-input-box {
+	background: url(../../../../assets/main/login/pass_input_bg.gif) no-repeat;
+	clear: both;
+	height: 32px;
+	margin-bottom: 10px;
+}
+
+.login-input {
+	width: 220px;
+	height: 16px;
+	padding:8px 0;
+	background: #fff;
+	border:none;
+	margin-left:32px;
+	padding-left:2px;
+}
+
+.fun-area a:hover {
+	color:#fff;
+	text-decoration: underline;
+}
+
+.login-btn {
+	background: url(../../../../assets/main/login/loginBtn.gif) no-repeat center top;
+	display: block;
+	height: 31px;
+	width: 110px;
+}
+
+.login-btn:hover {
+	background-position: center bottom;
+}
+
+.code-box {
+	float: left;
+	height: 238px;
+	padding-top: 30px;
+	width: 240px;
+	background-color:#FFF;
+	display:none;
+}
+
+.footer {
+	background-color: #b0b0b0;
+	color:#fff;
+	clear: both;
+	width: 100%;
+	padding-top: 40px;
+	padding-bottom: 8px;
+}
+
+.footer a {
+	color:#fff;
+}
+
+.footer a:hover {
+	color:#fff;
+	text-decoration: underline;
+}
+
+
+.checkcode input {
+	width: 130px;
+	margin-left:0;
+}
+
+

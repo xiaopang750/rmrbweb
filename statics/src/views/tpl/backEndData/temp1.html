@@ -1,0 +1,36 @@
+<table class="table striped" width="100%">
+	<thead>
+		<tr>
+			<td>活动主题</td>
+			<td>访问总数</td>
+			<td>微信访问数</td>
+			<td>新浪微博访问数</td>
+		</tr>
+	</thead>
+	<tbody>
+		{{if table.length}}
+			{{each table}}
+			<tr>
+				<td>
+					{{$value.topic}}
+				</td>
+				<td>
+					{{$value.wxNum*1 + $value.wbNum*1}}
+				</td>
+				<td>
+					{{$value.wxNum}}
+				</td>
+				<td>
+					{{$value.wbNum}}
+				</td>
+			</tr>
+			{{/each}}
+		{{else}}
+			<tr>
+				<td colspan="4">
+					暂无数据
+				</td>
+			</tr>
+		{{/if}}
+	</tbody>
+</table>

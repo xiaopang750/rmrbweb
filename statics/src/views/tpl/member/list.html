@@ -1,0 +1,20 @@
+<!-- 会员列表 -->
+{{each memberInfos}}
+<tr>
+	<td>{{$value.nickname}}</td>
+	<td>{{$value.memberrank}}</td>
+	<!-- <td>{{$value.cellphone}}</td> -->
+	<td>{{200}}</td>
+	<td>{{$value.memberfrom}}</td>
+	<td>{{$value.activitycount}}</td>
+	<td>
+		<a href="javascript:;" onclick="alert('功能正在开发中')">编辑</a>
+		<span>|</span>
+		<a href="javascript:;" onclick="alert('功能正在开发中')">删除</a>
+		<span>|</span>
+		<a href="javascript:;" onclick="alert('功能正在开发中')">详情</a>
+		<span>|</span>
+		<a href="javascript:;" onclick="alert('功能正在开发中')">拉黑</a>
+	</td>
+</tr>
+{{/each}}

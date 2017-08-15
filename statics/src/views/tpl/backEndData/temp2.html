@@ -1,0 +1,33 @@
+<div tab-inner-wrap>
+	<div class="mb-10">
+		{{each countResult}}
+			<a class="btn btn-default {{if $index == 0}}active{{/if}}" href="javascript:;" widget-tab-head-inner>{{$value.channel}}</a>
+		{{/each}}
+	</div>
+
+	{{each countResult}}
+	<div widget-tab-content-inner class="{{if $index != 0}}none{{/if}}">
+		<table class="table striped mb-50" width="100%">
+			<thead>
+				<tr>
+					<td colspan="2">
+						{{$value.channel}}(总数：{{$value.totle ? $value.totle: 0}})
+					</td>
+				</tr>
+				<tr>
+					<td width="50%">关注时间</td>
+					<td width="50%">会员关注数</td>
+				</tr>
+			</thead>
+			<tbody>
+				{{each $value.results as value2 index2}}
+				<tr>
+					<td>{{value2.dt}}</td>
+					<td>{{value2.num}}</td>
+				</tr>
+				{{/each}}
+			</tbody>
+		</table>
+	</div>
+	{{/each}}
+</div>

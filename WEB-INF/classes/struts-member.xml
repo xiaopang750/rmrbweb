@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+    <constant name="struts.enable.DynamicMethodInvocation" value="true" />
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.ui.theme" value="simple"></constant>
+    <constant name="struts.action.extension" value="do,action,,"></constant>
+    
+	<package name="rmrb-member" namespace="/member" extends="rmrb-default">
+	     <action name="jump" class="com.rsdataservice.o2o.action.member.MemberAction" method="jump">
+				<result name="meberlist">../views/main/way/member.jsp</result>
+				<result name="memberdetail">../views/main/way/member_detail.jsp</result>
+				<result name="memberedit">../views/main/way/member_edit.jsp</result>
+		</action>
+	
+		<!-- 会员级别部分开始 -->
+		<!-- 进入会员级别页 -->
+		<action name="toMemberLevel" class="com.rsdataservice.o2o.action.member.MemberLevelAction">
+			<result>../views/main/way/level.jsp</result>
+		</action>
+		<!-- 进入会员级别编辑页 -->
+		<action name="toMemberLevelEditPage" class="com.rsdataservice.o2o.action.member.MemberLevelAction" method="toMemberLevelEditPage">
+			<result>../views/main/way/level_form.jsp</result>
+		</action>
+		<!-- 根据公司查看会员级别 -->
+		<action name="findMemberLevelByCorp" class="com.rsdataservice.o2o.action.member.MemberLevelAction" method="findAllByCorp">
+			<result type="json"></result>
+		</action>
+		<!-- 添加会员级别 -->
+		<action name="addMemberLevel" class="com.rsdataservice.o2o.action.member.MemberLevelAction" method="addMemberLevel">
+			<result type="json"></result>
+		</action>
+		<!-- 修改会员级别 -->
+		<action name="updateMemberLevel" class="com.rsdataservice.o2o.action.member.MemberLevelAction" method="updateMemberLevel">
+			<result type="json"></result>
+		</action>
+		<!-- 删除会员级别 -->
+		<action name="delMemberLevel" class="com.rsdataservice.o2o.action.member.MemberLevelAction" method="deleteMemberlevel">
+			<result type="json"></result>
+		</action>
+		<!-- 通过会员级别主键查看会员级别 -->
+		<action name="findMemberLevel" class="com.rsdataservice.o2o.action.member.MemberLevelAction" method="findByPkMemberlevel">
+			<result type="json"></result>
+		</action>
+		<!-- 会员级别部分结束 -->
+		
+		<!-- 会员信息-->
+		<action name="findMemberByCorp" class="com.rsdataservice.o2o.action.member.MemberAction" method="findByPages">
+				<result type="json"></result>
+		</action>
+		<action name="deleteMemberBatch" class="com.rsdataservice.o2o.action.member.MemberAction" method="deleteMemberByBatch">
+				<result type="json"></result>
+		</action>
+		
+		<action name="updateMemberByBatch" class="com.rsdataservice.o2o.action.member.MemberAction" method="updateMemberByBatch">
+				<result type="json"></result>
+		</action>
+		<action name="addMemberinfo" class="com.rsdataservice.o2o.action.member.MemberAction" method="addMemberinfo">
+				<result type="json"></result>
+		</action>
+		<action name="updateMemberinfo" class="com.rsdataservice.o2o.action.member.MemberAction" method="updateMemberinfo">
+				<result type="json"></result>
+		</action>
+		<action name="findMemberinfoById" class="com.rsdataservice.o2o.action.member.MemberAction" method="findMemberinfoById">
+				<result type="json"></result>
+		</action>
+		<action name="deteteMemberinfo" class="com.rsdataservice.o2o.action.member.MemberAction" method="deteteMemberinfo">
+				<result type="json"></result>
+		</action>
+		<action name="memberCondition" class="com.rsdataservice.o2o.action.member.MemberAction" method="findMemberFromAndStatus">
+				<result type="json"></result>
+		</action>
+		<action name="updateMemberGroupInfo" class="com.rsdataservice.o2o.action.member.MemberAction" method="updateMemberGroup">
+				<result type="json"></result>
+		</action>
+		<action name="findMember" class="com.rsdataservice.o2o.action.member.MemberAction" method="findMember">
+				<result type="json"></result>
+		</action>
+		
+		
+		<!-- 会员优惠券 -->
+		<action name="cancelCoupons" class="com.rsdataservice.o2o.action.member.MemberCouponsAction" method="cancelCoupons">
+				<result type="json"></result>
+		</action>
+		<action name="memberCouponsList" class="com.rsdataservice.o2o.action.member.MemberCouponsAction" method="findMemberCouponsByPkMember">
+				<result type="json"></result>
+		</action>
+		<action name="memberCouponsCondition" class="com.rsdataservice.o2o.action.member.MemberCouponsAction" method="findMemberCouponsByCoupons">
+				<result type="json"></result>
+		</action>
+		<action name="memberCouponsStatus" class="com.rsdataservice.o2o.action.member.MemberCouponsAction" method="findMemberCouponsStatus">
+				<result type="json"></result>
+		</action>
+		
+		<!-- 会员评论 -->
+		<action name="findComment" class="com.rsdataservice.o2o.action.member.MemberEvaluateAction" method="findComment">
+				<result type="json"></result>
+		</action>
+		<action name="findCommentByBlogId" class="com.rsdataservice.o2o.action.member.MemberEvaluateAction" method="findCommentByBlogId">
+				<result type="json"></result>
+		</action>
+		<action name="addBlogComment" class="com.rsdataservice.o2o.action.member.MemberEvaluateAction" method="addBlogComment">
+				<result type="json"></result>
+		</action>
+		<action name="replayComments" class="com.rsdataservice.o2o.action.member.MemberEvaluateAction" method="replayComments">
+				<result type="json"></result>
+		</action>
+		<action name="memberEvaluateList" class="com.rsdataservice.o2o.action.member.MemberEvaluateAction" method="findCommentByCondition">
+				<result type="json"></result>
+		</action>
+		<action name="findEvaluateInfo" class="com.rsdataservice.o2o.action.member.MemberEvaluateAction" method="findEvaluateInfo">
+				<result type="json"></result>
+		</action>
+		<!-- 会员活动 -->
+		<action name="memberActList" class="com.rsdataservice.o2o.action.member.MemberActivityAction" method="findMemberActByPkMember">
+				<result type="json"></result>
+		</action>
+		
+		<!-- 会员收藏 -->
+		<action name="memberCollectList" class="com.rsdataservice.o2o.action.member.MemberCollectAction" method="findMemberColleByPkMember">
+				<result type="json"></result>
+		</action>
+		
+		<!-- 会员积分 -->
+		<action name="memberIntegralList" class="com.rsdataservice.o2o.action.member.MemberIntegralAction" method="findMemberIntegralByPkMeber">
+				<result type="json"></result>
+		</action>
+		<action name="addMemberIntegral" class="com.rsdataservice.o2o.action.member.MemberIntegralAction" method="addMemberIntegral">
+				<result type="json"></result>
+		</action>
+		
+		<!-- 会员互动 -->
+		<action name="memberInteractList" class="com.rsdataservice.o2o.action.member.MemberInteractAction" method="findMemberInteractByPkMember">
+				<result type="json"></result>
+		</action>
+		
+		<!-- 会员分组 -->
+		<action name="addMGroup" class="com.rsdataservice.o2o.action.member.MemberGroupWebAction" method="addGroup">
+				<result type="json"></result>
+		</action>
+		<action name="updateMGroup" class="com.rsdataservice.o2o.action.member.MemberGroupWebAction" method="updateGroup">
+				<result type="json"></result>
+		</action>
+		<action name="deleteMCroup" class="com.rsdataservice.o2o.action.member.MemberGroupWebAction" method="deleteCroup">
+				<result type="json"></result>
+		</action>
+		<action name="findMGroup" class="com.rsdataservice.o2o.action.member.MemberGroupWebAction" method="findAllByPkCorp">
+				<result type="json"></result>
+		</action>
+		
+		
+		<!-- 进入在线客服页 -->
+		<action name="toOnline" class="com.rsdataservice.o2o.action.member.MemberManAction" method="toOnline">
+			<result>../views/main/member/online.jsp</result>
+		</action>
+		<!-- 进入智能答复页 -->
+		<action name="toAnswer" class="com.rsdataservice.o2o.action.member.MemberManAction" method="toAnswer">
+			<result>../views/main/member/autoReply.jsp</result>
+		</action>
+		<!-- 进入评论管理页 -->
+		<action name="toArgue" class="com.rsdataservice.o2o.action.member.MemberManAction" method="toArgue">
+			<result>../views/main/member/arg_manage.jsp</result>
+		</action>
+	</package>
+</struts>
+
+
+
+
+
+

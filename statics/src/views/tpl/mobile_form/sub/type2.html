@@ -1,0 +1,50 @@
+<!-- hidden-nav -->
+{{if typeof content.textNav !== "undefined"}}
+<div sub-wrap ctype="multi" data-name="{{content.textNav.modelName}}" class="none">
+	{{each content.textNav.modelData}}
+	<div sub-list>
+		<input type="text" value="{{$value.textName}}" sub-name="textName">
+		<input type="text" value="{{$value.fontColor}}" sub-name="fontColor">
+		<input type="text" value="{{$value.labelColor}}" sub-name="labelColor">
+		<div sub-name="pageUrl">{{$value.pageUrl}}</div>
+		<div sub-name="isused">{{$value.isused}}</div>
+	</div>	
+	{{/each}}
+</div>
+{{/if}}
+
+
+<!-- 背景图片 -->
+<div class="edit-pic mobile-edit-section" data-name="{{content.bgImg.modelName}}">
+	<div class="mobile-edit-title font_13 bold">
+		<span class="r-icon mobile-pic ml-8 mr-5"></span>
+		<span class="blue">背景图片：</span>
+	</div>
+	<div class="mobile-edit-content">
+		<div class="inner clearfix" sub-wrap ctype="sin" r-upload-wrap>
+			<span sub-list>
+				<input type="text" class="r-text fl mr-6 edit-main" value="{{content.bgImg.modelData.bgImgName}}" sub-name="bgImgName" r-upload-name>
+				<input type="hidden" value="{{content.bgImg.modelData.bgImgUrl}}" sub-name="bgImgUrl" r-upload-url>
+			</span>
+			<span class="r-btn mobile-upload fl" r-upload-btn></span>
+			<span class="fl red mt-5 ml-5 font-14">*</span>
+		</div>
+	</div>
+</div>
+
+
+<!-- 列表编辑 -->
+<div class="edit-card mobile-edit-section" sub-type data-name="{{content.modelars.modelName}}">
+	<div class="mobile-edit-title font_13 bold">
+		<span class="r-icon mobile-pic ml-8 mr-5"></span>
+		<span class="blue">列表编辑：</span>
+	</div>
+	<div class="mobile-edit-content">
+		<div class="inner clearfix" sub-wrap ctype="multi" data-ele="sort-wrap" now="{{content.modelars.modelData.length}}" min="8" max="10">
+			{{include '../../mobile_temp_list/module_list2'}}
+		</div>
+		<div class="tc pb-10">
+			<span class="r-btn mobile-list-add mt-10" mobile-list-add add-name="oTplList2"></span>
+		</div>
+	</div>
+</div>

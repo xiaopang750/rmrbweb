@@ -1,0 +1,4 @@
+/*TMODJS:{"version":1,"md5":"fa10fe2c01cd84bff5f796be05a057e7"}*/
+define(function(require) {
+    return require("../../templates")("box/mobile/selfUrlBox", '<div class="nr-box url-box"> <div class="clearfix mb-10"> <div class="inner-wrap"> <div class="select-wrap rel"> <div class="select-head" select-head> <span class="ml-10" head>已有的自定义链接</span> </div> <ul select class="select-content">  </ul> </div> <div class="clearfix"> <p> 链接名称： </p> <input type="text" class="form-control" holder url-name text="请输入链接名称"> </div> <div class="clearfix"> <p> 链接地址： </p> <input type="text" class="form-control" holder self-input text="请输入自定义链接地址"> </div> </div> </div> <div class="tc"> <a href="javascript:;" class="btn btn-primary" sc="confirm">确定</a> <a href="javascript:;" class="btn btn-danger" sc="close">取消</a> </div> <a href="javascript:;" class="close" sc="close">×</a> </div>');
+});

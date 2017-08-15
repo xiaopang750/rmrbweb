@@ -1,0 +1,38 @@
+
+<table class="table striped mb-50" width="100%">
+	<thead>
+		
+		<tr>
+			<td>日期</td>
+			<td>报名积分</td>
+			<td>签到积分</td>
+			<td>分享积分</td>
+		</tr>
+	</thead>
+	<tbody>
+		{{if results.length}}
+			{{each results}}
+			<tr>
+				<td>
+					{{$value.dt}}
+				</td>
+				<td>
+					{{$value.signUpNum}}
+				</td>
+				<td>
+					{{$value.signInNum}}
+				</td>
+				<td>
+					{{$value.browseNum}}
+				</td>
+			</tr>
+			{{/each}}
+		{{else}}
+		<tr>
+			<td colspan="4">
+				暂无数据
+			</td>
+		</tr>
+		{{/if}}
+	</tbody>
+</table>

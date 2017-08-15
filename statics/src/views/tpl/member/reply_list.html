@@ -1,0 +1,21 @@
+<!-- 评论列表 -->
+{{if mEvaluates.length}}
+{{each mEvaluates}}
+<li reply-list>
+	<div>
+		<span class="blue mr-10">{{$value.commentusername}}:</span>
+		<span class="mr-10 black">{{$value.evaluatecontent}}</span>
+		<span>{{$value.ts}}</span>
+	</div>
+	<div reply-area class="reply-area">
+		<textarea class="WB_media_expand" namer="{{$value.commentusername}}" cid="{{$value.commentid}}" reply-text></textarea>
+		<div class="clearfix">
+			<span class="send-btn fr bg-gray" send-reply>评论</span>
+		</div>
+	</div>
+	<a href="javascript:;" class="reply-btn" reply-btn>回复</a>
+</li>
+{{/each}}
+{{else}}
+<div class="tc" no-arg>暂无评论</div>
+{{/if}}

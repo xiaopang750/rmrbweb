@@ -1,0 +1,62 @@
+<!-- hidden-nav -->
+{{if typeof content.textNav !== "undefined"}}
+<div sub-wrap ctype="multi" data-name="{{content.textNav.modelName}}" class="none">
+	{{each content.textNav.modelData}}
+	<div sub-list>
+		<input type="text" value="{{$value.textName}}" sub-name="textName">
+		<input type="text" value="{{$value.fontColor}}" sub-name="fontColor">
+		<input type="text" value="{{$value.labelColor}}" sub-name="labelColor">
+		<div sub-name="pageUrl">{{$value.pageUrl}}</div>
+		<div sub-name="isused">{{$value.isused}}</div>
+	</div>	
+	{{/each}}
+</div>
+{{/if}}
+
+
+<!-- 文字部分 -->
+<div class="text-edit mobile-edit-section" data-name="{{content.modelars.modelName}}">
+	<div class="mobile-edit-title font_13 bold">
+		<span class="r-icon mobile-text-add ml-8 mr-5"></span>
+		<span class="blue">文字广告：</span>
+	</div>
+	<div class="mobile-edit-content clearfix" sub-wrap ctype="multi">
+		<div class="inner" sub-list>
+			<table cellspacing="0" cellpadding="0" border="0" width="100%">
+				<tr>
+					<td width="100">主标题内容：</td>
+					<td>
+						<input type="text" class="r-text edit-main fl" value="{{content.modelars.modelData[0].mainTitle}}" sub-name="mainTitle" text-limit text-max="10">
+						<span class="fl red mt-5 ml-5 font-14">*</span>
+					</td>
+				</tr>
+				<tr>
+					<td>主题图片：</td>
+					<td r-upload-wrap>
+						<input type="text" class="r-text fl mr-6 edit-main" value="{{content.modelars.modelData[0].iconBgName}}" sub-name="iconBgName" r-upload-name>
+						<input type="hidden" value="{{content.modelars.modelData[0].iconBgUrl}}" sub-name="iconBgUrl" r-upload-url>
+						<span class="r-btn mobile-upload fl" r-upload-btn iscut="true" w="40" h="30" wmin="320" iscale="Y"></span>
+						<span class="fl red mt-5 ml-5 font-14">*</span>
+					</td>
+				</tr>
+				<!-- <tr>
+					<td>主标题颜色：</td>
+					<td>
+						<input type="text" class="r-text edit-color" value="{{content.modelars.modelData[0].mainFontColor}}" sub-name="mainFontColor">
+					</td>
+				</tr> -->
+				<tr>
+					<td>正文：</td>
+					<td class="baidu-editor-wrap">
+						<div>
+							<span class="red mt-5 ml-5 font-14">*</span>
+						</div>
+						<div>
+							<textarea sub-name="intro" id="deji" baidu-editor class="baidu-editor">{{xss content.modelars.modelData[0].intro}}</textarea>
+						</div>
+					</td>
+				</tr>									
+			</table>
+		</div>
+	</div>	
+</div>

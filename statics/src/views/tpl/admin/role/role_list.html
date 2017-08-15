@@ -1,0 +1,21 @@
+<!-- 角色权限列表 -->
+<div class="fl list-wrap">
+	<div class="tc mt-10">
+		<span>未拥有<span class="bold red">{{roleName}}</span>角色的用户</span>
+	</div>
+	<ul sc="nohased">
+		{{each noUserInfos}}
+			<li data-ele="list" lid="{{$value.cuserid}}" appendName="hased" orgName="nohased">{{$value.userName}}</li>
+		{{/each}}
+	</ul>
+</div>
+<div class="fr list-wrap">
+	<div class="tc mt-10">
+		<span>拥有<span class="bold red">{{roleName}}</span>角色的用户</span>
+	</div>
+	<ul sc="hased">
+		{{each isUserInfos}}
+			<li data-ele="list" lid="{{$value.cuserid}}" appendName="nohased" orgName="hased">{{$value.userName}}</li>
+		{{/each}}
+	</ul>
+</div>

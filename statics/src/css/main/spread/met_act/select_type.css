@@ -1,0 +1,34 @@
+/**
+ *description:选择界面风格
+ *author:fanwei
+ *date:2014/07/27
+ */
+
+.met-act-select .head-list {
+	width: 100%;
+	height: 36px;
+	position: relative;
+}
+
+.met-act-select .head-list .line {
+	width: 85%;
+	height: 0px;
+	border-bottom:1px dashed #909090;
+	overflow: hidden;
+	position: absolute;
+	right:0;
+	top:16px;
+}
+
+.select-wrap {
+	width: 698px;
+}
+
+.select-wrap .mobile-view-wrap {
+	cursor: pointer;
+	margin-right:150px;
+}
+
+.select-wrap-inner {
+	width: 848px;
+}

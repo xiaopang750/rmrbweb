@@ -1,0 +1,220 @@
+/**
+ *description:网站全局icon
+ *author:fanwei
+ *date:2014/07/22
+ */
+
+.r-icon {
+	display: inline-block;
+	background-image:url('../../../assets/lib/icon/icon.png');
+	background-repeat:no-repeat;
+	vertical-align: middle;
+}
+
+.r-icon-nav {
+	display: inline-block;
+	background-image:url('../../../assets/lib/icon/tree.png');
+	background-repeat:no-repeat;
+	vertical-align: middle;
+}
+
+/* ------ 左侧导航图标start ------ */
+.r-icon-nav.tag {
+	width: 29px;
+	height: 32px;
+	background-position: 0 0;
+}
+
+
+.r-icon-nav.mobile {
+	width: 18px;
+	height: 28px;
+	background-position: -7px -42px;
+}
+
+.r-icon-nav.mobile.active {
+	background-position: -7px -80px;
+}
+
+.r-icon-nav.way {
+	width: 26px;
+	height: 28px;
+	background-position: -3px -118px;
+}
+
+.r-icon-nav.way.active {
+	background-position: -3px -153px;
+}
+
+.r-icon-nav.spread {
+	width: 30px;
+	height: 30px;
+	background-position: 0 -188px;
+}
+.r-icon-nav.spread.active {
+	background-position: 0 -228px;
+}
+
+.r-icon-nav.member {
+	width: 25px;
+	height: 31px;
+	background-position: -3px -268px;
+}
+.r-icon-nav.member.active {
+	background-position: -3px -309px;
+}
+
+.r-icon-nav.admin {
+	width: 31px;
+	height: 31px;
+	background-position: -1px -424px;
+}
+.r-icon-nav.admin.active {
+	background-position: -1px -465px;
+}
+
+
+.r-icon-nav.data {
+	width: 27px;
+	height: 26px;
+	background-position: -3px -350px;
+}
+.r-icon-nav.data.active {
+	background-position: -3px -387px;
+}
+
+/* ------ 左侧导航图标end ------ */
+
+
+/* ------ 手机建站图标start ------ */
+
+/* 标识图片 */
+.r-icon.mobile-pic {
+	width: 21px;
+	height: 19px;
+	background-position: 0 -10px;
+}
+
+/* 标识图片 */
+.r-icon.mobile-tag {
+	width: 21px;
+	height: 20px;
+	background-position: 0 -53px;
+}
+
+/* 标签编辑 */
+.r-icon.mobile-add {
+	width: 21px;
+	height: 18px;
+	background-position: 0 -99px;
+}
+
+/* 轮播广告 */
+.r-icon.mobile-text-add {
+	width: 21px;
+	height: 21px;
+	background-position: 0 -140px;
+}
+
+/* 列表编辑 */
+.r-icon.mobile-list {
+	width: 21px;
+	height: 18px;
+	background-position: 0 -183px;
+}
+
+.r-icon.mobile-edit {
+	width: 17px;
+	height: 16px;
+	background-position: 0 -230px;
+}
+
+.r-icon.mobile-write {
+	width: 37px;
+	height: 37px;
+	background-position: -53px 0;
+}
+
+.r-icon.mobile-select {
+	width: 37px;
+	height: 37px;
+	background-position: -53px -46px;
+}
+
+.r-icon.mobile-dec {
+	width: 13px;
+	height: 13px;
+	background-position: -53px -100px;
+}
+
+.r-icon.mobile-dec2 {
+	width: 11px;
+	height: 15px;
+	background-position: -53px -123px;
+}
+
+.r-icon.mobile-tree-list {
+	width: 24px;
+	height: 37px;
+	background-position: -56px -144px;
+}
+
+.r-icon.mobile-tree-dec {
+	width: 10px;
+	height: 10px;
+	background-position: -53px -191px;
+}
+
+.r-icon.mobile-hased-detail {
+	width: 17px;
+	height: 18px;
+	background-position: -127px -120px;
+}
+
+/* ------ 手机建站图标end ------ */
+
+
+
+/* ------ 会议邀约/活动start ------ */
+
+.r-icon.met-set {
+	width: 14px;
+	height: 14px;
+	background-position: -53px -212px;
+}
+
+.r-icon.met-edit {
+	width: 11px;
+	height: 11px;
+	background-position: -53px -243px;
+}
+
+.r-icon.met-remove {
+	width: 9px;
+	height: 9px;
+	background-position: -53px -269px;
+}
+
+.r-icon.met-send {
+	width: 10px;
+	height: 13px;
+	background-position: -53px -292px;
+}
+
+.r-icon.met-head {
+	width: 37px;
+	height: 36px;
+	line-height: 36px;
+	text-align: center;
+	color:#fff;
+	background-position: -127px 0;
+}
+
+.r-icon.met-head.active {
+	width: 37px;
+	height: 37px;
+	background-position: -127px -46px;
+}
+
+/* ------ 会议邀约/活动end ------ */
+

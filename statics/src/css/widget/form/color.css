@@ -1,0 +1,28 @@
+/**
+ *description:颜色选择组件
+ *author:fanwei
+ *date:2014/08/01
+ */
+
+.widget-color-wrap {
+	border-collapse: collapse;
+	background: #fff;
+	padding:10px;
+	border:1px solid #ccc;
+}
+
+.widget-color-wrap td {
+	text-align: center;
+}
+
+.widget-color-dot {
+	width: 10px;
+	height: 10px;
+	display: inline-block;
+	border:1px solid #ccc;
+	border-radius: 3px;
+}
+
+.widget-color-dot.active { 
+	border-color: #000;
+}

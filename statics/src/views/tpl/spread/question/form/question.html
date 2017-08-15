@@ -1,0 +1,9 @@
+<h3 class="mb-20">{{questionname}}</h3>
+<ul>
+	{{each options}}
+	<li>
+		<input type="radio" name="test" disabled="disabled">
+		<span>{{$value.content}}</span>
+	</li>
+	{{/each}}
+</ul>

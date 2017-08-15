@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+    <constant name="struts.enable.DynamicMethodInvocation" value="true" />
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.ui.theme" value="simple"></constant>
+    <constant name="struts.action.extension" value="do,action,,"></constant>
+    
+	<package name="rmrb-jumppage" namespace="/jumppage" extends="rmrb-default">
+		<!-- 系统首页面 -->
+		<action name="indexPage" class="com.rsdataservice.o2o.action.jumppage.JumpPageAction" method="indexPage">
+			<result name="toIndexPage">../views/main/index.jsp</result>
+		</action>
+	
+		<!-- 问卷库首页 -->
+		<action name="surveyIndex" class="com.rsdataservice.o2o.action.jumppage.JumpPageAction" method="surveyIndex">
+			<result name="toSurveyIndex">../views/main/spread/question/index.jsp</result>
+		</action>
+		
+		<!-- 问卷库创建页 -->
+		<action name="surveyCreate" class="com.rsdataservice.o2o.action.jumppage.JumpPageAction" method="surveyCreate">
+			<result name="toCreate">../views/main/spread/question/create.jsp</result>
+		</action>
+		
+		<!-- 问卷库/问题库添加编辑页 -->
+		<action name="surveyQuestion" class="com.rsdataservice.o2o.action.jumppage.JumpPageAction" method="surveyQuestionEdit">
+			<result name="toAddEdit">../views/main/spread/question/form.jsp</result>
+		</action>
+		
+		<!-- 问题库列表页 -->
+		<action name="QuestionList" class="com.rsdataservice.o2o.action.jumppage.JumpPageAction" method="questionList">
+			<result name="toKuList">../views/main/spread/question/ku.jsp</result>
+		</action>
+		
+		<!-- 问卷库列表页 -->
+		<action name="surveyList" class="com.rsdataservice.o2o.action.jumppage.JumpPageAction" method="surveyList">
+			<result name="tosurveyList">../views/main/spread/question/list.jsp</result>
+		</action>
+		<!-- 进入日历页 -->
+		<action name="toCalendar" class="com.rsdataservice.o2o.action.jumppage.JumpPageAction" method="toCalendar">
+			<result>../views/main/admin/calendar/index.jsp</result>
+		</action>
+		<!-- 问题选项统计页 -->
+		<action name="surveyCount" class="com.rsdataservice.o2o.action.jumppage.JumpPageAction" method="surveyCount">
+			<result name="toSurveyCount">../views/main/spread/question/count.jsp</result>
+		</action>
+		
+	    <!-- 忘记密码列表页 -->
+	    <action name="msgList" class="com.rsdataservice.o2o.action.jumppage.JumpPageAction" method="sysMessageList">
+			<result name="toPwdMsgList">../views/main/admin/forget_pass/list.jsp</result>
+		</action>
+		<!-- 忘记密码编辑页 -->
+	    <action name="msgEdit" class="com.rsdataservice.o2o.action.jumppage.JumpPageAction" method="editPage">
+			<result name="toPwdMsgEdit">../views/main/admin/forget_pass/add.jsp</result>
+		</action>
+		<!-- 忘记密码详细页 -->
+	    <action name="msgDetail" class="com.rsdataservice.o2o.action.jumppage.JumpPageAction" method="detailPage">
+			<result name="toPwdMsgDetail">../views/main/spread/question/count.jsp</result>
+		</action>
+		
+		<!-- 行业类型列表页 -->
+	    <action name="industryList" class="com.rsdataservice.o2o.action.jumppage.JumpPageAction" method="dataListPage">
+			<result name="toindustryList">../views/main/admin/industry/list.jsp</result>
+		</action>
+		
+		<!-- 行业类型列表单 -->
+	    <action name="industryForm" class="com.rsdataservice.o2o.action.jumppage.JumpPageAction" method="dataEditPage">
+			<result name="toindustryForm">../views/main/admin/industry/form.jsp</result>
+		</action>
+		
+		<!-- 优惠券详情 -->
+	    <action name="saleDetail" class="com.rsdataservice.o2o.action.jumppage.JumpPageAction" method="couponsRecieveDetail">
+			<result name="tosaleDetail">../views/main/spread/elc_sale/detail.jsp</result>
+		</action>
+		
+		
+		<!-- 关键字首页-->
+	    <action name="keywordIndex" class="com.rsdataservice.o2o.action.jumppage.JumpPageAction" method="keywordIndex">
+			<result name="toKeywordIndex">../views/main/admin/keywords/index.jsp</result>
+		</action>
+		
+		<!-- 智能答复编辑 -->
+	    <action name="autoReplyForm" class="com.rsdataservice.o2o.action.jumppage.JumpPageAction" method="autoReplyForm">
+			<result name="toAutoReplyForm">../views/main/member/autoReply_add.jsp</result>
+		</action>
+		<!-- 评论列表 -->
+	    <action name="commentList" class="com.rsdataservice.o2o.action.jumppage.JumpPageAction" method="commentList">
+			<result name="toCommentList">../views/main/member/arg_detail.jsp</result>
+		</action>
+		<!-- 用户编辑 -->
+	    <action name="userForm" class="com.rsdataservice.o2o.action.jumppage.JumpPageAction" method="userForm">
+			<result name="toUserForm">../views/main/admin/user/add.jsp</result>
+		</action>
+		<!-- 角色编辑 -->
+	    <action name="roleForm" class="com.rsdataservice.o2o.action.jumppage.JumpPageAction" method="roleForm">
+			<result name="toRoleForm">../views/main/admin/role/add.jsp</result>
+		</action>
+		<!-- 角色用户列表 -->
+	    <action name="roleUserList" class="com.rsdataservice.o2o.action.jumppage.JumpPageAction" method="roleUserList">
+			<result name="toRoleUserList">../views/main/admin/role/role_list.jsp</result>
+		</action>
+		<!-- 公司权限分配页 -->
+	    <action name="corpPower" class="com.rsdataservice.o2o.action.jumppage.JumpPageAction" method="corpPower">
+			<result name="toCorpPower">../views/main/admin/power/power.jsp</result>
+		</action>
+		
+		<!--手机网站  页面列表页 -->
+	    <action name="mobilePageList" class="com.rsdataservice.o2o.action.jumppage.JumpPageAction" method="mobilePageList">
+			<result name="toMobilePageList">../views/main/mobile/mobile_list.jsp</result>
+		</action>
+		<!--手机网站  页面新建页 -->
+	    <action name="mobilePageAdd" class="com.rsdataservice.o2o.action.jumppage.JumpPageAction" method="mobilePageAdd">
+			<result name="toMobilePageAdd">../views/main/mobile/mobile_select_sub.jsp</result>
+		</action>
+		<!--手机网站  页面编辑页 -->
+	    <action name="mobileEdit" class="com.rsdataservice.o2o.action.jumppage.JumpPageAction" method="mobileEdit">
+			<result name="toMobileEdit">../views/main/mobile/mobile_add_edit.jsp</result>
+		</action>
+		<!--手机网站  站点新增页面 -->
+	    <action name="mobileAdd" class="com.rsdataservice.o2o.action.jumppage.JumpPageAction" method="mobileAdd">
+			<result name="toMobileAdd">../views/main/mobile/mobile_build.jsp</result>
+		</action>
+		<!--手机网站  已有站点列表页 -->
+	    <action name="mobileList" class="com.rsdataservice.o2o.action.jumppage.JumpPageAction" method="mobileList">
+			<result name="toMobileList">../views/main/mobile/mobile_hased.jsp</result>
+		</action>
+		<!--会员管理  详情页 -->
+	    <action name="memberDetail" class="com.rsdataservice.o2o.action.jumppage.JumpPageAction" method="memberDetail">
+			<result name="toMemberDetail">../views/main/way/member_detail.jsp</result>
+		</action>
+		<!--会员管理  列表页 -->
+	    <action name="memberList" class="com.rsdataservice.o2o.action.jumppage.JumpPageAction" method="memberList">
+			<result name="toMemberList">../views/main/way/member.jsp</result>
+		</action>
+		<!--会员管理  编辑页面-->
+	    <action name="memberForm" class="com.rsdataservice.o2o.action.jumppage.JumpPageAction" method="memberForm">
+			<result name="toMemberForm">../views/main/way/member_edit.jsp</result>
+		</action>
+		<!--优惠券  编辑页面-->
+	    <action name="couponsForm" class="com.rsdataservice.o2o.action.jumppage.JumpPageAction" method="couponsForm">
+			<result name="toCouponsForm">../views/main/spread/elc_sale/build.jsp</result>
+		</action>
+		<!--优惠券  列表页面-->
+	    <action name="couponsList" class="com.rsdataservice.o2o.action.jumppage.JumpPageAction" method="couponsList">
+			<result name="toCouponsList">../views/main/spread/elc_sale/list.jsp</result>
+		</action>
+		<!--优惠券  列表页面-->
+	    <action name="couponsIndex" class="com.rsdataservice.o2o.action.jumppage.JumpPageAction" method="couponsIndex">
+			<result name="toCouponsIndex">../views/main/spread/elc_sale/index.jsp</result>
+		</action>
+	</package>
+</struts>

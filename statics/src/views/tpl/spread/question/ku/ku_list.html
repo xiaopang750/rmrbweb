@@ -1,0 +1,22 @@
+{{if questions.length}}
+	<tr>
+		<td width="10%">序号</td>
+		<td width="70%">问题</td>
+		<td width="20%">操作</td>
+	</tr>
+	{{each questions}}
+	<tr>
+		<td>Q{{$index + 1}}</td>
+		<td>{{$value.questionname}}</td>
+		<td>
+			<a href="{{getUrl 'questionStorageEdit'}}&way={{$value.reserve1}}&kid={{$value.pkQuestion}}">编辑</a>
+			<span>|</span>
+			<a href="javascript:;" remove aid="{{$value.pkQuestion}}">删除</a>
+		</td>
+	</tr>
+	{{/each}}
+{{else}}
+<tr>
+	<td colspan="3">暂无数据</td>
+</tr>
+{{/if}}

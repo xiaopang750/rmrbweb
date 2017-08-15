@@ -1,0 +1,11 @@
+/*TMODJS:{"version":1,"md5":"e8fb70ecb22699ade35c26eca568e546"}*/
+define(function(require) {
+    return require("../../templates")("admin/menu/form", function($data) {
+        "use strict";
+        var $utils = this, $escape = ($utils.$helpers, $utils.$escape), corpcode = $data.corpcode, corpname = $data.corpname, $out = "";
+        return $out += ' <table cellpadding="0" cellspacing="0" border="0" width="600" class="table nohover"> <tr> <td width="150">菜单名称：</td> <td> <div> <input type="text" class="form-control col-xs-8" form_check="sys" ischeck="true" name="corp.corpcode" tip="此项为必填" wrong="企业编码为6-15位字母，数字或中文" re="((\\d|[a-zA-Z]|[\\u4e00-\\u9fa5]){6,15})" value="', 
+        $out += $escape(corpcode), $out += '"> <span class="fl red mt-5 ml-5 font-14">*</span> <span class="gray fl ml-5 mt-5">(<span class="red">*</span>号标记的为必填项)</span> </div> </td> </tr> <tr> <td width="150">菜单地址：</td> <td> <div> <input type="text" class="form-control col-xs-8" form_check="sys" ischeck="true" name="corp.corpname" tip="此项为必填" wrong="企业名称不能超过45个字" re="(.{1,45})" value="', 
+        $out += $escape(corpname), $out += '"> <span class="fl red mt-5 ml-5 font-14">*</span> </div> </td> </tr> <tr> <td></td> <td class="tl"> <a href="javascript:;" class="btn btn-primary pl-50 pr-50" script-role="confirm-btn">保存</a> </td> </tr> </table>', 
+        new String($out);
+    });
+});

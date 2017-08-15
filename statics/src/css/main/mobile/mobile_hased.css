@@ -1,0 +1,113 @@
+/**
+ *description:已有手机网站
+ *author:fanwei
+ *date:2014/07/22
+ */
+.mobile-hased {
+	width: 862px;
+	margin:15px auto 0 auto;
+	overflow: hidden;
+}
+
+.mobile-hased ul {
+	width: 882px;
+}
+
+.mobile-hased ul li.hased, .mobile-hased ul li.build {
+	width: 274px;
+	height: 580px;
+	float: left;
+	margin:0 20px 20px 0;
+	position: relative;
+	cursor: pointer;
+}
+
+.mobile-hased ul li.hased .self {
+	padding-top: 210px;
+	position: relative;
+	z-index: 500;
+	color:#fff;
+}
+
+.mobile-hased ul li.hased .self img {
+	border-radius: 10px;
+}
+
+.mobile-hased ul li.hased .mobile-remove {
+	position: absolute;	
+	z-index: 200;
+	right:20px;
+	top:20px;
+	display: none;
+}
+
+.mobile-hased .mobile-lay {
+	width: 235px;
+	/* height: 100px; */
+	/* background: rgba(0,0,0,0.5); */
+	z-index: 500;
+	position: absolute;
+	bottom: 80px;
+	left:20px;
+}
+
+.mobile-hased .mobile-lay .shadow {
+	width: 100%;
+	height:100%;
+	background: #000;
+	opacity: 0.5;
+	filter:alpha(opacity=50);
+	position: absolute;
+	left:0;
+	top:0;
+	z-index: 1;
+}
+
+.mobile-hased .mobile-lay .content {
+	position: relative;
+	left:0;
+	top:0;
+	z-index: 2;
+}
+
+.mobile-hased .inner {
+	padding:10px;
+}
+
+.mobile-hased .inner p {
+	margin-bottom: 5px;
+}
+
+.mobile-hased .detail {
+	width: 50px;
+	height: 100%;
+	background: #36373a;
+	position: absolute;
+	right:0;
+	top:0;
+	display: block;
+}
+
+.mobile-hased .detail .r-icon {
+	position: absolute;
+	margin:-9px 0 0 -8px;
+	left:50%;
+	top:50%;
+}
+
+.domain-related {
+	text-align: center;
+	width: 100%;
+	position: absolute;
+	top:110px;
+	z-index: 600;
+}
+
+.domain-related a {
+	color:#ffaa3d;
+}
+
+
+
+
+ 

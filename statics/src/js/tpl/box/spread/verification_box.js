@@ -1,0 +1,4 @@
+/*TMODJS:{"version":3,"md5":"e4b4e36b19b87cf2155d57effe62bb47"}*/
+define(function(require) {
+    return require("../../templates")("box/spread/verification_box", '<div class="nr-box verification"> <div class="inner-wrap"> <a href="javascript:;" class="close" sc="close">×</a> <select verification-select class="form-control select-member"> <option value="">请选择核销的会员</option> </select> <div class="clearfix mb-50 code-area" code-area> <span class="fl mt-5 mr-10">验证码：</span> <input type="text" class="fl form-control col-xs-8" code-input placeholder="请输入手机号码"> </div> </div> <div class="tc btn-area"> <a href="javascript:;" class="btn btn-primary" confirm>确定</a> <a href="javascript:;" class="btn btn-danger" sc="close">取消</a> </div> </div>');
+});

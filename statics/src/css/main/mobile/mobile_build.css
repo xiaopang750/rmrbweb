@@ -1,0 +1,44 @@
+/**
+ *description:手机建站-新建网站
+ *author:fanwei
+ *date:2014/07/22
+ */
+
+
+.mobile-build .site-name {
+	width: 253px;
+}
+
+.write-area td {
+	padding-bottom: 10px;
+}
+
+.select-wrap {
+	width: 912px;
+}
+
+.select-wrap .mobile-view-wrap {
+	margin-right: 30px;
+}
+
+.mobile-view-wrap {
+	cursor: pointer;
+}
+
+.write-area .form-control {
+	width: 300px;
+}
+
+.judge-name {
+	color:red;
+	font-size: 14px;
+	font-weight: bold;
+	margin-left:10px;
+	display: none;
+}
+
+.judge-name.active {
+	display: block;
+}
+
+

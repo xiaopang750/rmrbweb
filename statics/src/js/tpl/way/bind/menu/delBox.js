@@ -1,0 +1,4 @@
+/*TMODJS:{"version":1,"md5":"cfd0a4666f9fbc08e4d6cf1a902548e4"}*/
+define(function(require) {
+    return require("../../../templates")("way/bind/menu/delBox", ' <div class="weixin-menu-add-box confirm" sc="weixin-remove-confirm"> <div class="title"> <h3>温馨提示</h3> <a href="javascript:;" class="weixin-menu-close" sc="close">关闭</a> </div> <div class="content yahei clearfix"> <div class="weixin-warning fl mr-10"></div> <div class="fl mt_5"> <h3 class="font_16 mb-5 bold">删除确认</h3> <p class="gray font-14">删除后该菜单下设置的消息将不会被保存</p> </div> </div> <div class="confrim-area"> <a href="javascript:;" sc="confirm" class="btn btn-primary add small mr-10">确认</a> <a href="javascript:;" sc="close" class="btn btn-default rank small">取消</a> </div> </div>');
+});

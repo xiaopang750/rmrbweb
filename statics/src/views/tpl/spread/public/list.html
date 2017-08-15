@@ -1,0 +1,65 @@
+<!-- 历史活动查询列表 -->
+<li class="main-list">
+	<div class="list">
+		<div class="inner">
+			<div class="add-area tc">
+				<a class="r-btn mobile-build-btn" href="{{getUrl 'awardEdit'}}{{'&parentActivity='}}{{getUrl 'pkActivity'}}"></a>
+				<br>
+				<span class="font-14">新建</span>
+			</div>
+		</div>
+	</div>
+</li>
+{{each activities}}
+<li class="main-list">
+	<div class="list show rel">
+		<div class="top rel ml-20 pt-30 font-14">
+			<ul>
+				<li>名称：<span class="bold black">{{$value.activitytopic}}</span></li>
+				<li>发布状态：
+					<span class="bold black">
+						{{if $value.activitystatus == "001"}}
+						<span class="red">新建</span>
+						{{else if $value.activitystatus == "002"}}
+						<span class="blue">等待推送</span>
+						{{else if $value.activitystatus == "003"}}
+						<span class="yellow">进行中</span>
+						{{/if}}
+					</span>
+				</li>
+				<li>创建时间：<span class="bold black">{{$value.ts}}</span></li>
+				<li>创建人：<span class="bold black">{{$value.activityiowner}}</span></li>
+			</ul>
+		</div>
+		<div class="bot">
+			<ul class="clearfix font-14">
+				<li>
+					<span class="r-icon met-edit mr-6"></span>
+					<a href="{{getUrl 'awardEdit'}}&parentActivity={{$value.parentActivity}}&pkActivity={{$value.pkActivity}}">编辑</a>
+				</li>
+
+				<li>
+					<span class="r-icon met-remove mr-6"></span>
+					<a href="javascript:;" remove rid="{{$value.pkActivity}}">删除</a>
+				</li>
+				<!-- <li>
+					<span class="r-icon met-set mr-6 ml-6"></span>
+					<a href="javascript:;" box-set lid="{{$value.pkActivity}}">发布渠道</a>
+				</li> -->
+				<li>
+					<span class="r-icon met-send mr-6"></span>
+					<a href="javascript:;" send sid="{{$value.pkActivity}}">推送</a>
+				</li>
+				
+			</ul>
+			<ul class="clearfix font-14">
+				{{each menus as $value2 index}}
+				<li>
+					<a href="..{{$value2.labelhref}}{{$value.pkActivity}}">{{$value2.labelName}}</a>
+				</li>
+				{{/each}}
+			</ul>	
+		</div>
+	</div>
+</li>
+{{/each}}	

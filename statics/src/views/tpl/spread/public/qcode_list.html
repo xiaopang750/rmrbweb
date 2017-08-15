@@ -1,0 +1,15 @@
+<ul class="mb-20 clearfix">
+	{{each qrCodes}}
+		{{if $value.picUrl}}
+		<li>
+			<dl>
+				<dt>
+					<img src="{{$value.picUrl}}">
+				</dt>
+				<dd>{{$value.accountName}}</dd>
+			</dl>
+		</li>
+		{{/if}}
+	{{/each}}
+</ul>
+<p>{{promptMsg}}</p>

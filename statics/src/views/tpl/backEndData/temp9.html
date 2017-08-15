@@ -1,0 +1,54 @@
+<div tab-inner-wrap>
+	<div class="mb-10">
+		{{each results}}
+			<a class="btn btn-default {{if $index == 0}}active{{/if}}" href="javascript:;" widget-tab-head-inner>{{$value.type}}</a>
+		{{/each}}
+	</div>
+
+	{{each results}}
+	<table class="table striped mb-50 {{if $index != 0}}none{{/if}}" width="100%" widget-tab-content-inner>
+		<thead>
+			<tr>
+				<td colspan="4">{{$value.type}}&nbsp;&nbsp;会员总数:{{$value.memAddNum}}</td>
+			</tr>
+			<tr>
+				<td>活动类型</td>
+				<td>活动阅读量</td>
+				<td>活动分享量</td>
+				<td>活动会员参与量</td>
+			</tr>
+		</thead>
+		<tbody>
+			{{if $value.results.length}}
+				{{each $value.results as value2 index2}}
+				<tr>
+					<td>
+						{{value2.typeName}}
+					</td>
+					<td>
+						{{if $value.type == "微信"}}
+							{{value2.readNumWx}}
+						{{else}}
+							{{value2.readNumWb}}	
+						{{/if}}
+					</td>
+					<td>
+						{{value2.fxNum}}
+					</td>
+					<td>
+						{{value2.cyNum}}
+					</td>
+				</tr>
+				{{/each}}
+			{{else}}
+			<tr>
+				<td colspan="4">
+					暂无数据
+				</td>
+			</tr>
+			{{/if}}
+		</tbody>
+	</table>
+	{{/each}}
+
+</div>

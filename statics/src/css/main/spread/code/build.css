@@ -1,0 +1,105 @@
+/**
+ *description:先下活动二维码
+ *author:fanwei
+ *date:2014/08/09
+ */
+.code-wrap {
+	width: 800px;
+	margin:50px auto 0 auto;
+}
+
+.code-input {
+	width: 490px;
+	height: 280px;
+	border:1px solid #ccc;
+	padding:5px;
+	border-radius: 3px;
+}
+
+.code-input-left {
+	width: 380px;
+}
+
+.code-input-right {
+	width: 380px;
+}
+
+.code-input-wrap {
+	width: 100%;
+}
+
+.list-wrap {
+	width: 100%;
+	min-height: 500px;
+}
+
+
+.code-td table {
+	display: inline-block;
+}
+
+.code-td canvas {
+	width: 80%;
+}
+
+.code-td img {
+	width: 80%;
+}
+
+.build-btn {
+	border: 1px solid #d6d6d6;
+	margin-right: 10px;
+	border-radius: 3px;
+	background: #f3f3f1;
+	padding: 8px 25px;
+	font-size: 18px;
+	color: #333;
+	display: inline-block;
+	text-align: center;
+}
+
+.build-btn:hover {
+	color: #333;
+}
+
+.range-area {
+	width: 200px;
+	height: 18px;
+	position: relative;
+}
+
+.range-area .line {
+	width: 100%;
+	height: 2px;
+	background: #a0a0a0;
+	position: absolute;
+	left:0;
+	top:50%;
+	margin-top:-1px;
+	overflow: hidden;
+}
+
+.range-area .cube {
+	width: 10px;
+	height: 18px;
+	background: #434343;
+	margin-top:-9px;
+	left:0;
+	top:50%;
+	position: absolute;
+}
+
+.range-area .cube:hover {
+	background: #1c8821;
+}
+
+.change-view {
+	display: inline-block;
+	width: 30px;
+	height: 16px;
+	border:1px solid #ccc;
+	text-align: center;
+	line-height: 16px;
+}
+
+

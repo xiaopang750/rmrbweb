@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+    <constant name="struts.enable.DynamicMethodInvocation" value="true" />
+    <constant name="struts.devMode" value="false" />
+    <constant name="struts.ui.theme" value="simple"></constant>
+    <constant name="struts.action.extension" value="do,action,,"></constant>
+
+	<package name="rmrb-wj" namespace="/wj" extends="rmrb-default">
+		
+		<action name="wjObject*" class="com.rockstars.o2o.action.wj.WJObjectAction" method="{1}">
+			<result type="json"></result>
+		</action>
+		<action name="allWjQuestion" class="com.rockstars.o2o.action.wj.WJObjectAction" method="findQuestionAndSelectByPkobject">
+			<result type="json"></result>
+		</action>
+		<action name="updateWjObject" class="com.rockstars.o2o.action.wj.WJObjectAction" method="updateRmrbWjObject">
+			<result type="json"></result>
+		</action>
+		<!-- 问卷问题 -->
+		<action name="wjQuestion*" class="com.rockstars.o2o.action.wj.WJQuestionAction" method="{1}">
+			<result type="json"></result>
+		</action>
+		<action name="addWjQuesAndOption" class="com.rockstars.o2o.action.wj.WJQuestionAction" method="addWjQuestionAndOption">
+			<result type="json"></result>
+		</action>
+		<action name="deleteQuestion" class="com.rockstars.o2o.action.wj.WJQuestionAction" method="deleteOneOrMoreQues">
+			<result type="json"></result>
+		</action>
+		<action name="updateQuestion" class="com.rockstars.o2o.action.wj.WJQuestionAction" method="updatequestion">
+			<result type="json"></result>
+		</action>
+		
+		<!--  -->
+		<action name="wjAnswer*" class="com.rockstars.o2o.action.wj.WJAnswerAction" method="{1}">
+			<result type="json"></result>
+		</action>
+		<!--选项  -->
+		<action name="wjSelect*" class="com.rockstars.o2o.action.wj.WJSelectAction" method="{1}">
+			<result type="json"></result>
+		</action>
+		<action name="updateSelect" class="com.rockstars.o2o.action.wj.WJSelectAction" method="updateRmrbWjSelect">
+			<result type="json"></result>
+		</action>
+		<action name="deleteSelect" class="com.rockstars.o2o.action.wj.WJSelectAction" method="deleteRmrbWjSelect">
+			<result type="json"></result>
+		</action>
+		
+		
+		<action name="wjReply*" class="com.rockstars.o2o.action.wj.WJReplyAction" method="{1}">
+			<result type="json"></result>
+		</action>
+	</package>
+</struts>

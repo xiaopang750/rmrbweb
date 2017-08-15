@@ -1,0 +1,76 @@
+<!-- 会议列表 -->
+<li class="main-list">
+	<div class="list">
+		<div class="inner">
+			<div class="add-area tc">
+				<a class="r-btn mobile-build-btn" data-ele="build-btn" href="{{getUrl 'createMeetModel'}}"></a>
+				<br>
+				<span class="font-14">新建会议</span>
+			</div>
+		</div>
+	</div>
+</li>
+{{each activities}}
+<li class="main-list">
+	<div class="list show rel">
+		<div class="top rel ml-20 pt-30 font-14">
+			<ul>
+				<li>会议名称：<span class="bold black">{{$value.activitytopic}}</span></li>
+				<li>当前状态：
+					<span class="bold black">
+						{{if $value.activitystatus == "001"}}
+						<span class="red">新建</span>
+						{{else if $value.activitystatus == "002"}}
+						<span class="blue">等待推送</span>
+						{{else if $value.activitystatus == "003"}}
+						<span class="yellow">进行中</span>
+						{{/if}}
+					</span>
+				</li>
+				<li>开始时间：<span class="bold black">{{$value.starttime}}</span></li>
+				<li>结束时间：<span class="bold black">{{$value.endtime}}</span></li>
+				<!-- <li>报名人数：<span class="bold black">10000人</span></li>
+				<li>签到人数：<span class="bold black">1000人</span></li> -->
+			</ul>
+			<div class="qcode">
+				<a href="javascript:;" class="r-btn download" qcode-btn aid="{{$value.pkActivity}}"></a>
+				<p>下载二维码</p>
+			</div>
+		</div>
+		<div class="bot">
+			<ul class="clearfix font-14">
+				<li>
+					<span class="r-icon met-edit mr-6"></span>
+					<a href="{{getUrl 'meetEdit'}}{{'&pkActivity='+ $value.pkActivity + '&type='+ $value.vdef5 + '&flow=1'}}">编辑</a>
+				</li>
+				<li>
+					<span class="r-icon met-remove mr-6"></span>
+					<a href="javascript:;" remove rid="{{$value.pkActivity}}">删除</a>
+				</li>
+				<li>
+					<span class="r-icon met-set mr-6 ml-6"></span>
+					<a href="javascript:;" box-set lid="{{$value.pkActivity}}">发布渠道</a>
+				</li>
+				<li>
+					<span class="r-icon met-send mr-6"></span>
+					<a href="javascript:;" send sid="{{$value.pkActivity}}">推送</a>
+				</li>
+			</ul>
+			<ul class="clearfix font-14">
+				<li class="ml-10">
+					<a href="{{getUrl 'integralRuleList'}}{{'&pkActivity=' + $value.pkActivity}}">积分规则</a>
+				</li>
+				<li class="ml-10">
+					<a href="{{getUrl 'singList'}}{{'&pkActivity=' + $value.pkActivity}}">报名情况</a>
+				</li>
+				<li class="ml-10">
+					<a href="{{getUrl 'awardList'}}{{'&pkActivity=' + $value.pkActivity}}">现场抽奖</a>
+				</li>
+				<li class="ml-10">
+					<a href="{{getUrl 'meetInteract'}}{{'&pkActivity=' + $value.pkActivity}}">会议互动</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</li>
+{{/each}}

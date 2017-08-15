@@ -1,0 +1,90 @@
+/**
+ *description:到店有礼列表页
+ *author:fanwei
+ *date:2014/07/31
+ */
+
+ .gift-list-wrap {
+	width: 96%;
+	margin:18px auto 0 auto;
+	min-height: 600px;
+}
+
+.gift-list-wrap .main-list {
+	width: 33.33%;
+	margin-bottom: 20px;
+	float: left;
+	overflow: hidden;
+}
+
+.gift-list-wrap .main-list .list {
+	width: 96%;
+	height: 235px;
+	border:3px dashed #9fb1bb;
+	border-radius: 5px;
+	box-shadow: 1px 1px 1px #ccc;
+}
+
+.gift-list-wrap .main-list .list.show {
+	border:3px solid #dfdfe1;
+	background: #fff;
+}
+
+.gift-list-wrap .main-list .list.show:hover {
+	border:3px solid #ffaa3d;
+}
+
+.gift-list-wrap .add-area {
+	margin-top:60px;
+	padding:0 60px;
+}
+
+.gift-list-wrap .top dl dt {
+	padding:10px;
+	background: #f4f4f4;
+}
+
+.gift-list-wrap .top dd img {
+	max-height: 142px;
+}
+
+.gift-list-wrap .top dl dd .content {
+	position: absolute;
+	left:0;
+	top:0;
+	z-index: 100;
+	padding:10px;
+	color:#000;
+} 
+
+.gift-list-wrap .top dl dd {
+	height: 142px;
+}
+
+.gift-list-wrap .bot {
+	width: 100%;
+	line-height: 32px;
+	background: #e9eef1;
+	position: absolute;
+	bottom:0;
+	left:0;
+}
+
+.gift-list-wrap .bot ul {
+	width: 335px;
+}
+
+.gift-list-wrap .bot ul li {
+	float: left;
+	color:#888;
+	margin-right: 10px;
+	cursor: pointer;
+}
+
+.qcode {
+	position: absolute;
+	right:10px;
+	bottom: 70px;
+	text-align: center;
+}
+

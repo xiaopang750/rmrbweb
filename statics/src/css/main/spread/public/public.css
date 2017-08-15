@@ -1,0 +1,290 @@
+/**
+ *description:现场活动
+ *author:fanwei
+ *date:2014/08/11
+ */
+
+.elc-index {
+	padding:50px 0;
+}
+
+.elc-index td {
+	padding:20px 0;
+	text-align: center;
+}
+
+.elc-index td p {
+	padding:5px;
+	font-size: 14px;
+} 
+
+.upload-area {
+	width: 488px;
+	height: 332px;
+	border:1px solid #ccc;
+	border-radius: 5px;
+	margin:0 auto;
+	background: #fff;
+	margin-bottom: 200px;
+}
+
+/* .upload-area select {
+	width: 247px;
+	height: 28px;
+	border:1px solid #ccc;
+} */
+
+.view-area {
+	width: 712px;
+	height: 417px;
+	margin:20px auto 20px auto;
+	border:1px solid #ccc;
+	position: relative;
+	background: #fff;
+}
+
+.roll-text {
+	position: absolute;
+	width: 700px;
+	height: 30px;
+	line-height: 30px;
+	left:10px;
+	top:103px;
+	font-size: 18px;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.full {
+	position: absolute;
+	right:10px;
+	top:10px;
+}
+
+.roll-text-inner {
+	position: absolute;
+	left:0;
+	top:0;
+}
+
+.roll-text span {
+	margin-right: 15px;
+}
+
+.view-area .view-image {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left:0;
+	top:0;
+}
+
+.view-text {
+	position: absolute;
+	left:10px;
+	top:30px;
+	font-size: 50px;
+	color:#000;
+}
+
+.upload-head {
+	width: 100%;
+	height: 36px;
+	background: #eee;
+	border-bottom: 1px solid #dedede;
+}
+
+.upload-area button {
+	width: 100px;
+	height: 30px;
+	margin:30px 0 0 68px;
+}
+
+/* .upload-area textarea {
+	width: 235px;
+	height: 100px;
+	border:1px solid #ccc;
+	padding:5px;
+} */
+
+.msg-list-wrap {
+	width: 744px;
+	margin:0 auto;
+}
+
+.msg-list-wrap .roll-wrap {
+	width: 750px;
+}
+
+.msg-list-wrap li {
+	margin-bottom: 10px;
+	width: 750px;
+}
+
+.msg-list-wrap dt {
+	width: 446px;
+	border:1px solid #ccc;
+	height: 177px;
+	background: #f4f4f4;
+	border-radius: 5px;
+}
+
+.msg-list-wrap dt .check {
+	position: absolute;
+	bottom: 10px;
+}
+
+.act-btn,.all-act-btn {
+	width: 85px;
+	height: 26px;
+	position: absolute;
+	bottom: 10px;
+	right:10px;
+}
+
+.all-act-btn {
+	position:inherit;
+}
+
+.msg-list-wrap dd {
+	width: 279px;
+	border:1px solid #ccc;
+	height: 177px;
+	background: #f4f4f4;
+	border-radius: 5px;
+}
+
+.msg-list-wrap dd td {
+	padding-bottom: 10px;
+}
+
+.pic-text-wrap {
+	width: 800px;
+	margin:0 auto;
+	padding-top:20px;
+}
+
+.view-circle {
+	width: 200px;
+	position: absolute;
+	z-index: 10;
+	margin:-100px 0 0 -100px;
+	left: 50%;
+	top:50%;
+}
+
+.view-title {
+	width: 233px;
+	position: absolute;
+	left:21px;
+	top:120px;
+	text-align: center;
+	font-size: 21px;
+	color:#696f73;
+}
+
+.view-form {
+	width: 486px;
+	border:1px solid #ccc;
+	border-radius: 5px;
+	background: #fff;
+}
+
+.view-form-title {
+	height: 36px;
+	background: #eee;
+	border-bottom: 1px solid #ccc;
+}
+
+.view-form-content table td {
+	padding-bottom: 10px;
+}
+
+.view-form-content input.p-text {
+	width: 120px;
+	height: 28px;
+	line-height: 28px;
+	padding-left:2px;
+	border:1px solid #ccc;
+}
+
+.view-form-content textarea {
+	width: 285px;
+	height: 200px;
+	border:1px solid #ccc;
+	padding:5px;
+}
+
+.view-form-content select {
+	width: 200px;
+	height: 30px;
+	border:1px solid #ccc;
+}
+
+.set-gift-wrap {
+	width: 430px;
+	padding:10px;
+	margin:0 auto;
+	background: #f7f5f5;
+	border:1px solid #ccc;
+	border-radius: 5px;
+}
+
+
+.confirm button {
+	width: 100px;
+	height: 28px;
+	margin:10px 0;
+}
+
+.up-screen-wrap {
+	width: 90%;
+	top:40px;
+	z-index: 50;
+	margin:20px auto 0 auto;
+}
+
+.up-screen-wrap ul {
+	width: 100%;
+}
+
+.up-screen-wrap ul li {
+	width: 98%;
+	height: 30px;
+	padding-left:10px;
+	line-height: 30px;
+	border:1px solid #ccc;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	background: #fff;
+}
+
+/* 签到显示二维码 */
+.qcode-wrap {
+	position: absolute;
+	left:20px;
+	bottom: 40px;
+	width: 100%;
+}
+
+.qcode-wrap ul {
+	width: 100%;
+}
+
+.qcode-wrap li {
+	width: 10%;
+	text-align: center;
+	float:left;
+	margin-right:20px;
+}
+
+.qcode-wrap li dt {
+	margin-bottom: 10px;
+}
+
+.qcode-wrap li img {
+	width: 100%;
+}
+
+
+

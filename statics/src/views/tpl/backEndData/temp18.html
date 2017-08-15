@@ -1,0 +1,52 @@
+<div tab-inner-wrap>
+	<div class="mb-10">
+		{{each results}}
+			<a class="btn btn-default {{if $index == 0}}active{{/if}}" href="javascript:;" widget-tab-head-inner>{{$value.channel}}</a>
+		{{/each}}
+	</div>
+
+	{{each results}}
+	<div widget-tab-content-inner class="{{if $index != 0}}none{{/if}}">
+		<table class="table striped mb-50" width="100%">
+			<thead>
+				<tr>
+					<td colspan="4">{{$value.channel}}</td>
+				</tr>
+				<tr>
+					<td>日期</td>
+					<td>积分总量</td>
+					<td>积分增量</td>
+					<td>积分兑换量</td>
+				</tr>
+			</thead>
+			<tbody>
+				{{if $value.results.length}}
+					{{each $value.results as value2 index2}}
+					<tr>
+						<td>
+							{{value2.dt}}
+						</td>
+						<td>
+							{{value2.allnum}}
+						</td>
+						<td>
+							{{value2.addnum}}
+						</td>
+						<td>
+							{{value2.reducenum}}
+						</td>
+					</tr>
+					{{/each}}
+				{{else}}
+				<tr>
+					<td colspan="4">
+						暂无数据
+					</td>
+				</tr>
+				{{/if}}
+			</tbody>
+		</table>
+	</div>
+	{{/each}}
+
+</div>

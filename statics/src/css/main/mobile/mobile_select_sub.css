@@ -1,0 +1,47 @@
+/**
+ *description:选择子模板
+ *author:fanwei
+ *date:2014/07/22
+ */
+
+.mobile-select-sub {
+	width: 862px;
+	margin:15px auto 0 auto;
+}
+
+.mobile-select-sub ul {
+	width: 882px;
+}
+
+.mobile-select-sub ul li {
+	width: 274px;
+	height: 580px;
+	float: left;
+	margin: 0 20px 60px 0;
+}
+
+.select-sub .head-list {
+	width: 100%;
+	height: 36px;
+	position: relative;
+}
+
+.select-sub .head-list .line {
+	width: 85%;
+	height: 0px;
+	border-bottom:1px dashed #909090;
+	overflow: hidden;
+	position: absolute;
+	right:0;
+	top:16px;
+}
+
+.select-sub .site-name {
+	width: 253px;
+}
+
+.mobile-view-wrap {
+	cursor: pointer;
+}
+
+

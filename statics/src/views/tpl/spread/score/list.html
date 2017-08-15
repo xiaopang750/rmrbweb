@@ -1,0 +1,43 @@
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="table striped">
+	<thead>
+		<tr>
+			<td colspan="4" class="tr">
+				<a class="btn btn-primary" href="{{getUrl 'integralRuleEdit'}}&pkActivity={{pid}}" add-btn>
+					添加规则
+				</a>
+			</td>
+		</tr>
+	</thead>
+	<tbody>
+		{{if pointRules.length}}
+			<tr>
+				<td>积分规则名称</td>
+				<td>积分数量</td>
+				<td>积分规则类型</td>
+				<td>操作</td>
+			</tr>
+			{{each pointRules}}
+			<tr rule-list>
+				<td>{{$value.ruleName}}</td>
+				<td>{{$value.pointNum}}</td>
+				<td>
+					{{$value.pointType}}
+				</td>
+				<td>
+					<a href="{{getUrl 'integralRuleEdit'}}&pkActivity={{pid}}&pkRule={{$value.pkRule}}">编辑</a>
+					<span>|</span>
+					<a href="javascript:;" aid="{{$value.pkRule}}" remove>删除</a>
+					<span>|</span>
+					<a href="{{getUrl 'integralRulePart'}}&pkRule={{$value.pkRule}}">积分领取详情</a>
+				</td>
+			</tr>
+			{{/each}}
+		{{else}}
+			<tr colspan="4">
+				<td>
+					暂无数据
+				</td>
+			</tr>	
+		{{/if}}
+	</tbody>
+</table>

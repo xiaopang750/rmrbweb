@@ -1,0 +1,43 @@
+<!-- 报名列表 -->
+
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="table striped mb-20">
+	<thead>
+		<tr>
+			<td width="10%">姓名</td>
+			<td width="20%">公司</td>
+			<td width="30%">地址</td>
+			<td width="30%">电话</td>
+			<td width="5%">状态</td>
+			<td width="5%">渠道</td>
+		</tr>
+	</thead>
+	<tbody>
+		{{each activitySigns}}
+		<tr>
+			<td>{{$value.name}}</td>
+			<td>{{$value.corp}}</td>
+			<td>{{$value.addr}}</td>
+			<td>{{$value.tel}}</td>
+			<td>
+				{{if $value.issuccess == '1'}}
+					已报名
+				{{else if $value.issuccess == '0'}}
+					已签到
+				{{/if}}
+			</td>
+			<td>
+				{{if $value.signChannel == '001'}}
+					微信
+				{{else if $value.signChannel == '002'}}
+					微博
+				{{/if}}
+			</td>
+		</tr>
+		{{/each}}
+	</tbody>
+</table>
+
+<div>
+	<p>报名人数:{{count.signNum}}人</p>
+	<p>签到人数:{{count.joinNum}}人</p>
+</div>

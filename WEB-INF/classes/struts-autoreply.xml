@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+    <constant name="struts.enable.DynamicMethodInvocation" value="true" />
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.ui.theme" value="simple"></constant>
+    <constant name="struts.action.extension" value="do,action,,"></constant>
+
+	<package name="rmrb-autoreply" namespace="/autoreply" extends="rmrb-default">
+		
+	<action name="findautoreply" class="com.rsdataservice.o2o.action.autoreply.AutoReplyAction" method="findAutoReplyByPage">
+		<result type="json"></result>
+	</action> 
+	
+	<action name="addautoreply" class="com.rsdataservice.o2o.action.autoreply.AutoReplyAction" method="saveAutoReply">
+		<result type="json"></result>
+	</action> 
+	
+	<action name="updateautoreply" class="com.rsdataservice.o2o.action.autoreply.AutoReplyAction" method="updateAutoReply">
+		<result type="json"></result>
+	</action> 
+	
+		<action name="delautoreply" class="com.rsdataservice.o2o.action.autoreply.AutoReplyAction" method="deleteAutoReply">
+		<result type="json"></result>
+	</action> 
+	
+		<action name="findreplybyid" class="com.rsdataservice.o2o.action.autoreply.AutoReplyAction" method="findAutoById">
+		<result type="json"></result>
+	</action> 
+	</package>
+</struts>

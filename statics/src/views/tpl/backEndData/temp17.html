@@ -1,0 +1,53 @@
+<div tab-inner-wrap-level>
+	
+	<div class="mb-10 tl">
+		{{each results}}
+			<a class="btn btn-default {{if $index == 0}}active{{/if}}" href="javascript:;" widget-tab-head-inner-level>{{$value.channel}}</a>
+		{{/each}}
+	</div>
+
+	{{each results}}
+	<div widget-tab-content-inner-level class="{{if $index != 0}}none{{/if}}">
+		<table class="table striped mb-50" width="100%">
+			<thead>
+				<tr>
+					<td colspan="4">{{$value.channel}}</td>
+				</tr>
+				<tr>
+					<td>活动类型</td>
+					<!-- <td>活动阅读量</td> -->
+					<td>互动评论量</td>
+					<td>会员参与量</td>
+				</tr>
+			</thead>
+			<tbody>
+				{{if $value.results.length}}
+					{{each $value.results as value2 index2}}
+					<tr>
+						<td>
+							{{value2.typeName}}
+						</td>
+						<!-- <td>
+							{{value2.readNum}}
+						</td> -->
+						<td>
+							{{value2.reviewNum}}
+						</td>
+						<td>
+							{{value2.cyNum}}
+						</td>
+					</tr>
+					{{/each}}
+				{{else}}
+				<tr>
+					<td colspan="3">
+						暂无数据
+					</td>
+				</tr>
+				{{/if}}
+			</tbody>
+		</table>
+	</div>
+	{{/each}}
+
+</div>

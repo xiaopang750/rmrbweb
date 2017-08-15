@@ -1,0 +1,44 @@
+<!-- 商品领取详情 -->
+
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="table striped">
+	<thead>
+		<tr>
+			<td width="10%">会员昵称</td>
+			<td width="30%">会员姓名</td>
+			<td width="10%">会员手机号</td>
+			<td width="15%">来源</td>
+			<td width="20%">兑换时间</td>
+			<td width="15%">兑换礼品</td>
+		</tr>
+	</thead>
+	{{if details.length}}	
+		{{each details}}
+		<tr rule-list>
+			<td>{{$value.nickname}}</td>
+			<td>
+				{{$value.membername}}
+			</td>
+			<td>{{$value.cellphone}}</td>
+			<td>
+				{{if $value.memberfrom == '001'}}
+					微信
+				{{else if $value.memberfrom == '002'}}
+					新浪微博
+				{{/if}}
+			</td>
+			<td>
+				{{$value.integraltime}}
+			</td>
+			<td>
+				{{$value.exchangeProduct}}
+			</td>
+		</tr>
+		{{/each}}
+	{{else}}
+		<tr>
+			<td colspan="6">
+				暂无数据
+			</td>
+		</tr>	
+	{{/if}}
+</table>

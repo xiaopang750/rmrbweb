@@ -1,0 +1,52 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: "Microsoft Yahei";
+	font-size: 12px;
+	color:#989898;
+}
+
+body,html {
+	*overflow-x:hidden;
+}
+
+ul, ol, li {
+	list-style-type: none;
+}
+
+img {
+	border: none;
+}
+
+a {
+	color: #888;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #4183c4;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-size: 12px;
+	font-weight: normal;
+}
+
+select {
+	vertical-align: middle;
+	border: none;
+}
+
+textarea {
+	resize: none;
+	outline: none;
+	overflow: auto;
+}
+
+input {
+	vertical-align: middle;
+	outline: none;
+}

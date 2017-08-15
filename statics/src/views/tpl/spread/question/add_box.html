@@ -1,0 +1,32 @@
+<!-- 引用问卷弹框 -->
+<div class="nr-box question-quote-box" script-bound="form_check">
+	<a href="javascript:;" class="close" sc="close">×</a>
+	<table cellspacing="0" cellpadding="0" border="0" width="100%" class="table nohover noline nobg mt-20">
+		<tr>
+			<td class="tc">调查问卷问题目设置</td>
+			<td>
+				<input type="text" class="form-control col-xs-11" form_check="sys" ischeck="true" name="rmrbWjObject.title" tip="此项为必填" wrong="调查问卷问题目设置为20个字以内" re="(.{1,20})">
+			</td>
+		</tr>
+		<tr>
+			<td class="tc">选择问卷类型</td>
+			<td>
+				<select type="text" class="form-control col-xs-11" form_check="sys" ischeck="true" name="rmrbWjObject.type" tip="此项为必填" wrong="此项为必填" re="(.+)" question-type>
+					<option value="">请选择</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td class="tc">调查问卷说明</td>
+			<td>
+				<textarea type="text" class="form-control h-sm col-xs-11" form_check="sys" ischeck="true" name="rmrbWjObject.discribe" tip="此项为必填" wrong="调查问卷说明为100个字以内" re="((.|\n){1,100})"></textarea>
+			</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td class="tl">
+				<a href="javascript:;" class="btn btn-primary pl-50 pr-50" script-role="confirm-btn">引用</a>
+			</td>
+		</tr>
+	</table>
+</div>

@@ -1,0 +1,41 @@
+<!-- 列表编辑 -->
+{{each content.modelars.modelData}}
+<tr class="clearfix" sub-list data-ele="list-change">
+	<td class="tc" width="74">
+		<span class="sort" data-ele="sort">
+			{{if now}}
+				{{now}}
+			{{else}}
+				{{$index + 1}}
+			{{/if}}
+		</span>
+	</td>
+	<td width="169">
+		<input type="text" class="r-text edit-name fl" value="{{$value.modelName}}" sub-name="modelName" data-ele="no-move" text-limit text-max="4">
+		<span class="fl red mt-5 ml-5 font-14">*</span>
+	</td>
+	<td width="158">
+		<select class="edit-select fl" sub-name="iconBgUrl" data-ele="no-move">
+			<option value="{{basePath}}sys/mobile/module_list/icon1.png" {{if $value.iconBgUrl == basePath + 'sys/mobile/module_list/icon1.png'}}selected="selected"{{/if}}>图标1</option>
+			<option value="{{basePath}}sys/mobile/module_list/icon2.png" {{if $value.iconBgUrl == basePath + 'sys/mobile/module_list/icon2.png'}}selected="selected"{{/if}}>图标2</option>
+			<option value="{{basePath}}sys/mobile/module_list/icon3.png" {{if $value.iconBgUrl == basePath + 'sys/mobile/module_list/icon3.png'}}selected="selected"{{/if}}>图标3</option>
+			<option value="{{basePath}}sys/mobile/module_list/icon4.png" {{if $value.iconBgUrl == basePath + 'sys/mobile/module_list/icon4.png'}}selected="selected"{{/if}}>图标4</option>
+			<option value="{{basePath}}sys/mobile/module_list/icon5.png" {{if $value.iconBgUrl == basePath + 'sys/mobile/module_list/icon5.png'}}selected="selected"{{/if}}>图标5</option>
+			<option value="{{basePath}}sys/mobile/module_list/icon6.png" {{if $value.iconBgUrl == basePath + 'sys/mobile/module_list/icon6.png'}}selected="selected"{{/if}}>图标6</option>
+		</select>	
+		<span class="fl red mt-5 ml-5 font-14">*</span>
+	</td>
+	<td width="143">
+		<select class="edit-select" sub-name="pageUrl" data-ele="no-move">
+			<option value="">请选择</option>
+			{{each pages as value1 index}}
+				<option value="{{value1.weburl}}" {{if value1.weburl==$value.pageUrl}}selected="selected"{{/if}}>{{value1.webname}}</option>
+			{{/each}}
+			<option value="" select-link>自定义链接</option>
+		</select>
+	</td>
+	<td width="37">
+		<span class="r-btn mobile-list-remove" data-ele="no-move" remove-list></span>
+	</td>
+</tr>
+{{/each}}

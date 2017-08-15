@@ -1,0 +1,56 @@
+/**
+ *description:查看详情
+ *author:fanwei
+ *date:2014/07/20
+ */
+.mobile-list-head {
+	width: 97%;
+	height: 46px;
+	line-height: 46px;
+	border-bottom: 1px dashed #a5b6bf;
+}
+
+.mobile-list-content {
+	min-height: 600px;
+}
+
+/* .mobile-list-content table {
+	width: 90%;
+	margin:20px auto 0 auto;
+	border-collapse: collapse;
+}
+
+.mobile-list-content table td {
+	border:1px solid #ccc;
+	text-align: center;
+	padding:5px 0;
+} */
+
+/* .mobile-list-content table td.t-head {
+	padding:10px 0;
+	font-size: 14px;
+} */
+
+.mobile-list-content ul li {
+	border-bottom:1px solid #e9e9e9;
+	padding:10px;
+}
+
+.mobile-list-content ul li.active {
+	background:#e9eef1;
+}
+
+/* .mobile-list-content table td {
+	padding-bottom:5px;
+} */
+
+.mobile-list-content .net {
+	width: 190px;
+	height: 34px;
+	line-height: 34px;
+	overflow: hidden;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+

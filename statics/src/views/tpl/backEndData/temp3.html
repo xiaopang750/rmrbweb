@@ -1,0 +1,36 @@
+<table class="table striped mb-50" width="100%">
+	<thead>
+		<tr>
+			<td>发布日期</td>
+			<td>活动发布总数</td>
+			<td>微信发布数</td>
+			<td>新浪微博发布数</td>
+		</tr>
+	</thead>
+	<tbody>
+		{{if countResult.length}}
+			{{each countResult as value2 index2}}
+			<tr>
+				<td>
+					{{value2.dt}}
+				</td>
+				<td>
+					{{value2.allNum}}
+				</td>
+				<td>
+					{{value2.wxNum}}
+				</td>
+				<td>
+					{{value2.wbNum}}
+				</td>
+			</tr>
+			{{/each}}
+		{{else}}
+		<tr>
+			<td colspan="2">
+				暂无数据
+			</td>
+		</tr>
+		{{/if}}
+	</tbody>
+</table>

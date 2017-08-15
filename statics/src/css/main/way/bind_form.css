@@ -1,0 +1,27 @@
+/**
+ *description:添加公众号表单
+ *author:fanwei
+ *date:2014/08/03
+ */
+
+.bind-wrap-form {
+	width: 90%;
+	margin:20px auto 0 auto;
+}
+
+
+/* .bind-wrap-form button {
+	width: 100px;
+	height: 28px;
+}
+
+.bind-wrap-form td {
+	padding:10px;
+}
+
+.bind-wrap-form td input {
+	width: 200px;
+	height: 28px;
+	line-height: 28px;
+	border:1px solid #ccc;
+} */

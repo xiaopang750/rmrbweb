@@ -1,0 +1,49 @@
+<!-- 会员评论详情 -->
+{{if !mEvaluates.length}}
+<div class="tc">暂无数据</div>
+{{else}}
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="auto table mt-20">
+	<thead class="list-head">
+		<tr>
+			<td width="15%">主题</td>
+			<td width="15%">评论人名称</td>
+			<td width="15%">评论内容</td>
+			<td width="15%">评论来源</td>
+			<td width="20%">评论类型</td>
+			<td width="20%">评论时间</td>
+		</tr>
+	</thead>
+	<tbody data-ele="data-wrap" class="list-body">
+		{{each mEvaluates as value1 index1}}
+			{{each value1.evaluates as value2 index2}}
+			<tr>
+				{{if index2 == 0}}
+				<td rowspan="{{value1.evaluates.length}}">{{value1.topic}}</td>
+				{{/if}}
+				<td>{{value2.commentusername}}</td>
+				<td>
+					{{value2.evaluatecontent}}
+				</td>
+				<td>
+					{{if value2.evaluatefrom == '001'}}
+						微信
+					{{else if value2.evaluatefrom == '002'}}
+						新浪微博
+					{{else if value2.evaluatefrom == '003'}}
+						腾讯微博	
+					{{/if}}
+				</td>
+				<td>
+					{{if value2.evaluatetype == 'act'}}
+						活动
+					{{else}}
+						微博
+					{{/if}}
+				</td>
+				<td>{{value2.evaluatetime}}</td>
+			</tr>
+			{{/each}}
+		{{/each}}
+	</tbody>
+</table>
+{{/if}}

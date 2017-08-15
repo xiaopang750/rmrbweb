@@ -1,0 +1,36 @@
+<div class="sub-type2">
+	<div class="mobile-view-inner">
+		<img src="{{content.bgImg.modelData.bgImgUrl}}" class="bg-img">
+		<!-- mobile-lead -->
+		<div class="mobile-lead"></div>
+		<!-- mobile-nav -->
+		{{if typeof content.textNav !== "undefined"}}
+		<div class="mobile-nav">
+			<ul class="clearfix">
+				{{each content.textNav.modelData}}
+					<li style="background:{{$value.labelColor}}">
+						<span style="color:{{$value.fontColor}}">{{$value.textName}}</span>
+					</li>
+				{{/each}}
+			</ul>
+		</div>
+		{{/if}}
+		<div class="mobile-list mt-10">
+			<ul>
+				{{each content.modelars.modelData}}
+				<li data-name="module{{$index}}">
+					<span class="r-icon mobile-dec2"></span>
+					<dl class="clearfix">
+						<dt class="mb-5 fl ml-5 mr-5">
+							<img src="{{$value.iconBgUrl}}" width="60" height="24" class="fl mt-6">
+						</dt>
+						<dd class="fl">
+							<h2 class="mb-5 bold" style="color:{{$value.mainFontColor}}">{{$value.mainTitle}}</h2>
+						</dd>
+					</dl>
+				</li>
+				{{/each}}
+			</ul>
+		</div>
+	</div>
+</div>

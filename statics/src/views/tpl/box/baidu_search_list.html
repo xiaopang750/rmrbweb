@@ -1,0 +1,6 @@
+<!-- 百度搜索列表 -->
+{{each data}}
+<li data-ele="select-list" data-ele="select-ele" url="{{$value.objURL}}" name="{{$value.fromPageTitleEnc}}">
+	<img real-src="{{$value.objURL}}" src="{{basePath}}/lib/loading/g_loading.gif" baidu-image>
+</li>
+{{/each}}

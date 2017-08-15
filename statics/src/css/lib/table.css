@@ -1,0 +1,88 @@
+/**
+ *description: 全局表格样式
+ *author:fanwei
+ *date:2014/09/07
+ */
+.table {
+	max-width: 100%;
+	/* background-color: transparent; */
+	border-spacing: 0;
+	border-collapse: collapse;
+	border-color: gray;
+	box-sizing: border-box;
+	border: 1px solid #ddd;
+	word-break: break-all;
+}
+
+.table.striped tbody tr:nth-child(odd) td {
+	background: #d9edf7;
+}
+
+.table.striped tbody tr:hover td, .table.striped tbody tr.active td  {
+	background: #ffaa3d!important;
+	color:#fff;
+}
+
+.table.striped tbody tr:hover td a {
+	color:#fff;
+	text-decoration: underline;
+}	
+
+.table thead {
+	background: #e9eef2;
+	color:#000;
+}
+
+.table td {
+	padding: 8px;
+	border: 1px solid #ddd;
+	color:#989898;
+	font-size: 12px;
+	text-align: center;
+	background: #fff;
+}
+
+.table thead td {
+	color:#000;
+	font-size: 16px;
+}
+
+.table tbody tr, .table tbody td {
+	-webkit-transition:.5s;
+	-moz-transition:.5s;
+	-o-transition:.5s;
+	-ms-transition:.5s;
+}
+
+.table tbody tr:hover td  {
+	background: #d9edf7;
+}	
+
+
+.table tbody tr:hover td {
+	color:#000;
+}
+
+.table.nohover tr {
+	-webkit-transition:0s;
+	-moz-transition:0s;
+	-o-transition:0s;
+	-ms-transition:0s;
+}
+
+.table.nohover tr:hover td {
+	background: #fff;	
+}
+
+.table.nobg td,.table.nobg tr:hover td {
+	background: none;
+}
+
+.table.noline {
+	border:none;
+}
+
+.table.noline td {
+	border:none;
+}
+ 

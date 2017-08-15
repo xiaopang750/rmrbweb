@@ -1,0 +1,49 @@
+<!-- set-box -->
+<div class="inner mt-30">
+	<div class="head pb-10 font-20 tc">
+		发布渠道设置
+	</div>
+	<div class="content">
+		<table cellpadding="0" cellspacing="0" border="0" width="96%" class="auto pt-10 font-14">
+			<tr member>
+				<td width="100">选择会员级别：</td>
+				<td>
+					{{each memberLevels}}
+					<span class="mr-10">
+						<span>{{$value.levelname}}</span>
+						<input type="checkbox" value="{{$value.pkMemberlevel}}" {{if $value.dr == 1}}checked="checked"{{/if}}>
+					</span>
+					{{/each}}
+				</td>
+			</tr>
+			<tr time>
+				<td>选择时间：</td>
+				<td>
+					<div class="mb-10 mt-7">
+						<input type="text" class="form-control col-xs-6" data-ele="send-time" value="" class="r-text" readonly="readonly">
+					</div>
+				</td>
+			</tr>
+			<tr way>
+				<td>选择渠道：</td>
+				<td>
+					<span class="mr-10">
+						{{each channels}}
+						<span class="mr-5" third-way-wrap>
+							<span>{{$value.accountname}}</span>
+							<input type="checkbox" {{if $value.isCheck == "Y"}}checked="checked"{{/if}} third-way-select accountid="{{$value.accountid}}" accounttype="{{$value.accounttype}}">
+						</span>
+						{{/each}}
+					</span>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>
+<div class="btn-area tc">
+	<a href="javascript:;" class="btn btn-primary pl-20 pr-20" set-save>确定</a>
+	<a href="javascript:;" class="btn btn-danger pl-20 pr-20" sc="close">取消</a>
+</div>
+<a href="javascript:;" class="close" sc="close">×</a>
+
+

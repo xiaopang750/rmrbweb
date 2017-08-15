@@ -1,0 +1,36 @@
+{{if mCouponsList.length}}
+<table class="table striped" width="100%">
+	<tr>
+		<td>领取的会员名称</td>
+		<td>领取渠道</td>
+		<td>领取时间</td>
+		<td>当前状态</td>
+		<td>核销时间</td>
+	</tr>
+	{{each mCouponsList}}
+	<tr>
+		<td>{{$value.reserve3}}</td>
+		<td>
+			{{if $value.reserve2 == '001'}}
+				微信
+			{{else if $value.reserve2 == '002'}}	
+				新浪微博
+			{{/if}}
+		</td>
+		<td>{{$value.vdef1}}</td>
+		<td>
+			{{if $value.couponsStatus == 1}}
+				已核销
+			{{else}}
+				未核销
+			{{/if}}
+		</td>
+		<td>
+			{{$value.cancelTime}}
+		</td>
+	</tr>
+	{{/each}}
+</table>
+{{else}}
+<div class="tc">暂无任何详情</div>
+{{/if}}

@@ -1,0 +1,42 @@
+<!-- 主模板2 -->
+<div class="main-type2">
+	<div class="mobile-view-inner">
+		<!-- mobile-lead -->
+		<div class="mobile-lead"></div>
+		<!-- mobile-head -->
+		<div class="mobile-head clearfix" data-ele="cd-test" data-name="{{content.logo.modelName}}">
+					<img src="{{content.logo.modelData.logoUrl}}" width="232" height="28">
+				</div>
+		<!-- mobile-banner -->
+		<div class="mobile-banner" data-ele="cd-test" data-name="{{content.point.modelName}}">
+			<ul class="clearfix">
+				{{each content.point.modelData}}
+					<li>
+						<img src="{{$value.imgUrl}}">
+					</li>
+				{{/each}}
+			</ul>
+		</div>
+		<!-- mobile-nav -->
+		<div class="mobile-list" data-ele="cd-test" data-name="{{content.modelars.modelName}}">
+			<ul class="clearfix">
+				{{each content.modelars.modelData}}
+				<li>
+					<div class="module tc">
+						<table cellpadding="0" cellspacing="0" border="0" width="100%">
+							<tr>
+								<td height="60" class="pt-2">
+									{{if $value.iconBgUrl}}
+										<img src="{{$value.iconBgUrl}}" width="30" class="block auto">
+									{{/if}}
+									<p>{{$value.modelName}}</p>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</li>
+				{{/each}}
+			</ul>
+		</div>
+	</div>
+</div>

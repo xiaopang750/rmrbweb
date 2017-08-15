@@ -1,0 +1,4 @@
+/*TMODJS:{"version":1,"md5":"f26deaf26987c6e7fc534b987e047bdc"}*/
+define(function(require) {
+    return require("../../templates")("box/way/group_box", '<div class="nr-box group-box" group-box> <div class="inner-wrap"> <div class="select-wrap rel"> <div class="select-head" select-head> <span class="ml-10" head>选择分组</span> </div> <ul select class="select-content">  </ul> </div> <div class="clearfix mb-20"> <input type="text" class="form-control fl col-xs-7" create-area> <a href="javascript:;" class="btn btn-default fr pl-50 pr-50" create-btn>创建分组</a> </div> <div class="tc"> <a href="javascript:;" class="btn btn-primary pl-30 pr-30" confirm>确定</a> <a href="javascript:;" class="btn btn-danger pl-30 pr-30" sc="close">取消</a> </div> </div> <a href="javascript:;" class="close" sc="close">×</a> </div>');
+});

@@ -1,0 +1,68 @@
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="table striped">
+	<thead>
+	<tr>
+		<td colspan="6">
+			<span class="select-area fl mt-10" select-area>
+				
+			</span>
+			<a class="btn btn-primary fr" href="javascript:;" data-ele="build-btn" select-pic-type>
+				添加图文消息
+			</a>
+		</td>
+	</tr>
+	</thead>
+	{{if activities.length}}
+		<thead>
+		<tr>
+			<td width="10%">名称</td>
+			<td width="30%">发布状态</td>
+			<td width="10%">创建时间</td>
+			<td width="10%">创建人</td>
+			<td width="20%">封面图片</td>
+			<td width="20%">操作</td>
+		</tr>
+		</thead>
+		{{each activities}}
+		<tr rule-list>
+			<td>{{$value.activitytopic}}</td>
+			<td>
+				{{if $value.activitystatus == "001"}}
+				<span class="red">新建</span>
+				{{else if $value.activitystatus == "002"}}
+				<span class="blue">等待推送</span>
+				{{else if $value.activitystatus == "003"}}
+				<span class="yellow">进行中</span>
+				{{/if}}
+			</td>
+			<td>{{$value.ts}}</td>
+			<td>{{$value.activityiowner}}</td>
+			<td>
+				<img src="{{$value.activityheader}}" height="100">
+			</td>
+			<td>
+				<a class="mr-5" href="{{getUrl 'muliEdit'}}{{'&pkActivity='+ $value.pkActivity + '&way=' + $value.vdef1}}">
+					编辑
+				</a>
+				<a class="mr-5" href="javascript:;" removepic rid="{{$value.pkActivity}}">
+					删除
+				</a>
+				<a class="mr-5" href="javascript:;" box-set lid="{{$value.pkActivity}}">
+					发布渠道
+				</a>
+				<a class="mr-5" href="javascript:;" send sid="{{$value.pkActivity}}">
+					推送
+				</a>
+				<a href="{{getUrl 'integralRuleList'}}{{'&pkActivity=' + $value.pkActivity}}">积分规则</a>
+				<a href="{{getUrl 'reviewList'}}{{'&pkActivity=' + $value.pkActivity}}">评论情况</a>
+				<a href="javascript:;" pid="{{$value.pkActivity}}" set-time>有效期</a>
+			</td>
+		</tr>
+		{{/each}}
+	{{else}}
+		<tr colspan="4">
+			<td>
+				暂无数据
+			</td>
+		</tr>	
+	{{/if}}
+</table>

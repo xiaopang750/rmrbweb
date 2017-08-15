@@ -1,0 +1,18 @@
+<!-- 图文预览 -->
+{{each muliInfos}}
+<div class="list-view b-r font-14 {{if $index == iNow}}active{{/if}}" widget-role="tab-head" aid={{$index}}>
+	<a href="javascript:;" class="font-18 remove {{if $index==0}}none{{/if}}" remove aid="{{$value.pkInfo}}">x</a>
+	<h3 class="mb-10 font-14">{{$value.subject}}</h3>
+	<img class="mb-10" src="{{$value.picurl}}" width="100%">
+	<p class="mb-10">
+		{{if actType == '001'}}
+		提示信息
+		{{else}}
+		摘要 
+		{{/if}}
+	</p>
+	<div class="text lineH-23">
+		{{$value.activityAbstract}}
+	</div>
+</div>
+{{/each}}

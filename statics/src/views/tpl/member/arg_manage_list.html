@@ -1,0 +1,51 @@
+<!-- 评论管理列表 -->
+{{if blogs.length}}
+<table cellpadding="0" cellspacing="0" border="0" width="90%" class="table striped auto mt-20">
+	<thead>
+		<tr>
+			<td width="10%">微博渠道</td>
+			<td width="10%">是否已收藏</td>
+			<td width="10%">转发数</td>
+			<td width="10%">评论数</td>
+			<td width="15%">微博内容</td>
+			<td width="15%">操作</td>
+		</tr>
+	</thead>
+	<tbody>
+		{{each blogs}}
+		<tr>
+			<td>
+				{{if $value.blogWay == "001"}}
+					微信
+				{{else if $value.blogWay == "002"}}
+					新浪微博
+				{{else if $value.blogWay == "003"}}
+					腾讯微博
+				{{/if}}				
+			</td>
+			<td>
+				{{if $value.favorited == '1'}}
+					是
+				{{else}}
+					否
+				{{/if}}
+			</td>
+			<td zhuan>{{$value.repostCount}}</td>
+			<td comment>{{$value.commentsCount}}</td>
+			<td>{{$value.blogContent}}</td>
+			<td>
+				<a href="{{getUrl 'commentList'}}&accountId={{$value.standby1}}&blogId={{$value.blogId}}&pkBlog={{$value.pkBlog}}">查看评论</a>
+				<span>|</span>
+				<a href="javascript:;" get-new accountId="{{$value.standby1}}" blogId="{{$value.blogId}}" pkBlog="{{$value.pkBlog}}">获取最新信息</a>
+				<span>|</span>
+				<a href="javascript:;" get-new-arg accountId="{{$value.standby1}}" blogId="{{$value.blogId}}" pkBlog="{{$value.pkBlog}}">获取最新评论</a>
+			</td>
+		</tr>
+		{{/each}}
+	</tbody>
+</table>
+{{else}}
+<div class="noData">
+	<p>暂无数据</p>
+</div>
+{{/if}}

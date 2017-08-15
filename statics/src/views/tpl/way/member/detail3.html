@@ -1,0 +1,27 @@
+<!-- 会员参与活动详情 -->
+{{if !memberActs.length}}
+<div class="tc">暂无数据</div>
+{{else}}
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="auto table mt-20">
+	<thead class="list-head">
+		<tr>
+			<td width="20%">参与时间</td>
+			<td width="20%">参与内容</td>
+			<td width="20%">参与结果</td>
+			<td width="20%">参与奖励</td>
+			<td width="20%">互动内容</td>
+		</tr>
+	</thead>
+	<tbody data-ele="data-wrap" class="list-body">
+		{{each memberActs}}
+		<tr>
+			<td>{{$value.participatetime}}</td>
+			<td>{{$value.participatecontent}}</td>
+			<td>{{$value.participateresult}}</td>
+			<td>{{$value.participatereward}}</td>
+			<td>{{$value.participatedetail}}</td>
+		</tr>
+		{{/each}}
+	</tbody>
+</table>
+{{/if}}

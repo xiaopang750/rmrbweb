@@ -1,0 +1,20 @@
+<!-- 会议流程6 预览模板-->
+
+<img src="{{bg}}" class="bg" width="234" height="392" data-ele="bg">
+<div class="cover">
+	<table cellpadding="0" cellspacing="0" border="0" width="100%" class="table nohover noline">
+				<tr>
+					<td colspan="2">欢迎报名</td>
+				</tr>
+		{{each List}}
+			{{if $value.isChecked == "0"}}
+				<tr>
+					<td class="tr pb-20" width="50">{{$value.name}}：</td>
+					<td class="pb-20">
+						<input type="{{$value.type}}" class="form-control" disabled="disabled">
+					</td>
+				</tr>
+			{{/if}}
+		{{/each}}
+	</table>
+</div>

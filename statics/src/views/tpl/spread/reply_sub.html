@@ -1,0 +1,29 @@
+{{each reviews as $value2 index}}
+	<div class="rel ml-50 pt-10 pb-10" reply-list>
+		<div reply-content>
+			<span class="blue mr-10">{{$value2.reviewPerson}}回复</span>
+			<span>{{$value2.reviewTarget}}:</span>
+			<span class="mr-10 black">{{$value2.reviewContent}}</span>
+			<span class="mr-10">{{$value2.reviewTime}}</span>
+			<span class="red">
+				来自：
+				{{if $value2.reviewSource == '001'}}
+				微信
+				{{else if $value2.reviewSource == '002'}}
+				微博
+				{{/if}}
+				<span class="ml-10">{{$value2.reviewLocation}}</span>
+			</span>
+		</div>
+		<div reply-area class="reply-area">
+			<textarea class="WB_media_expand" namer="{{$value2.reviewPerson}}" cid="{{pkReview}}" reply-text></textarea>
+			<div class="clearfix">
+				<span class="send-btn fr bg-gray" send-reply>评论</span>
+			</div>
+		</div>
+		<div class="btn-wrap" btn-wrap>
+			<a href="javascript:;" class="reply-btn" reply-btn>回复</a>
+			<a href="javascript:;" class="remove-btn" remove-btn aid="{{$value2.pkReview}}">删除</a>
+		</div>
+	</div>
+{{/each}}

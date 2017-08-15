@@ -1,0 +1,37 @@
+{{if userinfoes.length}}
+<table cellpadding="0" cellspacing="0" border="0" width="90%" class="table auto mt-20 striped">
+	<!-- 用户管理列表 -->
+	<thead>
+		<tr>
+			<td colspan="4" class="tr">
+				<a class="btn btn-primary pl-50 pr-50" href="{{getUrl 'userEdit'}}&type=add" add>添加</a>
+			</td>
+		</tr>
+		<tr>
+			<td width="20%">用户名称</td>
+			<td width="20%">生效日期</td>
+			<td width="20%">失效日期</td>
+			<td width="40%">操作</td>
+		</tr>	
+	</thead>
+	<tbody>
+		{{each userinfoes}}
+		<tr list>
+			<td>{{$value.userName}}</td>
+			<td>{{$value.ableTime}}</td>
+			<td>{{$value.disableTime}}</td>
+			<td>
+				<a href="{{getUrl 'userEdit'}}&type=edit&aid={{$value.cuserid}}" edit>编辑</a>
+				<span>|</span>
+				<a href="javascript:;" remove aid="{{$value.cuserid}}">删除</a>
+			</td>
+		</tr>
+		{{/each}}
+	</tbody>
+</table>
+{{else}}
+<div class="noData">
+	<p>暂无数据</p>
+	<a class="btn btn-primary" href="{{getUrl 'userEdit'}}&type=add" add>添加</a>
+</div>
+{{/if}}

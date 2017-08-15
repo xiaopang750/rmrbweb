@@ -1,0 +1,247 @@
+﻿<server>
+	<pmenu name="手机网站" label="mobilesite" code="001" parentCode="0" funInterface="" icon="mobile" level="1" subPageCode="">
+		<cmenu name="新建手机网站" label="siteAddForm" code="00101" parentCode="001" funInterface="../jumppage/mobileAdd?id=00101" icon="" level="2" subPageCode="">
+		  	<page name="手机页面编辑页" label="sitePageEdit" code="0010101" parentCode="00101"  funInterface="../jumppage/mobileEdit?id=0010101" icon="" level="3" subPageCode="">
+				<page name="手机页面新建页" label="pageAddForm" code="001010101" parentCode="0010101"  funInterface="../jumppage/mobilePageAdd?id=001010101" icon="" level="4" subPageCode="0010101"></page>
+				<page name="手机页面编辑页" label="sitePageEdit" code="001010102" parentCode="00101"  funInterface="../jumppage/mobileEdit?id=001010102" icon="" level="4" subPageCode="0010101"></page>
+				<page name="站点页面列表" label="pageList" code="001010103" parentCode="00101"  funInterface="../jumppage/mobilePageList?id=001010103" icon="" level="4" subPageCode="0010101"></page>
+		  	</page>
+		</cmenu>
+		
+		<cmenu name="已有手机网站" label="siteList" code="00102" parentCode="001" funInterface="../jumppage/mobileList?id=00102" icon="" level="2" subPageCode="">
+		   <page name="站点页面列表" label="pageList" code="0010201" parentCode="00102"  funInterface="../jumppage/mobilePageList?id=0010201" icon="" level="3" subPageCode="0010101">
+		   		
+		   </page>
+		   <page name="新建手机网站" label="siteAddForm" code="0010202" parentCode="00102"  funInterface="../jumppage/mobileAdd?id=0010202" icon="" level="3" subPageCode="00101"></page>
+		</cmenu>
+	</pmenu>
+	<pmenu name="渠道管理"  label="channelData" code="002" parentCode="0"  funInterface="" icon="way" level="1" subPageCode="">
+		<cmenu name="账号绑定" label="accountBindList" code="00202" parentCode="002" funInterface="../sys/toAccount?id=00202" icon="" level="2" subPageCode="">
+			 <page name="公众号新增编辑页" label="accountBindForm" code="0020201" parentCode="00202"  funInterface="../sys/toAccountEdit?id=0020201" icon="" level="3" subPageCode="002"></page>
+			 <page name="自定义菜单首页"  label="autoMenuIndex"  code="0020202" parentCode="00202"  funInterface="../account/toWxmenuPage?id=0020202" icon="" level="3" subPageCode=""></page>
+		</cmenu>
+		<cmenu name="会员管理" label="memberManage" code="00203" parentCode="002" funInterface="../jumppage/memberList?id=00203" icon="" level="2" subPageCode="">
+			<page name="会员详情页" label="memberDetail" code="0020301" parentCode="00203"  funInterface="../jumppage/memberDetail?id=0020301" icon="" level="3" subPageCode=""></page>
+			<page name="会员编辑页" label="memberForm" code="0020302" parentCode="00203"  funInterface="../jumppage/memberForm?id=0020302" icon="" level="3" subPageCode="002"></page>
+			<page name="会员级别编辑页" label="memberLevelForm" code="0020303" parentCode="00203"  funInterface="../member/toMemberLevelEditPage?id=0020303" icon="" level="3" subPageCode="002"></page>
+		</cmenu>
+		<cmenu name="会员级别" label="memberLevel" code="00204" parentCode="002" funInterface="../member/toMemberLevel?id=00204" icon="" level="2" subPageCode="">
+			<page name="会员级别编辑页" label="memberLevelForm" code="0020401" parentCode="00204"  funInterface="../member/toMemberLevelEditPage?id=0020401" icon="" level="3" subPageCode="002"></page>
+		</cmenu>
+		<cmenu name="渠道数据" label="" code="00201" parentCode="002" funInterface="../channel/toChannelData?id=00201" icon="" level="2" subPageCode=""></cmenu>
+		<!-- <cmenu name="行业热点" label="" code="00205" parentCode="002" funInterface="http://top.baidu.com/" icon="" level="2"></cmenu> -->
+	</pmenu>
+	<pmenu name="推广活动" label="" code="003" parentCode="0"  funInterface="" icon="spread" level="1" subPageCode="">
+		<cmenu name="企业形象" label="" code="00301" parentCode="003" funInterface="../activity/toCorparate?activityType=002&amp;id=00301" icon="" level="2" subPageCode="">
+			<page name="图文编辑页" label="muliEdit" code="0030101" parentCode="00301" funInterface="../activity/toSinglePage?id=0030101&amp;activityType=002" icon="" level="3" subPageCode="">
+				<page name="企业形象列表页" label="muliList" code="003010101" parentCode="0030101" funInterface="../activity/toCorparate?activityType=002&amp;id=003010101" icon="" level="4" subPageCode="00301"></page>
+			</page>
+   			<page name="积分规则列表页" label="integralRuleList" code="0030102" parentCode="00301" funInterface="../sys/toIntegralRuleList?id=0030102" icon="" level="3" subPageCode="">
+   				<page name="积分规则编辑页" label="integralRuleEdit" code="003010201" parentCode="0030102" funInterface="../sys/toIntegralRuleEdit?id=003010201" icon="" level="4" subPageCode="">
+   					<page name="积分规则列表页" label="integralRuleList" code="00301020101" parentCode="003010201" funInterface="../sys/toIntegralRuleList?id=00301020101" icon="" level="5" subPageCode="0030102"></page>
+   				</page>
+   				<page name="积分领取详情" label="integralRulePart" code="003010202" parentCode="0030102" funInterface="../sys/toIntegralReceiveDetail?id=003010202" icon="" level="4" subPageCode=""></page>
+   			</page>
+   			<page name="评论情况页" label="reviewList" code="0030103" parentCode="00301" funInterface="../activity/toActivityReview?id=0030103" icon="" level="3" subPageCode=""></page>
+		</cmenu>
+		<cmenu name="品牌建设"  label="" code="00302" parentCode="003" funInterface="../activity/toBrand?activityType=010&amp;id=00302" icon="" level="2" subPageCode="">
+			<page name="图文编辑页" label="muliEdit" code="0030201" parentCode="00302" funInterface="../activity/toSinglePage?id=0030201&amp;activityType=010" icon="" level="3" subPageCode="">
+				<page name="品牌建设列表页" label="muliList" code="003020101" parentCode="0030201" funInterface="../activity/toBrand?activityType=010&amp;id=003020101" icon="" level="4" subPageCode="00302"></page>
+			</page>
+   			<page name="积分规则列表页" label="integralRuleList" code="0030202" parentCode="00302" funInterface="../sys/toIntegralRuleList?id=0030202" icon="" level="3" subPageCode="">
+   				<page name="积分规则编辑页" label="integralRuleEdit" code="003020201" parentCode="0030202" funInterface="../sys/toIntegralRuleEdit?id=003020201" icon="" level="4" subPageCode="">
+   					<page name="积分规则列表页" label="integralRuleList" code="00302020101" parentCode="003020201" funInterface="../sys/toIntegralRuleList?id=00302020101" icon="" level="5" subPageCode="0030202"></page>
+   				</page>
+   				<page name="积分领取详情" label="integralRulePart" code="003020202" parentCode="0030202" funInterface="../sys/toIntegralReceiveDetail?id=003020202" icon="" level="4" subPageCode=""></page>
+   			</page>
+   			<page name="评论情况页" label="reviewList" code="0030203" parentCode="00302" funInterface="../activity/toActivityReview?id=0030203" icon="" level="3" subPageCode=""></page>
+		</cmenu>
+		<cmenu name="每日资讯" label="" code="00303" parentCode="003" funInterface="../activity/toEvery?activityType=003&amp;id=00303" icon="" level="2" subPageCode="">
+			<page name="图文编辑页" label="muliEdit" code="0030301" parentCode="00303" funInterface="../activity/toSinglePage?id=0030301&amp;activityType=003" icon="" level="3" subPageCode="">
+				<page name="每日资讯列表页" label="muliList" code="003030101" parentCode="0030301" funInterface="../activity/toEvery?activityType=003&amp;id=003030101" icon="" level="4" subPageCode="00303"></page>
+			</page>
+   			<page name="积分规则列表页" label="integralRuleList" code="0030302" parentCode="00303" funInterface="../sys/toIntegralRuleList?id=0030302" icon="" level="3" subPageCode="">
+   				<page name="积分规则编辑页" label="integralRuleEdit" code="003030201" parentCode="0030302" funInterface="../sys/toIntegralRuleEdit?id=003030201" icon="" level="4" subPageCode="">
+   					<page name="积分规则列表页" label="integralRuleList" code="00303020101" parentCode="003030201" funInterface="../sys/toIntegralRuleList?id=00303020101" icon="" level="5" subPageCode="0030302"></page>
+   				</page>
+   				<page name="积分领取详情" label="integralRulePart" code="003030202" parentCode="0030302" funInterface="../sys/toIntegralReceiveDetail?id=003030202" icon="" level="4" subPageCode=""></page>
+   			</page>
+   			<page name="评论情况页" label="reviewList" code="0030303" parentCode="00303" funInterface="../activity/toActivityReview?id=0030303" icon="" level="3" subPageCode=""></page>
+		</cmenu>
+		<cmenu name="促销活动" label="" code="00304" parentCode="003" funInterface="../activity/toSale?activityType=004&amp;id=00304" icon="" level="2" subPageCode="">
+			<page name="图文编辑页" label="muliEdit" code="0030401" parentCode="00304" funInterface="../activity/toSinglePage?id=0030401&amp;activityType=002" icon="" level="3" subPageCode="">
+				<page name="促销活动列表页" label="muliList" code="003040101" parentCode="0030401" funInterface="../activity/toSale?activityType=004&amp;id=003040101" icon="" level="4" subPageCode="00304"></page>
+			</page>
+   			<page name="积分规则列表页" label="integralRuleList" code="0030402" parentCode="00304" funInterface="../sys/toIntegralRuleList?id=0030402" icon="" level="3" subPageCode="">
+   				<page name="积分规则编辑页" label="integralRuleEdit" code="003040201" parentCode="0030402" funInterface="../sys/toIntegralRuleEdit?id=003040201" icon="" level="4" subPageCode="">
+   					<page name="积分规则列表页" label="integralRuleList" code="00304020101" parentCode="003040201" funInterface="../sys/toIntegralRuleList?id=00304020101" icon="" level="5" subPageCode="0030402"></page>
+   				</page>
+   				<page name="积分领取详情" label="integralRulePart" code="003040202" parentCode="0030402" funInterface="../sys/toIntegralReceiveDetail?id=003040202" icon="" level="4" subPageCode=""></page>
+   			</page>
+   			<page name="评论情况页" label="reviewList" code="0030403" parentCode="00304" funInterface="../activity/toActivityReview?id=0030403" icon="" level="3" subPageCode=""></page>
+		</cmenu>
+		<cmenu name="电子优惠券" label="" code="00305" parentCode="003" funInterface="../jumppage/couponsIndex?id=00305" icon="" level="2" subPageCode="">
+			<page name="编辑电子优惠卷" label="couponsEdit" code="0030501" parentCode="00305" funInterface="../jumppage/couponsForm?id=0030501" icon="" level="3" subPageCode="">
+				<page name="图文编辑页" label="muliEdit" code="003050101" parentCode="0030501" funInterface="../activity/toSinglePage?id=003050101&amp;activityType=006" icon="" level="4" subPageCode="">
+					<page name="电子优惠卷列表页" label="muliList" code="00305010101" parentCode="003050101" funInterface="../jumppage/couponsList?id=00305010101" icon="" level="5" subPageCode="0030502"></page>
+				</page>
+			</page>
+			<page name="电子优惠卷列表页" label="conpousList" code="0030502" parentCode="00305" funInterface="../jumppage/couponsList?id=0030502" icon="" level="3" subPageCode="">
+				<page name="编辑电子优惠卷" label="couponsEdit" code="003050201" parentCode="0030502" funInterface="../jumppage/couponsForm?id=003050201" icon="" level="4" subPageCode="">
+					<page name="图文编辑页" label="muliEdit" code="00305020101" parentCode="003050201" funInterface="../activity/toSinglePage?id=00305020101&amp;activityType=006" icon="" level="5" subPageCode="">
+						<page name="电子优惠卷列表页" label="muliList" code="0030502010101" parentCode="00305020101" funInterface="../jumppage/couponsList?id=00305010101" icon="" level="6" subPageCode="0030502"></page>
+					</page>
+				</page>
+				<page name="积分规则列表页" label="integralRuleList" code="003050202" parentCode="0030502" funInterface="../sys/toIntegralRuleList?id=003050202" icon="" level="4" subPageCode="">
+	   				<page name="积分规则编辑页" label="integralRuleEdit" code="00305020201" parentCode="003050202" funInterface="../sys/toIntegralRuleEdit?id=00305020201" icon="" level="5" subPageCode="">
+	   					<page name="积分规则列表页" label="integralRuleList" code="0030502020101" parentCode="00305020201" funInterface="../sys/toIntegralRuleList?id=0030502020101" icon="" level="6" subPageCode="003050202"></page>
+	   				</page>
+	   				<page name="积分领取详情" label="integralRulePart" code="00305020202" parentCode="003050202" funInterface="../sys/toIntegralReceiveDetail?id=00305020202" icon="" level="5" subPageCode=""></page>
+   				</page>
+				<page name="报名情况列表" label="singList" code="003050203" parentCode="0030502" funInterface="../activity/toSingList?id=003050203" icon="" level="4" subPageCode=""></page>
+				<page name="优惠券领取详情页" label="couponsDetail" code="003050204" parentCode="0030502"  funInterface="../jumppage/saleDetail?id=003050204" icon="" level="4" subPageCode=""></page>
+			</page>
+		</cmenu>
+		<cmenu name="积分兑换" label="" code="00310" parentCode="003" funInterface="../activity/toIntegralExchange?activityType=008&amp;id=00310" icon="" level="2" subPageCode="">
+			<page name="商品兑换编辑" label="productExchangeEdit" code="0031001" parentCode="00310" funInterface="../activity/toIntegralExchangeEdit?id=0031001" icon="" level="3" subPageCode="">
+				<page name="商品兑换列表页" label="productExchangeList" code="003100101" parentCode="0031001" funInterface="../activity/toIntegralExchange?activityType=008&amp;id=003100101&amp;type=goods" icon="" level="4" subPageCode="00310"></page>
+			</page>
+			<page name="商品兑换详情" label="productExchangePart" code="0031002" parentCode="00310" funInterface="../activity/toIntegralExchanegDetailPage?id=0031002" icon="" level="3" subPageCode=""></page>
+			<page name="图文编辑页" label="muliEdit" code="0031003" parentCode="00310" funInterface="../activity/toSinglePage?id=0031003&amp;activityType=008" icon="" level="3" subPageCode="">
+				<page name="图文列表页" label="muliList" code="003100301" parentCode="0031003" funInterface="../activity/toIntegralExchange?activityType=008&amp;id=003100301&amp;type=pic" icon="" level="4" subPageCode="00310"></page>
+			</page>
+			<page name="积分规则列表页" label="integralRuleList" code="0031004" parentCode="00310" funInterface="../sys/toIntegralRuleList?id=0031004" icon="" level="3" subPageCode="">
+	   				<page name="积分规则编辑页" label="integralRuleEdit" code="003100401" parentCode="0031004" funInterface="../sys/toIntegralRuleEdit?id=003100401" icon="" level="4" subPageCode="">
+	   					<page name="积分规则列表页" label="integralRuleList" code="00310040101" parentCode="003100401" funInterface="../sys/toIntegralRuleList?id=00310040101" icon="" level="5" subPageCode="0031004"></page>
+	   				</page>
+	   				<page name="积分领取详情" label="integralRulePart" code="003100402" parentCode="0031004" funInterface="../sys/toIntegralReceiveDetail?id=003100402" icon="" level="5" subPageCode=""></page>
+   			</page>
+   			<page name="评论情况页" label="reviewList" code="0031005" parentCode="00310" funInterface="../activity/toActivityReview?id=0031005" icon="" level="3" subPageCode=""></page>
+		</cmenu>
+		<cmenu name="调查问卷" label="survey" code="00311" parentCode="003" funInterface="../jumppage/surveyIndex?activityType=012&amp;id=00311" icon="" level="2" subPageCode="">
+			<page name="问卷新增页" label="surveyAddForm"  code="0031101" parentCode="00311"  funInterface="../jumppage/surveyCreate?id=0031101" icon="" level="3" subPageCode="">
+			    <page name="问卷问题编辑页" label="surveyEditForm" code="003110101" parentCode="0031101"  funInterface="../jumppage/surveyQuestion?id=003110101" icon="" level="4" subPageCode="">
+					<page name="调查问卷图文编辑" label="surveyMuliEdit" code="00311010101" parentCode="003110101" funInterface="../activity/toSinglePage?id=00311010101&amp;activityType=012" icon="" level="5" subPageCode="">
+						<page name="问卷列表页" label="muliList" code="0031101010101" parentCode="00311010101" funInterface="../jumppage/surveyList?id=0031101010101" icon="" level="6" subPageCode="0031102"></page>
+					</page>
+				</page>
+			</page>
+			<page name="问卷列表页" label="surveyList" code="0031102" parentCode="00311"  funInterface="../jumppage/surveyList?id=0031102" icon="" level="3" subPageCode="">
+				<page name="问卷新增页" label="surveyAddForm" code="003110201" parentCode="0031102"  funInterface="../jumppage/surveyCreate?id=0031101" icon="" level="4" subPageCode="0031101"></page>
+				<page name="问卷问题编辑页" label="surveyEditForm" code="003110202" parentCode="0031102"  funInterface="../jumppage/surveyQuestion?id=003110202" icon="" level="4" subPageCode="003110101"></page>
+				<page name="问卷结果收集页" label="surveyResultCollect" code="003110203" parentCode="0031102"  funInterface="../jumppage/surveyCount?id=003110203" icon="" level="4" subPageCode=""></page>
+			</page>
+			<page name="问题库列表页" label="questionStorageList" code="0031103" parentCode="00311"  funInterface="../jumppage/QuestionList?id=0031103" icon="" level="3" subPageCode="">
+				<page name="问题库问题编辑页" label="questionStorageEdit" code="003110301" parentCode="0031103"  funInterface="../jumppage/surveyQuestion?id=003110301" icon="" level="4" subPageCode=""></page>
+			</page>
+		</cmenu>
+		<cmenu name="到店有礼" label="" code="00306" parentCode="003" funInterface="../activity/toActivityIndex?activityType=007&amp;id=00306" icon="" level="2" subPageCode="">
+			<page name="图文编辑页" label="muliEdit" code="0030601" parentCode="00306" funInterface="../activity/toSinglePage?id=0030601&amp;activityType=007" icon="" level="3" subPageCode="">
+				<page name="图文列表页" label="muliList" code="003060101" parentCode="0030601" funInterface="../activity/toActivityListPage?activityType=007&amp;id=003060101" icon="" level="4" subPageCode="0030602"></page>
+			</page>
+			<page name="图文列表页" label="muliList" code="0030602" parentCode="00306" funInterface="../activity/toActivityListPage?activityType=007&amp;id=0030602" icon="" level="3" subPageCode="">
+				<page name="图文编辑页" label="muliEdit" code="003060201" parentCode="0030602" funInterface="../activity/toSinglePage?id=003060201&amp;activityType=007" icon="" level="4" subPageCode="">
+					<page name="图文列表页" label="muliList" code="00306020101" parentCode="003060201" funInterface="../activity/toActivityListPage?activityType=007&amp;id=00306020101" icon="" level="5" subPageCode="0030602"></page>
+				</page>
+				<page name="积分规则列表页" label="integralRuleList" code="003060202" parentCode="0030602" funInterface="../sys/toIntegralRuleList?id=003060202" icon="" level="4" subPageCode="">
+	   				<page name="积分规则编辑页" label="integralRuleEdit" code="00306020201" parentCode="003060202" funInterface="../sys/toIntegralRuleEdit?id=00306020201" icon="" level="5" subPageCode="">
+	   					<page name="积分规则列表页" label="integralRuleList" code="0030602020101" parentCode="00306020201" funInterface="../sys/toIntegralRuleList?id=0030602020101" icon="" level="6" subPageCode="003060202"></page>
+	   				</page>
+	   				<page name="积分领取详情" label="integralRulePart" code="00306020202" parentCode="003060202" funInterface="../sys/toIntegralReceiveDetail?id=00306020202" icon="" level="5" subPageCode=""></page>
+   				</page>
+   				<page name="评论情况页" label="reviewList" code="003060203" parentCode="0030602" funInterface="../activity/toActivityReview?id=003060203" icon="" level="4" subPageCode=""></page>
+				<page name="报名情况列表" label="singList" code="003060204" parentCode="0030602" funInterface="../activity/toSingList?id=003060204" icon="" level="4" subPageCode=""></page>
+			</page>
+			<page name="店铺二维码" label="shopEwm" code="0030603" parentCode="00306" funInterface="../activity/toActivityListPage?activityType=007&amp;id=0030602&amp;listType=nofunc" icon="" level="3" subPageCode=""></page>
+		</cmenu>
+		<cmenu name="会议邀约" label="" code="00307" parentCode="003" funInterface="../activity/toMeeting?activityType=001&amp;id=00307" icon="" level="2" subPageCode="">
+			<page name="新建会议模板" label="createMeetModel" code="0030701" parentCode="00307" funInterface="../activity/toCheckMeetModel?id=0030701" icon="" level="3" subPageCode="">
+				<page name="会议编辑页" label="meetEdit" code="003070101" parentCode="0030701" funInterface="../activity/editPageChange?id=003070101" icon="" level="4" subPageCode="0030701"></page>
+				<page name="图文编辑页" label="muliEdit" code="003070102" parentCode="0030701" funInterface="../activity/toSinglePage?id=003070102&amp;activityType=001" icon="" level="4" subPageCode="">
+					<page name="会议列表页" label="muliList" code="00307010201" parentCode="003070102" funInterface="../activity/toMeeting?activityType=001&amp;id=00307010201" icon="" level="5" subPageCode="00307"></page>
+				</page>
+			</page>
+			<page name="会议编辑页" label="meetEdit" code="0030702" parentCode="00307" funInterface="../activity/editPageChange?id=0030702" icon="" level="3" subPageCode="0030701"></page>
+			<page name="积分规则列表页" label="integralRuleList" code="0030703" parentCode="00307" funInterface="../sys/toIntegralRuleList?id=0030703" icon="" level="3" subPageCode="">
+	   				<page name="积分规则编辑页" label="integralRuleEdit" code="003070301" parentCode="0030703" funInterface="../sys/toIntegralRuleEdit?id=003070301" icon="" level="4" subPageCode="">
+	   					<page name="积分规则列表页" label="integralRuleList" code="00307030101" parentCode="003070301" funInterface="../sys/toIntegralRuleList?id=00307030101" icon="" level="5" subPageCode="0030703"></page>
+	   				</page>
+	   				<page name="积分领取详情" label="integralRulePart" code="003070302" parentCode="0030703" funInterface="../sys/toIntegralReceiveDetail?id=003070302" icon="" level="3" subPageCode=""></page>
+   			</page>
+   			<page name="报名情况列表" label="singList" code="0030704" parentCode="00307" funInterface="../activity/toSingList?id=0030704" icon="" level="3" subPageCode=""></page>
+			<page name="现场抽奖" label="awardList" code="0030705" parentCode="00307" funInterface="../activity/toAward?id=0030705&amp;activityType=009" icon="" level="3" subPageCode="">
+				<page name="现场抽奖编辑" label="awardEdit" code="003070501" parentCode="0030705" funInterface="../activity/toWardEdit?id=003070501" icon="" level="4" subPageCode="">
+					<page name="图文编辑页" label="muliEdit" code="00307050101" parentCode="003070501" funInterface="../activity/toSinglePage?id=00307050101&amp;activityType=009" icon="" level="5" subPageCode="">
+						<page name="现场抽奖" label="muliList" code="0030705010101" parentCode="00307050101" funInterface="../activity/toAward?id=0030705010101&amp;activityType=009" icon="" level="6" subPageCode="0030705"></page>
+					</page>
+				</page>
+			</page>
+			 <page name="会议互动" label="meetInteract" code="0030706" parentCode="00307" funInterface="../activity/toMeetingInteractive?id=0030706&amp;activityType=011" icon="" level="3" subPageCode="">
+			 	<page name="图文编辑页" label="muliEdit" code="003070601" parentCode="0030706" funInterface="../activity/toSinglePage?id=003070601&amp;activityType=011" icon="" level="4" subPageCode="">
+					<page name="会议互动" label="muliList" code="00307060101" parentCode="003070601" funInterface="../activity/toMeetingInteractive?id=00307060101&amp;activityType=011" icon="" level="5" subPageCode="0030706"></page>
+				</page>
+   				<page name="积分规则列表页" label="integralRuleList" code="003070602" parentCode="0030706" funInterface="../sys/toIntegralRuleList?id=003070602" icon="" level="4" subPageCode="">
+   						<page name="积分规则编辑页" label="integralRuleEdit" code="00307060201" parentCode="003070602" funInterface="../sys/toIntegralRuleEdit?id=00307060201" icon="" level="5" subPageCode="">
+   							<page name="积分规则列表页" label="integralRuleList" code="0030706020101" parentCode="00307060201" funInterface="../sys/toIntegralRuleList?id=0030706020101" icon="" level="6" subPageCode="003070602"></page>
+   						</page>
+   						<page name="积分领取详情" label="integralRulePart" code="00307060202" parentCode="003070602" funInterface="../sys/toIntegralReceiveDetail?id=00307060202" icon="" level="4" subPageCode=""></page>
+   				</page>
+   				<page name="评论情况页" label="reviewList" code="003070603" parentCode="0030706" funInterface="../activity/toActivityReview?id=003070603" icon="" level="4" subPageCode=""></page>
+			 </page>
+		</cmenu>
+		<cmenu name="现场活动" label="" code="00308" parentCode="003" funInterface="../activity/toConference?id=00308" icon="" level="2" subPageCode="">
+			    <page name="发布会互动屏幕" label="memberConference" code="0030801" parentCode="00308" funInterface="../activity/toMemberConference?id=0030801" icon="" level="3" subPageCode=""></page>
+  			    <page name="发布会后台监控" label="monitor" code="0030802" parentCode="00308" funInterface="../activity/toMonitor?id=0030802" icon="" level="3" subPageCode=""></page>
+                <page name="会议签到页面" label="welcome" code="0030803" parentCode="00308" funInterface="../activity/toWelcome?id=0030803" icon="" level="3" subPageCode=""></page>
+		</cmenu>
+		<cmenu name="线下活动二维码" label="" code="00309" parentCode="003" funInterface="../activity/toNumber?id=00309" icon="" level="2" subPageCode=""></cmenu>
+	</pmenu>
+	<pmenu name="会员互动" label="memberInteract" code="004" parentCode="0"  funInterface="" icon="member" level="1" subPageCode="">
+		<cmenu name="在线客服" label="onlineService" code="00401" parentCode="004" funInterface="../member/toOnline?id=00401" icon="" level="2" subPageCode=""></cmenu>
+		<cmenu name="智能答复" label="autoReply" code="00402" parentCode="004" funInterface="../member/toAnswer?id=00402" icon="" level="2" subPageCode="">
+			<page name="智能答复编辑页"  label="autoReplyEdit" code="0040201" parentCode="00402"  funInterface="../jumppage/autoReplyForm?id=0040201" icon="" level="3" subPageCode="004"></page>
+		</cmenu>		
+		<cmenu name="评论管理" label="commentManage" code="00403" parentCode="004" funInterface="../member/toArgue?id=00403" icon="" level="2" subPageCode="">
+			 <page name="评论列表页"  label="commentList" code="0040301" parentCode="00403"  funInterface="../jumppage/commentList?id=0040301" icon="" level="3" subPageCode=""></page>
+		</cmenu>		
+	</pmenu>
+	
+	<pmenu name="数据分析" label="" code="006" parentCode="0" funInterface="" icon="data" level="1" subPageCode="">
+		<cmenu name="推广活动排行" label="" code="00601" parentCode="006" funInterface="../ds/toDataAnalysis?dataType=001&amp;id=00601" icon="" level="2" subPageCode=""></cmenu>
+		<cmenu name="活动发布统计" label="" code="00602" parentCode="006" funInterface="../ds/toDataAnalysis?dataType=003&amp;id=00602" icon="" level="2" subPageCode=""></cmenu>
+		<cmenu name="活动效果对比" label="" code="00603" parentCode="006" funInterface="../ds/toDataAnalysis?dataType=005&amp;id=00603" icon="" level="2" subPageCode=""></cmenu>
+		<cmenu name="活动类型对比" label="" code="00604" parentCode="006" funInterface="../ds/toDataAnalysis?dataType=009&amp;id=00604" icon="" level="2" subPageCode=""></cmenu>
+		<cmenu name="会员数量" label="" code="00605" parentCode="006" funInterface="../ds/toDataAnalysis?dataType=011&amp;id=00605" icon="" level="2" subPageCode=""></cmenu>
+		<cmenu name="会员活跃度" label="" code="00606" parentCode="006" funInterface="../ds/toDataAnalysis?dataType=013&amp;id=00606" icon="" level="2" subPageCode=""></cmenu>
+		<cmenu name="会员行为" label="" code="00607" parentCode="006" funInterface="../ds/toDataAnalysis?dataType=016&amp;id=00607" icon="" level="2" subPageCode=""></cmenu>
+		<cmenu name="会员积分统计" label=""  code="00608" parentCode="006" funInterface="../ds/toDataAnalysis?dataType=018&amp;id=00608" icon="" level="2" subPageCode=""></cmenu>
+		<cmenu name="区域活动推送" label="" code="00609" parentCode="006" funInterface="../ds/toDataAnalysis?dataType=020&amp;id=00609" icon="" level="2" subPageCode=""></cmenu>
+	</pmenu>
+	
+	<pmenu name="账号管理" label="" code="005" parentCode="0"  funInterface="" icon="admin" level="1" subPageCode="">
+		<cmenu name="用户管理" label="userManage" code="00501" parentCode="005" funInterface="../sys/toUserManage?id=00501" icon="" level="2" subPageCode="">
+			<page name="用户编辑页"  label="userEdit" code="0050101" parentCode="00501"  funInterface="../jumppage/userForm?id=0050101" icon="" level="3" subPageCode="005"></page>
+		</cmenu>
+		<cmenu name="角色管理" label="roleManage" code="00502" parentCode="005" funInterface="../sys/toRoleManage?id=00502" icon="" level="2" subPageCode="">
+			<page name="角色编辑页" label="roleEdit" code="0050201" parentCode="00502"  funInterface="../jumppage/roleForm?id=0050201" icon="" level="3" subPageCode="005"></page>
+			<page name="角色用户列表页" label="roleUserList" code="0050202" parentCode="00502"  funInterface="../jumppage/roleUserList?id=0050202" icon="" level="3" subPageCode=""></page>
+			<page name="角色权限页" label="rolePower" code="0050203" parentCode="00502"  funInterface="../sys/toPowerFunc?id=0050203" icon="" level="3" subPageCode=""></page>
+		</cmenu>		
+		<cmenu name="区域店铺管理" label="areaShopManage" code="00503" parentCode="005" funInterface="../sys/toShopManage?id=00503" icon="" level="2" subPageCode=""></cmenu>	
+		<cmenu name="企业管理" label="corpManage" code="00504" parentCode="005" funInterface="../sys/toCorpManage?id=00504" icon="" level="2" subPageCode="">
+			 <page name="企业权限页" label="corpPower" code="0050401" parentCode="00504"  funInterface="../jumppage/corpPower?id=0050401" icon="" level="3" subPageCode=""></page>
+    		 <page name="子企业详情页" label="subCorpDetail" code="0050402" parentCode="00504"  funInterface="../sys/toChildrenCorpDataInfo?id=0050402" icon="" level="3" subPageCode=""></page>
+		</cmenu>
+		<cmenu name="忘记密码提示" label="pwdTip" code="00505" parentCode="005" funInterface="../jumppage/msgEdit?id=00505" icon="" level="2" subPageCode=""></cmenu>
+		<cmenu name="数据字典" label="dataDictionary" code="00506" parentCode="005" funInterface="../jumppage/industryList?id=00506" icon="" level="2" subPageCode="">
+			<page name="数据字典编辑页" label="dataDictionaryEdit" code="0050601" parentCode="00506"  funInterface="../jumppage/industryForm?id=0050601" icon="" level="3" subPageCode="005"></page>
+		</cmenu>
+		<cmenu name="知识库维护" label="knowledgeManage" code="00507" parentCode="005" funInterface="../ku/toKnowledgestorgerListPage?id=00507" icon="" level="2" subPageCode="">
+			 <page name="知识库编辑页" label="knowledgeEdit" code="0050701" parentCode="00507"  funInterface="../ku/toKnowledgestorgerFromPage?id=0050701" icon="" level="3" subPageCode="005"></page>
+		</cmenu>
+<!-- 		<cmenu name="日历链接" label="" code="00508" parentCode="005" funInterface="../jumppage/toCalendar?id=00508" icon="" level="2"></cmenu> -->
+		<cmenu name="关键词维护" label="keyWordManage" code="00509" parentCode="005" funInterface="../jumppage/keywordIndex?id=00509" icon="" level="2" subPageCode=""></cmenu>
+	</pmenu>
+	
+	
+</server>

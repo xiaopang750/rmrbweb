@@ -1,0 +1,51 @@
+<!-- 会议流程2 表单模板-->
+<table cellpadding="0" cellspacing="0" border="0" width="380" sub-wrap name="bg" class="table nohover noline">
+	<tr>
+		<td class="tr" width="100">
+			背景图片：
+		</td>
+		<td r-upload-wrap class="clearfix">
+			<span sub-list>
+				<input type="text" class="form-control col-xs-8 fl" value="{{bg}}" r-upload-url>
+				<input type="hidden" value="{{bg}}" sub-name="bg" r-upload-url>			
+				<a href="javascript:;" class="btn btn-default fr" r-upload-btn>选择图片</a>
+			</span>	
+		</td>
+	</tr>
+</table>
+<div sub-wrap name="List" form-list-wrap>	
+{{each List}}
+<div widget-role="tab-content" {{if $index!=0}}class="none"{{/if}}>
+	<table cellpadding="0" cellspacing="0" border="0" width="380" sub-list name="test" class="table nohover noline">
+		<tr>
+			<td class="tr" width="100">
+				日期：
+			</td>
+			<td>
+				<input type="text" class="form-control" value="{{$value.date}}" sub-name="date" readonly="readonly">
+			</td>
+		</tr>
+		<tr>
+			<td class="tr">
+				日程安排：
+			</td>
+			<td>
+				<input type="text" class="form-control" value="{{$value.plane}}" sub-name="plane" text-limit text-max="15">
+			</td>
+		</tr>
+		<!-- <tr>
+			<td class="tr">
+				日程详细图：
+			</td>
+			<td r-upload-wrap class="clearfix">
+				<span>
+					<input type="text" class="form-control col-xs-8 fl" value="{{$value.detailPic}}" r-upload-url>
+					<input type="hidden" value="{{$value.detailPic}}" sub-name="detailPic" r-upload-url>	
+					<a href="javascript:;" class="btn btn-default fr" r-upload-btn>选择图片</a>		
+				</span>
+			</td>
+		</tr> -->
+	</table>
+</div>
+{{/each}}
+</div>

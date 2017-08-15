@@ -1,0 +1,71 @@
+/**
+ *description:会议邀约
+ *author:fanwei
+ *date:2014/07/26
+ */
+.met-list-wrap {
+	width: 96%;
+	margin:18px auto 0 auto;
+	min-height: 600px;
+}
+
+.met-list-wrap .main-list {
+	width: 33.33%;
+	margin-bottom: 20px;
+	float: left;
+}
+
+.met-list-wrap .main-list .list {
+	width: 96%;
+	height: 235px;
+	border:3px dashed #9fb1bb;
+	border-radius: 5px;
+	box-shadow: 1px 1px 1px #ccc;
+}
+
+.met-list-wrap .main-list .list.show {
+	border:3px solid #dfdfe1;
+}
+
+.met-list-wrap .main-list .list.show:hover {
+	border:3px solid #ffaa3d;
+}
+
+.met-list-wrap .add-area {
+	margin-top:60px;
+	padding:0 60px;
+}
+
+.met-list-wrap .top ul li {
+	line-height: 23px;
+	color:#979797;
+}
+
+.met-list-wrap .qcode {
+	width: 70px;
+	position: absolute;
+	right:20px;
+	bottom: 0;
+	text-align: center;
+}
+
+.met-list-wrap .bot {
+	width: 100%;
+	line-height: 32px;
+	background: #e9eef1;
+	position: absolute;
+	bottom:0;
+	left:0;
+}
+
+.met-list-wrap .bot ul {
+	margin-left:10px;
+}
+
+.met-list-wrap .bot ul li {
+	float: left;
+	color:#888;
+	margin-right: 5px;
+	cursor: pointer;
+}
+

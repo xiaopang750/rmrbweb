@@ -1,0 +1,36 @@
+<!-- 推广活动评论列表 -->
+{{if reviews.length}}
+{{each reviews}}
+<li reply-list>
+	<div reply-content>
+		<span class="blue mr-10">{{$value.reviewPerson}}:</span>
+		<span class="mr-10 black">{{$value.reviewContent}}</span>
+		<span class="mr-10">{{$value.reviewTime}}</span>
+		<span class="red">
+			来自：
+			{{if $value.reviewSource == '001'}}
+			微信
+			{{else if $value.reviewSource == '002'}}
+			微博
+			{{/if}}
+			<span class="ml-10">{{$value.reviewLocation}}</span>
+		</span>
+	</div>
+	<div reply-area class="reply-area">
+		<textarea class="WB_media_expand" namer="{{$value.reviewPerson}}" cid="{{$value.pkReview}}" reply-text></textarea>
+		<div class="clearfix">
+			<span class="send-btn fr bg-gray" send-reply>评论</span>
+		</div>
+	</div>
+	<div class="btn-wrap" btn-wrap>
+		<a href="javascript:;" class="reply-btn" reply-btn>回复</a>
+		<a href="javascript:;" class="remove-btn" remove-btn aid="{{$value.pkReview}}">删除</a>
+	</div>
+	<div sub-wrap>
+	{{include './reply_sub' $value}}
+	</div>
+</li>
+{{/each}}
+{{else}}
+<div class="tc" no-arg>暂无评论</div>
+{{/if}}

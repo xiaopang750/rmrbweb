@@ -1,0 +1,18 @@
+<!-- 在线客服用户列表 -->
+{{if customerserviceLists.length}}
+	{{each customerserviceLists}}
+		<li user-list mid="{{$value.memberid}}" aid="{{$value.accountid}}" name="{{if $value.vdef1}}{{$value.vdef1}}{{else}}游客{{/if}}" level="{{$value.vdef5}}" tel="{{$value.vdef3}}" score="{{$value.vdef4}}" address="{{$value.vdef2}}" mid="{{$value.memberid}}">
+			<span class="ml-20">
+				{{if $value.vdef1}}
+					{{$value.vdef1}}
+				{{else}}
+					游客
+				{{/if}}
+			</span>
+			<span class="red">待办:{{$value.needdealnum}}</span>
+			<a href="javascript:;" class="member-btn" toper>置顶</a>
+		</li>
+	{{/each}}
+{{else}}
+	<div class="tc" noDataTip>暂无接入用户</div>
+{{/if}}
